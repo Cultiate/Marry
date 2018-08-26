@@ -14,7 +14,10 @@
 //= require bootstrap-sprockets
 //= require bootstrap.min.js
 
+//= require front.min.js
 //= require jquery3
+//= require jquery_ujs
+//= require jquery.turbolinks
 //= require jquery.min.js
 //= require jquery-migrate.min.js
 //= require jquery.fancybox.min.js
