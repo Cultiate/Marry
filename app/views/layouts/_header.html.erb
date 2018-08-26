@@ -484,7 +484,7 @@
                       <div class="col-sm-6">
                         <!-- Links -->
                         <ul class="list-unstyled u-list">
-                          <li><%= link_to "マイページへ", @user %></li>
+                          <li><%= link_to "マイページへ", @user, class:"nav-link u-list__link py-2 px-0" %></li>
                           <li><a class="nav-link u-list__link py-2 px-0" href="../account/edit-profile.html">プロフィール編集</a></li>
 
                           <li><a class="nav-link u-list__link py-2 px-0" href="../account/change-password.html">パスワード設定</a></li>
@@ -527,7 +527,7 @@
               <!-- Button -->
               <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
 
-                  <%= link_to "登録", new_user_path, class="btn btn-sm btn-primary u-btn-primary transition-3d-hover", target="_blank" %>
+                  <%= link_to "登録", new_user_path, class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover", target:"_blank" %>
               </li>
               <!-- End Button -->
 
