@@ -10,18 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= dzsparallaxer.css
- *= slick.css
- *= jquery.fancybox.css
- *= jquery.mCustomScrollbar.css
- *= hs.megamenu.css
- *= animate.min.css
- *= fontawesome-all.min.css
- *= bootstrap.css
- *= custom-front.css
- *= front-core.css
- *= front-components.css
- *= front.css
+ *= require bootstrap.css
+ *= require custom-front.css
+ *= require front-core.css
+ *= require front-components.css
+ *= require front.css
+ *= require font-awesome
+ *= require fontawesome-all.min.css
+ *= require dzsparallaxer.css
+ *= require slick.css
+ *= require jquery.fancybox.css
+ *= require jquery.mCustomScrollbar.css
+ *= require hs.megamenu.css
+ *= require animate.min.css
  *= require_tree .
  *= require_self
  */

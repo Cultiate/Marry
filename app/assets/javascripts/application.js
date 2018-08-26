@@ -11,28 +11,33 @@
 // about supported directives.
 //
 //
-//= hs.go-to.js
-//= hs.show-animation.js
-//= hs.slick-carousel.js
-//= hs.fancybox.js
-//= hs.validation.js
-//= hs.malihu-scrollbar.js
-//= hs.focus-state.js
-//= hs.unfold.js
-//= hs.header.js
-//= hs.core.js
-//= gmaps.min.js
-//= dzsparallaxer.js
-//= slick.js
-//= typed.min.js
-//= jquery.fancybox.min.js
-//= jquery.validate.min.js
-//= jquery.mCustomScrollbar.concat.min.js
-//= hs.megamenu.js
-//= bootstrap.min.js
-//= popper.min.js
-//= jquery-migrate.min.js
-//= jquery.min.js
+//= require bootstrap-sprockets
+//= require bootstrap.min.js
+
+//= require jquery3
+//= require jquery.min.js
+//= require jquery-migrate.min.js
+//= require jquery.fancybox.min.js
+//= require jquery.validate.min.js
+//= require jquery.mCustomScrollbar.concat.min.js
+
+//= require hs.go-to.js
+//= require hs.show-animation.js
+//= require hs.slick-carousel.js
+//= require hs.fancybox.js
+//= require hs.validation.js
+//= require hs.malihu-scrollbar.js
+//= require hs.focus-state.js
+//= require hs.unfold.js
+//= require hs.header.js
+//= require hs.core.js
+//= require hs.megamenu.js
+//= require popper
+//= require popper.min.js
+//= require gmaps.min.js
+//= require dzsparallaxer.js
+//= require slick.js
+//= require typed.min.js
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
