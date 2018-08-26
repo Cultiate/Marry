@@ -58,6 +58,18 @@ svg {
   vertical-align: baseline;
 }
 
+img {
+  width:100%;
+}
+
+/*------------------------------------
+  SNS icon
+------------------------------------*/
+.u-list__link > img {
+  height:20px;
+  width:auto;
+}
+
 /*------------------------------------
   Highlight Color
 ------------------------------------*/
@@ -7760,6 +7772,10 @@ svg {
 
 .font-size-32 {
   font-size: 2rem;
+}
+
+.font-size-64 {
+  font-size: 4rem;
 }
 
 @media (max-width: 991px) {
