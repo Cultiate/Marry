@@ -10,12 +10,12 @@
 
           <!-- List -->
           <ul class="list-unstyled mb-0">
-            <li><a class="u-list__link" href="../pages/about-agency.html">利用規約</a></li>
-            <li><a class="u-list__link" href="../pages/about-start-up.html">プライバシーポリシー</a></li>
-            <li><a class="u-list__link" href="#">特定商取引法に基づく表記</a></li>
-            <li><a class="u-list__link" href="../pages/about-agency.html">会社情報</a></li>
-            <li><a class="u-list__link" href="../pages/about-start-up.html">採用情報</a></li>
-            <li><a class="u-list__link" href="#">お問い合わせ</a></li>
+            <li><%= link_to "利用規約", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "プライバシーポリシー", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "特定商取引法に基づく表記", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "会社情報", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "採用情報", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "お問い合わせ", "#", class:"u-list__link" %></a></li>
           </ul>
           <!-- End List -->
         </div>
@@ -27,9 +27,8 @@
 
           <!-- List -->
           <ul class="list-unstyled mb-0">
-            <li><a class="u-list__link" href="../pages/services-agency.html">marryとは？</a></li>
-            <li><a class="u-list__link" href="../pages/services-start-up.html">協賛企業</a></li>
-
+            <li><%= link_to "marryとは？", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "協賛企業", "#", class:"u-list__link" %></a></li>
           </ul>
           <!-- End List -->
         </div>
@@ -41,11 +40,11 @@
 
           <!-- List -->
           <ul class="list-unstyled mb-0">
-            <li><a class="u-list__link" href="#">マイページへ</a></li>
-            <li><a class="u-list__link" href="#">プロフィール編集</a></li>
-            <li><a class="u-list__link" href="#">パスワード設定</a></li>
-            <li><a class="u-list__link" href="#">お支払い方法の確認</a></li>
-            <li><a class="u-list__link" href="#">銀行口座情報</a></li>
+            <li><%= link_to "マイページ", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "プロフィール編集", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "パスワード設定", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "お支払い方法の確認", "#", class:"u-list__link" %></a></li>
+            <li><%= link_to "銀行口座情報", "#", class:"u-list__link" %></a></li>
           </ul>
           <!-- End List -->
         </div>
@@ -55,10 +54,26 @@
             <strong>繋がろうよ</strong>
           </h3>
           <ul class="list-unstyled mb-0">
-            <li><a class="u-list__link" href="#"><img src="/icon/facebook-icon.png"></a></li>
-            <li><a class="u-list__link" href="#"><img src="/icon/twitter-icon.png"></a></li>
-            <li><a class="u-list__link" href="#"><img src="/icon/instagram-icon.png"></a></li>
-            <li><a class="u-list__link" href="#"><img src="/icon/line-icon.png"></a></li>
+            <li>
+              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
+                <%= image_tag "/icon/facebook-icon.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
+                <%= image_tag "/icon/twitter-icon.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
+                <%= image_tag "/icon/instagram-icon.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
+                <%= image_tag "/icon/line-icon.png" %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
