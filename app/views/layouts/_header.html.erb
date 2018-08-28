@@ -398,8 +398,8 @@
                       <div class="col-sm-6">
                         <!-- Links -->
                         <ul class="list-unstyled u-list">
-                          <li><%= link_to "マイページへ", @user, class:"nav-link u-list__link py-2 px-0" %></li>
-                          <li><%= link_to "プロフィール編集", "#", class:"nav-link u-list__link py-2 px-0" %></li>
+                          <li><%= link_to "マイページへ", user_path(current_user), class:"nav-link u-list__link py-2 px-0" %></li>
+                          <li><%= link_to "プロフィール編集", edit_user_path(current_user), class:"nav-link u-list__link py-2 px-0" %></li>
                           <li><%= link_to "パスワード設定", "#", class:"nav-link u-list__link py-2 px-0" %></li>
                         </ul>
                         <!-- End Links -->
