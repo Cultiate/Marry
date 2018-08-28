@@ -1,13 +1,7 @@
 class ProjectsController < ApplicationController
-  def new
+  def create
   end
 
-  def edit
-  end
-
-  def show
-  end
-
-  def index
+  def destroy
   end
 end
