@@ -8,13 +8,14 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find_by(user_id: current_user.id)
+    @project = Project.find_by(id: params[:id])
   end
 
   def create
     @project = current_user.projects.new(project_params)
     if @project.save
       flash[:success] = "プロジェクトが作成されました。"
+      byebug
       redirect_to root_url
     else
       render "new"
