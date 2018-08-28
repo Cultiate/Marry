@@ -1,0 +1,11 @@
+<%= form_for(@project, url: projects_path) do |f| %>
+    <%= render 'shared/error_messages', model: @project %>
+    <main>
+    <div>
+      <%= f.text_area :content, placeholder: "ご自由にご入力ください。" %>
+    </div>
+    <%= f.submit "作成する" %>
+    <span>
+      <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png" %>
+    </span>
+<% end %>
