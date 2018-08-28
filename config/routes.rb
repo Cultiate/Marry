@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root "welcome#top"
   get "about" => "welcome#about"
 
-  resources :users
+  resources :users, except: [:new]
   get  "/signup" => "users#new"
   post  "/signup" => "users#create"
 
