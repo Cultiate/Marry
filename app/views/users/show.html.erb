@@ -26,10 +26,9 @@
           </div>
 
           <!-- Edit Profile -->
-          <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="edit-profile.html">
-            <span class="fa fa-user-cog font-size-13 mr-2"></span>
-            Edit Profile
-          </a>
+          <div class="btn btn-sm u-btn-white--air transition-3d-hover">
+            <%= link_to "プロフィール編集", edit_user_path(current_user), class:"fa fa-user-cog font-size-13 mr-2" %>
+          </div>
           <!-- End Edit Profile -->
         </div>
 
