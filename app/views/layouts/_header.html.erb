@@ -121,8 +121,8 @@
 
   <div class="u-header__section">
     <!-- Topbar -->
-    <div class="container u-header__hide-content pt-2">
-      <div class="d-flex align-items-center mb-0">
+    <!-- <div class="container u-header__hide-content pt-2">
+      <div class="d-flex align-items-center mb-0"> -->
         <!-- Language -->
         <!-- <div class="position-relative"> <a id="languageDropdownInvoker" class="d-flex align-items-center u-unfold-wrapper" href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false"
         data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
@@ -130,9 +130,9 @@
         class="fa fa-angle-down u-unfold__icon-pointer"></span> </a> <div id="languageDropdown" class="u-unfold mt-2" aria-labelledby="languageDropdownInvoker"> <a class="active u-list__link" href="#">English</a> <a class="u-list__link" href="#">Deutsch</a>
         <a class="u-list__link" href="#">Español‎</a> </div> </div> <!-- End Language -->
 
-        <div class="ml-auto">
+        <!-- <div class="ml-auto"> -->
           <!-- Jump To -->
-          <div class="d-inline-block d-sm-none position-relative mr-2">
+          <!-- <div class="d-inline-block d-sm-none position-relative mr-2">
             <a
               id="jumpToDropdownInvoker"
               class="d-flex align-items-center u-unfold-wrapper"
@@ -157,11 +157,11 @@
               <a class="u-list__link" href="../pages/help.html">Help</a>
               <a class="u-list__link" href="../pages/contacts-agency.html">Contacts</a>
             </div>
-          </div>
+          </div> -->
           <!-- End Jump To -->
 
           <!-- Links -->
-          <div class="d-none d-sm-inline-block ml-sm-auto">
+          <!-- <div class="d-none d-sm-inline-block ml-sm-auto">
             <ul class="list-inline mb-0">
               <li class="list-inline-item mr-0">
                 <a class="u-header__topbar-nav-link" href="../pages/help.html">Help</a>
@@ -170,22 +170,22 @@
                 <a class="u-header__topbar-nav-link" href="../pages/contacts-agency.html">Contacts</a>
               </li>
             </ul>
-          </div>
+          </div> -->
           <!-- End Links -->
-        </div>
+        <!-- </div> -->
 
-        <ul class="list-inline ml-2 mb-0">
+        <!-- <ul class="list-inline ml-2 mb-0"> -->
           <!-- Search -->
-          <li class="list-inline-item">
+          <!-- <li class="list-inline-item">
             <a class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="searchPushTop" data-unfold-type="jquery-slide" data-unfold-target="#searchPushTop">
               <span class="fa fa-search u-btn--icon__inner"></span>
             </a>
-          </li>
+          </li> -->
           <!-- End Search -->
 
-        </ul>
+        <!-- </ul>
       </div>
-    </div>
+    </div> -->
     <!-- End Topbar -->
 
     <div id="logoAndNav" class="container">
@@ -250,17 +250,14 @@
             </li>
             <!-- End Home -->
 
-            <!-- Pages -->
             <li class="nav-item">
-              <a class="nav-link u-header__nav-link" href="../pages/contacts-start-up.html" target="_blank">
-                プロジェクトを始める
-              </a>
+                <%= link_to "プロジェクトを始める", new_project_path, class: "nav-link u-header__nav-link" %>
             </li>
 
             <!-- Blog -->
             <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
               <a id="blogMegaMenu" class="nav-link u-header__nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">
-                プロジェクトを探す
+                プロジェクトをさがす
                 <span class="fa fa-angle-down u-header__nav-link-icon"></span>
               </a>
 
@@ -275,7 +272,6 @@
 
                   <!-- Submenu (level 2) -->
                   <ul id="navSubmenuBlogClassic" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;" aria-labelledby="navLinkBlogClassic">
-
                     <li class="dropdown-item px-0">
                       <a class="nav-link u-list__link px-4" href="../blog/classic-full-width.html">画像</a>
                     </li>
@@ -351,7 +347,6 @@
 
                     <li class="dropdown-item px-0">
                       <a class="nav-link u-list__link px-4" href="../blog/masonry-full-width.html">
-                        <img src="../../assets/img/icons/sougen.png" style="width:100%;">
                       </a>
                     </li>
                   </ul>

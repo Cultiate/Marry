@@ -5,6 +5,7 @@ class Project < ApplicationRecord
   mount_uploader :main_image, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true
+  validate  :main_image_size
 
   private
 

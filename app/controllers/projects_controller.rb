@@ -15,8 +15,7 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.new(project_params)
     if @project.save
       flash[:success] = "プロジェクトが作成されました。"
-      byebug
-      redirect_to root_url
+      redirect_to project_url(@project)
     else
       render "new"
     end
