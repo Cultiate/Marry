@@ -405,6 +405,7 @@
                         <ul class="list-unstyled u-list">
                           <li><%= link_to "お支払い方法の確認", "#", class:"nav-link u-list__link py-2 px-0" %></li>
                           <li><%= link_to "銀行口座情報", "#", class:"nav-link u-list__link py-2 px-0" %></li>
+                          <li><%= link_to "ログアウト", logout_path, method: "delete", class:"nav-link u-list__link py-2 px-0" %></li>
                         </ul>
                         <!-- End Links -->
                       </div>
@@ -432,11 +433,7 @@
             <!-- End Shop -->
 
             <!-- Button -->
-            <% if logged_in? %>
-              <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
-                <%= link_to "ログアウト", logout_path, method: "delete", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
-              </li>
-            <% else %>
+            <% if not logged_in? %>
               <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
                 <%= link_to "登録", signup_path, class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
               </li>
