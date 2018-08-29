@@ -24,6 +24,13 @@
 //= require jquery.validate.min.js
 //= require jquery.mCustomScrollbar.concat.min.js
 
+//= require summernote-bs4.min.js
+//= require bootstrap-tagsinput.min.js
+//= require flatpickr.min.js
+
+
+//= require hs.range-datepicker.js
+//= require hs.summernote-editor.js
 //= require hs.go-to.js
 //= require hs.show-animation.js
 //= require hs.slick-carousel.js

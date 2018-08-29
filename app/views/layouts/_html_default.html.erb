@@ -29,6 +29,11 @@
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/front.css">
 
+  <!-- project.new_page --->
+  <link rel="stylesheet" href="../../assets/summernote-lite.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="../../assets/flatpickr.min.css">
+
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
   integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -51,6 +56,10 @@
   <script src="../../assets/dzsparallaxer.js"></script>
   <script src="../../assets/gmaps.min.js"></script>
 
+  <script src="../../assets/summernote-bs4.min.js"></script>
+  <script src="../../assets/bootstrap-tagsinput.min.js"></script>
+  <script src="../../assets/flatpickr.min.js"></script>
+
   <!-- JS Front -->
   <script src="../../assets/hs.core.js"></script>
   <script src="../../assets/hs.header.js"></script>
@@ -62,6 +71,9 @@
   <script src="../../assets/hs.slick-carousel.js"></script>
   <script src="../../assets/hs.show-animation.js"></script>
   <script src="../../assets/hs.go-to.js"></script>
+
+  <script src="../../assets/hs.summernote-editor.js"></script>
+  <script src="../../assets/hs.range-datepicker.js"></script>
 　
   <!-- JS Plugins Init. -->
   <script>
@@ -71,6 +83,15 @@
         event: 'hover',
         pageContainer: $('.container'),
         breakpoint: 767,
+        hideTimeOut: 0
+      });
+    });
+
+    // initialization of HSMegaMenu component
+      $('.js-breadcrumb-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991,
         hideTimeOut: 0
       });
     });
@@ -91,6 +112,12 @@
 
       // initialization of forms
       $.HSCore.helpers.HSFocusState.init();
+
+      // initialization of text editors
+      $.HSCore.components.HSSummernoteEditor.init('.js-summernote-editor');
+
+      // initialization of range datepicker
+      $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
 
       // initialization of form validation
       $.HSCore.components.HSValidation.init('.js-validate', {
@@ -123,5 +150,17 @@
       $.HSCore.components.HSGoTo.init('.js-go-to');
     });
   </script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // initialization of slick carousel
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+      // initialization of forms
+      $.HSCore.helpers.HSFocusState.init();
+    });
+  </script>
+
 
   <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async defer></script>

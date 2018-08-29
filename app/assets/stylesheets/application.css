@@ -10,6 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require summernote-lite.css
+ *= require bootstrap-tagsinput.css
+ *= require flatpickr.min.css
+
  *= require bootstrap.css
  *= require custom-front.css
  *= require front-core.css
