@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   resources :projects
+  # temporary
+  get "/sessions/recover" => "sessions#recover"
 
 end
