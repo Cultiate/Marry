@@ -29,19 +29,6 @@
 //= require flatpickr.min.js
 
 
-//= require hs.range-datepicker.js
-//= require hs.summernote-editor.js
-//= require hs.go-to.js
-//= require hs.show-animation.js
-//= require hs.slick-carousel.js
-//= require hs.fancybox.js
-//= require hs.validation.js
-//= require hs.malihu-scrollbar.js
-//= require hs.focus-state.js
-//= require hs.unfold.js
-//= require hs.header.js
-//= require hs.core.js
-//= require hs.megamenu.js
 //= require popper
 //= require popper.min.js
 //= require gmaps.min.js
