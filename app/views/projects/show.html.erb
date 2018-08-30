@@ -1,4 +1,368 @@
-<main>
-    <%= image_tag @project.main_image.url %>
-    <%= @project.content %>
-</main>
+<body>
+  <!-- Skippy -->
+  <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
+    <div class="container">
+      <span class="u-skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- End Skippy -->
+
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Blog Classic Section -->
+    <div class="container u-space-4-top u-space-5-top--md u-space-4-top--lg u-space-3-bottom">
+      <div class="row mb-9" style="background-color: #f1f1f1; padding: 5%;">
+        <!-- Title -->
+        <div class="w-md-70 w-lg-60">
+          <div class="col-sm-12 mb-7">
+            <!-- News Classic -->
+            <article>
+              <div class="mb-5">
+                <%= image_tag @project.main_image.url, class:"img-fluid rounded pr-8" ,style:"" %>
+              </div>
+              <small class="d-block text-secondary mb-1">日時</small>
+              <h2 class="h5">
+                <a href="single-article-classic.html">キャッチコピー</a>
+              </h2>
+              <p>想い</p>
+            </article>
+            <!-- End News Classic -->
+          </div>
+        </div>
+        <div class="w-md-30 w-lg-40">
+          <div class="mb-4">
+            <p style="margin-bottom: 0px !important;"><i class="fa fa-yen-sign fa-lg pr-2"></i>現在の支援総額</p>
+            <h2 style="font-weight: bold; font-size: 300%;">1,000,000円</h2>
+            <div class="js-hr-progress progress" style="height: 25px;">
+              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p style="margin-bottom: 0px !important;"><i class="fa fa-users fa-lg pr-2"></i>総メンバー</p>
+            <h2 style="font-weight: bold; font-size: 250%;">679人</h2>
+          </div>
+          <div class="mb-4">
+            <p style="margin-bottom: 0px !important;"><i class="fa fa-clock fa-lg pr-2"></i>募集まで残り</p>
+            <h2 style="font-weight: bold; font-size: 250%;">12日</h2>
+          </div>
+        </div>
+      </div>
+      <!-- End Title -->
+
+      <div class="row">
+        <div class="col-lg-7 mb-9 mb-lg-0 mr-9">
+          <!-- News Classic -->
+          <div class="row">
+            <div class="col-sm-12 mb-7">
+              <!-- News Classic -->
+              <article>
+                <h1 class="mb-9" style="text-align: center;">
+                  本文
+                <%= @project.content %>
+              </h1>
+                <div class="mb-5">
+
+                  <img class="img-fluid rounded" src="/projects_show/500280img.jpg" alt="Image Description">
+                </div>
+                <small class="d-block text-secondary mb-1">March 20, 2018</small>
+                <h2 class="h5">
+                  <a href="single-article-classic.html">Remote workers, here's how to dodge distractions</a>
+                </h2>
+                <p>We've been working hard with our besties at Reuters to design a new reading experience for Reuters.com.</p>
+              </article>
+              <!-- End News Classic -->
+            </div>
+
+            <div class="col-sm-12 mb-7">
+              <!-- News Classic -->
+              <article>
+                <small class="d-block text-secondary mb-1">April 29, 2018</small>
+                <h3 class="h5">
+                  <a href="single-article-classic.html">5 basic tips for colors</a>
+                </h3>
+                <p>Tis the season to be jolly, and Ueno has one more thing to be cheery about in 2017.</p>
+              </article>
+              <!-- End News Classic -->
+            </div>
+
+            <div class="col-sm-12 mb-7">
+              <!-- News Classic -->
+              <article>
+                <div class="mb-5">
+                  <img class="img-fluid rounded" src="/projects_show/500280img.jpg" alt="Image Description">
+                </div>
+                <small class="d-block text-secondary mb-1">March 20, 2018</small>
+                <h3 class="h5">
+                  <a href="single-article-classic.html">How to change careers or start a home-based business?</a>
+                </h3>
+                <p>The biggest collections of design principles on the internet</p>
+              </article>
+              <!-- End News Classic -->
+            </div>
+          </div>
+          <!-- End News Classic -->
+
+          <div class="u-space-2-bottom"></div>
+        </div>
+
+        <div id="stickyBlockStartPoint" class="col-lg-4">
+          <!-- Sticky Block -->
+          <h2><span class="fa fa-gift"></span> リターンを選ぶ</h2>
+          <hr>
+          <div class="js-sticky-block"
+               data-has-sticky-header="true"
+               data-offset-target="#logoAndNav"
+               data-sticky-view="lg"
+               data-start-point="#stickyBlockStartPoint"
+               data-end-point="#stickyBlockEndPoint"
+               data-offset-top="32"
+               data-offset-bottom="170">
+            <h3 class="h5 text-primary font-weight-bold mb-4">100,000円</h3>
+
+            <!-- Thumbnail return -->
+            <article class="mb-5">
+              <div class="mb-1">
+                  <img class="mb-5" style="width: 80%; margin:0 10%; display: block;" src="/projects_show/100img.jpg" alt="Image Description">
+                <div class="media-body">
+                  <h4 class="h6 font-weight-normal mb-0">
+                    <a class="btn btn-block btn-warning u-btn-primary mb-3" href="#">
+                      このリターンを選択する
+                    </a>
+                    <h3>
+                      リターン名
+                    </h3>
+                    <p>
+                      商品説明
+                      <br>
+                      こんなにいいものもらえるよ〜
+                      <br>
+                      買ってよ〜〜
+                      <br>
+                    </p>
+                    <div class="row" style=" ">
+                      <div class="col-sm-5" style="font-size: 90%;">
+                        <span class="fa fa-user"></span>
+                        メンバー：85人
+                      </div>
+                      <div class="col-sm-7" style="font-size: 90%;">
+                        <span class="fa fa-truck"></span>
+                        お届け予定：2019年12月
+                      </div>
+
+                  </h4>
+                </div>
+              </div>
+            </article>
+
+            <hr class="my-7">
+            <!-- End Thumbnail return -->
+
+            <h3 class="h5 text-primary font-weight-bold mb-4">100,000円</h3>
+
+            <!-- Thumbnail return -->
+            <article class="mb-5">
+              <div class="mb-1">
+                  <img class="mb-5" style="width: 80%; margin:0 10%; display: block;" src="/projects_show/100img.jpg" alt="Image Description">
+                <div class="media-body">
+                  <h4 class="h6 font-weight-normal mb-0">
+                    <a class="btn btn-block btn-warning u-btn-primary mb-3" href="#">
+                      このリターンを選択する
+                    </a>
+                    <h3>
+                      リターン名
+                    </h3>
+                    <p>
+                      商品説明
+                      <br>
+                      こんなにいいものもらえるよ〜
+                      <br>
+                      買ってよ〜〜
+                      <br>
+                    </p>
+                    <div class="row" style=" ">
+                      <div class="col-sm-5" style="font-size: 90%;">
+                        <span class="fa fa-user"></span>
+                        メンバー：85人
+                      </div>
+                      <div class="col-sm-7" style="font-size: 90%;">
+                        <span class="fa fa-truck"></span>
+                        お届け予定：2019年12月
+                      </div>
+
+                  </h4>
+                </div>
+              </div>
+            </article>
+
+            <hr class="my-7">
+            <!-- End Thumbnail return -->
+
+            <h3 class="h5 text-primary font-weight-bold mb-4">100,000円</h3>
+
+            <!-- Thumbnail return -->
+            <article class="mb-5">
+              <div class="mb-1">
+                  <img class="mb-5" style="width: 80%; margin:0 10%; display: block;" src="/projects_show/100img.jpg" alt="Image Description">
+                <div class="media-body">
+                  <h4 class="h6 font-weight-normal mb-0">
+                    <a class="btn btn-block btn-warning u-btn-primary mb-3" href="#">
+                      このリターンを選択する
+                    </a>
+                    <h3>
+                      リターン名
+                    </h3>
+                    <p>
+                      商品説明
+                      <br>
+                      こんなにいいものもらえるよ〜
+                      <br>
+                      買ってよ〜〜
+                      <br>
+                    </p>
+                    <div class="row" style=" ">
+                      <div class="col-sm-5" style="font-size: 90%;">
+                        <span class="fa fa-user"></span>
+                        メンバー：85人
+                      </div>
+                      <div class="col-sm-7" style="font-size: 90%;">
+                        <span class="fa fa-truck"></span>
+                        お届け予定：2019年12月
+                      </div>
+
+                  </h4>
+                </div>
+              </div>
+            </article>
+
+            <hr class="my-7">
+            <!-- End Thumbnail return -->
+
+
+
+            <h3 class="h5 text-primary font-weight-bold mb-4">SNSアカウント</h3>
+
+            <!-- Instafeed -->
+            <div id="instaFeed" class="js-instagram row mx-gutters-2"
+                 data-user-id="4815936096"
+                 data-client-id="60648b9247324e87a4d7ab3aa7a58f6c"
+                 data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce"
+                 data-limit="4"
+                 data-template='<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>'></div>
+            <!-- End Instafeed -->
+          </div>
+          <!-- End Sticky Block -->
+        </div>
+      </div>
+    </div>
+    <!-- End Blog Classic Section -->
+
+
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fa fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="../../assets/vendor/instafeed.js/instafeed.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../../assets/js/hs.core.js"></script>
+  <script src="../../assets/js/components/hs.header.js"></script>
+  <script src="../../assets/js/components/hs.unfold.js"></script>
+  <script src="../../assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="../../assets/js/components/hs.validation.js"></script>
+  <script src="../../assets/js/helpers/hs.focus-state.js"></script>
+  <script src="../../assets/js/components/hs.show-animation.js"></script>
+  <script src="../../assets/js/components/hs.sticky-block.js"></script>
+  <script src="../../assets/js/components/hs.instagram.js"></script>
+  <script src="../../assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767,
+        hideTimeOut: 0
+      });
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#password'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.helpers.HSFocusState.init();
+
+      // initialization of sticky blocks
+      setTimeout(function () {
+        $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
+      }, 300);
+
+      // initialization of instagram api
+      $.HSCore.components.HSInstagram.init('#instaFeed', {
+        resolution: 'standard_resolution',
+        after: function () {
+          // initialization of masonry.js
+          var $grid = $('.js-instagram').masonry({
+            percentPosition: true
+          });
+
+          // initialization of images loaded
+          $grid.imagesLoaded().progress(function () {
+            $grid.masonry();
+          });
+        }
+      });
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>
