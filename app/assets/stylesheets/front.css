@@ -2735,6 +2735,11 @@ header {
   height: 10rem;
 }
 
+.u-mega-avatar {
+  width: 15rem;
+  height: 15rem;
+}
+
 /*------------------------------------
   Avatar Bordered
 ------------------------------------*/
@@ -7783,6 +7788,10 @@ header {
 /*------------------------------------
   Typography Font Size
 ------------------------------------*/
+.font-size-.6 {
+  font-size: 0.6rem;
+}
+
 .font-size-13 {
   font-size: 0.8125rem;
 }
