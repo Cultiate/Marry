@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
-  resources :projects
   # temporary
   get "/sessions/recover" => "sessions#recover"
+
+  resources :projects
+  get "return_count" => "projects#return_follower_count"
 
 end
