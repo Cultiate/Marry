@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
   before_save :downcase_email
-  has_many :projects, dependent: :destroy
+  has_many :projects
 
   private
 

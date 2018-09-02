@@ -1,13 +1,6 @@
 <%= form_for(@project, url: projects_path) do |f| %>
-    <%= render 'shared/error_messages', model: @project %>
 <body>
-  <!-- Skippy -->
-  <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
-    <div class="container">
-      <span class="u-skiplink-text">Skip to main content</span>
-    </div>
-  </a>
-  <!-- End Skippy -->
+  <%= render 'shared/error_messages', model: @project %>
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
@@ -18,10 +11,10 @@
           <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
             <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
               <!-- Breadcrumb -->
-              <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
+              <!-- <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
                 <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
                 <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit profile</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit profile</li> -->
               </ol>
               <!-- End Breadcrumb -->
 
@@ -52,8 +45,8 @@
                 </span>
               </div>
               <div class="media-body">
-                <h1 class="h3 text-white font-weight-medium mb-1">Howdy, Natalie!</h1>
-                <span class="d-block text-white">natalie.curtis@gmail.com</span>
+                <h1 class="h3 text-white font-weight-medium mb-1">プロジェクト作成</h1>
+                <%= render 'shared/error_messages', model: @project %>
               </div>
             </div>
             <!-- End User Info -->
@@ -74,31 +67,25 @@
             <!-- Input -->
             <div class="col-sm-6 mb-6">
               <div class="js-form-message">
-                <label class="d-block small text-uppercase font-weight-medium">
+                <%= f.label :title, class: "d-block small text-uppercase font-weight-medium" do %>
                   タイトル
                   <span class="text-danger">*</span>
-                </label>
+                <% end %>
 
                 <div class="js-focus-state input-group u-form mb-2">
-                  <input class="form-control u-form__input" type="text" name="name" value="Natalie Curtis" required
-                         placeholder="Enter your name"
-                         aria-label="Enter your name"
-                         data-msg="Please enter your name."
-                         data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                  <%= f.text_field :title, placeholder: "タイトル", class:"js-summernote-editor" %>
                 </div>
               </div>
-              <p class="small mb-0">Displayed on your public profile, notifications and other places.</p>
             </div>
             <!-- End Input -->
 
             <!-- Input -->
             <div class="col-sm-6 mb-6">
               <div class="js-form-message">
-                <label class="d-block small text-uppercase font-weight-medium">
+                <%= f.label :main_image, class: "d-block small text-uppercase font-weight-medium" do %>
                   メイン画像
                   <span class="text-danger">*</span>
-                </label>
+                <% end %>
 
                 <div class="js-focus-state input-group u-form mb-2">
                   <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
@@ -109,33 +96,16 @@
           </div>
 
           <!-- Title -->
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <h2 class="h5 mb-0">募集期間</h2>
             <p>途中で変更できます</p>
-          </div>
+          </div> -->
           <!-- End Title -->
 
-          <div class="row">
-            <div class="col-sm-6 mb-6">
-              <!-- Datepicker -->
-              <label class="d-block small text-uppercase font-weight-medium">いつから</label>
 
-              <div id="datepickerWrapperFrom" class="u-datepicker input-group u-form">
-                <div class="input-group-prepend u-form__prepend">
-                  <span class="input-group-text u-form__text">
-                    <span class="fa fa-calendar u-form__text-inner"></span>
-                  </span>
-                </div>
-                <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="From" aria-label="From"
-                       data-rp-wrapper="#datepickerWrapperFrom"
-                       data-rp-date-format="d/m/Y">
-              </div>
-              <!-- End Datepicker -->
-            </div>
-
-            <div class="col-sm-6 mb-6">
+            <!-- <div class="col-sm-6 mb-6"> -->
               <!-- Datepicker -->
-              <label class="d-block small text-uppercase font-weight-medium">いつまで</label>
+              <!-- <label class="d-block small text-uppercase font-weight-medium">いつまで</label>
 
               <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
                 <div class="input-group-prepend u-form__prepend">
@@ -146,10 +116,10 @@
                 <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="To" aria-label="To"
                        data-rp-wrapper="#datepickerWrapperTo"
                        data-rp-date-format="d/m/Y">
-              </div>
+              </div> -->
               <!-- End Datepicker -->
-            </div>
-          </div>
+            <!-- </div>
+          </div> -->
           <!--
           <label class="d-block small text-uppercase font-weight-medium">
             募集終了日
@@ -354,9 +324,9 @@
           </div>
         -->
 
-          <div class="row">
+          <!-- <div class="row"> -->
             <!-- Input -->
-            <div class="col-sm-6 mb-6">
+            <!-- <div class="col-sm-6 mb-6">
               <div class="js-form-message">
                 <label class="d-block small text-uppercase font-weight-medium">
                   カテゴリー選択
@@ -370,11 +340,11 @@
                   <option value="languageSelect4">小学校</option>
                 </select>
               </div>
-            </div>
+            </div> -->
             <!-- End Input -->
 
             <!-- Input -->
-            <div class="col-sm-6 mb-6">
+            <!-- <div class="col-sm-6 mb-6">
               <div class="js-form-message">
                 <label class="d-block small text-uppercase font-weight-medium">
                   一言コンセプト
@@ -382,24 +352,21 @@
                 </label>
 
                 <div class="js-focus-state input-group u-form mb-2">
-                  <input class="form-control u-form__input" type="tel" name="phoneNumber" value="" required
-                         placeholder="Enter your phone number"
-                         aria-label="Enter your phone number"
-                         data-msg="Please enter a valid phone number"
-                         data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                  <input class="form-control u-form__input" type="tel" name="phoneNumber" value="">
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- End Input -->
-          </div>
+          <!-- </div> -->
 
           <hr class="mt-1 mb-7">
 
           <!-- Title -->
           <div class="mb-3">
-            <h2 class="h5 mb-0">本文</h2>
-            <p>具体的にお書きください</p>
+            <%= f.label :content, class: "d-block small text-uppercase font-weight-medium" do %>
+              本文
+              <span class="text-danger">*</span>
+            <% end %>
           </div>
           <!-- End Title -->
 
@@ -414,97 +381,79 @@
           </div>
 
           <!-- Buttons -->
-          <%= f.submit "作成する",  class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
-          <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
           <!-- End Buttons -->
 
           <hr class="my-7">
-
-
         </form>
         <!-- End Personal Info Form -->
 
         <!-- Title -->
         <div class="mb-5">
-          <h3 class="h5 mb-1">金額とリターン作成</h3>
-          <p>途中で追加はできますが、削除はできません。</p>
+          <h3 class="h5 mb-1">リターン作成</h3>
         </div>
         <!-- End Title -->
 
         <!-- Social Profiles Form -->
-        <form class="js-validate">
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_price, class: "d-block small text-uppercase font-weight-medium" do %>
+                金額
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_field :return_price, data: { autonumeric: true }, class:"js-summernote-editor" %>
               </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Dribbble link"
-                     aria-label="Dribbble link"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
             </div>
-            <p class="small mb-0">リターン名</p>
           </div>
           <!-- End Input Group -->
 
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_title, class: "d-block small text-uppercase font-weight-medium" do %>
+                リターンタイトル
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_field :return_title, placeholder: "タイトル", class:"js-summernote-editor" %>
               </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Twitter profile"
-                     aria-label="Twitter profile"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
             </div>
-            <p class="small mb-0">リターン名</p>
           </div>
           <!-- End Input Group -->
 
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_content, class: "d-block small text-uppercase font-weight-medium" do %>
+                内容
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_area :return_content, placeholder: "内容", class:"js-summernote-editor" %>
               </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Facebook profile"
-                     aria-label="Facebook profile"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
             </div>
-            <p class="small mb-0">リターン名</p>
           </div>
           <!-- End Input Group -->
 
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
-              </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Behance profile"
-                     aria-label="Behance profile"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <p class="small mb-0">リターン名</p>
-          </div>
-          <!-- End Input Group -->
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_image1, class: "d-block small text-uppercase font-weight-medium" do %>
+                画像
+                <span class="text-danger">*</span>
+              <% end %>
 
-          <%= f.submit "作成する",  class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
-          <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">キャンセル</button>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.file_field :return_image1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <%= f.submit "作成する" %>
       <% end %>
-        </form>
         <!-- End Social Profiles Form -->
       </div>
     </div>

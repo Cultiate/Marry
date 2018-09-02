@@ -37,4 +37,5 @@
 //= require typed.min.js
 //= require rails-ujs
 //= require turbolinks
+//= require autonumeric
 //= require_tree .

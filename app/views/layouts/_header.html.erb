@@ -209,17 +209,22 @@
         <div id="navBar" class="collapse navbar-collapse py-0">
           <ul class="navbar-nav u-header__navbar-nav ml-lg-auto">
             <!-- Home -->
+            <% if current_user %>
             <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
-              <a id="homeMegaMenu" class="nav-link u-header__nav-link pl-0" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-                marryとは？
-                <span class="fa fa-angle-down u-header__nav-link-icon"></span>
-              </a>
+                ログインユーザー(開発用): <%= current_user.name %>
+            </li>
+            <% end %>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
+                <%= link_to "marryとは？", about_path %>
+            </li>
+
 
               <!-- Home - Mega Menu -->
-              <div class="hs-mega-menu u-header__sub-menu w-100 u-header__mega-menu-wrapper-v2" aria-labelledby="homeMegaMenu">
+              <!-- <div class="hs-mega-menu u-header__sub-menu w-100 u-header__mega-menu-wrapper-v2" aria-labelledby="homeMegaMenu">
                 <div class="row p-0 mr-0">
                   <div class="col-lg-6 pr-0">
-                    <!-- Banner Image -->
+                    Banner Image
                     <div class="d-none d-lg-block u-header__banner-v1" data-bg-img-src="../../assets/img/750x750/img1.jpg">
                       <div class="w-100 text-center u-header__banner-v1-content u-content-centered-y p-4">
                         <div class="mb-4">
@@ -228,9 +233,9 @@
                         </div>
                         <a class="btn btn-primary u-btn-primary btn-sm transition-3d-hover" href="services-agency.html">詳しく見る<span class="fa fa-angle-right ml-2"></span></a>
                       </div>
-                    </div>
+                    </div> -->
                     <!-- End Banner Image -->
-                  </div>
+                  <!-- </div>
 
                   <div class="col-lg-6 u-header__mega-menu-wrapper-v3">
                     <div class="row u-header__mega-menu-wrapper-v1">
@@ -245,9 +250,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- End Home - Mega Menu -->
-            </li>
             <!-- End Home -->
 
             <li class="nav-item">
