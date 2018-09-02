@@ -392,18 +392,20 @@
           <h3 class="h5 mb-1">リターン作成</h3>
         </div>
         <!-- End Title -->
-
+        <div class="mb-5">
+          <h2 class="h5 mb-1">リターン 1</h2>
+        </div>
         <!-- Social Profiles Form -->
 
           <!-- Input -->
           <div class="col-sm-6 mb-6">
             <div class="js-form-message">
-              <%= f.label :return_price, class: "d-block small text-uppercase font-weight-medium" do %>
+              <%= f.label :return_price_1, class: "d-block small text-uppercase font-weight-medium" do %>
                 金額
                 <span class="text-danger">*</span>
               <% end %>
               <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_price, data: { autonumeric: true }, class:"js-summernote-editor" %>
+                <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
               </div>
             </div>
           </div>
@@ -412,12 +414,12 @@
           <!-- Input -->
           <div class="col-sm-6 mb-6">
             <div class="js-form-message">
-              <%= f.label :return_title, class: "d-block small text-uppercase font-weight-medium" do %>
+              <%= f.label :return_title_1, class: "d-block small text-uppercase font-weight-medium" do %>
                 リターンタイトル
                 <span class="text-danger">*</span>
               <% end %>
               <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_title, placeholder: "タイトル", class:"js-summernote-editor" %>
+                <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
               </div>
             </div>
           </div>
@@ -426,12 +428,12 @@
           <!-- Input -->
           <div class="col-sm-6 mb-6">
             <div class="js-form-message">
-              <%= f.label :return_content, class: "d-block small text-uppercase font-weight-medium" do %>
+              <%= f.label :return_content_1, class: "d-block small text-uppercase font-weight-medium" do %>
                 内容
                 <span class="text-danger">*</span>
               <% end %>
               <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_area :return_content, placeholder: "内容", class:"js-summernote-editor" %>
+                <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
               </div>
             </div>
           </div>
@@ -440,13 +442,131 @@
           <!-- Input -->
           <div class="col-sm-6 mb-6">
             <div class="js-form-message">
-              <%= f.label :return_image1, class: "d-block small text-uppercase font-weight-medium" do %>
+              <%= f.label :return_image_1, class: "d-block small text-uppercase font-weight-medium" do %>
                 画像
                 <span class="text-danger">*</span>
               <% end %>
 
               <div class="js-focus-state input-group u-form mb-2">
-                <%= f.file_field :return_image1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input -->
+          <div class="mb-5">
+            <h2 class="h5 mb-1">リターン 2</h2>
+          </div>
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_price_2, class: "d-block small text-uppercase font-weight-medium" do %>
+                金額
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+              </div>
+            </div>
+          </div>
+          <!-- End Input Group -->
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_title_2, class: "d-block small text-uppercase font-weight-medium" do %>
+                リターンタイトル
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_field :return_title_2, placeholder: "タイトル", class:"js-summernote-editor" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input Group -->
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_content_2, class: "d-block small text-uppercase font-weight-medium" do %>
+                内容
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input Group -->
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_image_2, class: "d-block small text-uppercase font-weight-medium" do %>
+                画像
+                <span class="text-danger">*</span>
+              <% end %>
+
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.file_field :return_image_2, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input -->
+          <div class="mb-5">
+            <h2 class="h5 mb-1">リターン 3</h2>
+          </div>
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_price_3, class: "d-block small text-uppercase font-weight-medium" do %>
+                金額
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_field :return_price_3, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+              </div>
+            </div>
+          </div>
+          <!-- End Input Group -->
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_title_3, class: "d-block small text-uppercase font-weight-medium" do %>
+                リターンタイトル
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_field :return_title_3, placeholder: "タイトル", class:"js-summernote-editor" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input Group -->
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_content_3, class: "d-block small text-uppercase font-weight-medium" do %>
+                内容
+                <span class="text-danger">*</span>
+              <% end %>
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.text_area :return_content_3, placeholder: "内容", class:"js-summernote-editor" %>
+              </div>
+            </div>
+          </div>
+          <!-- End Input Group -->
+
+          <!-- Input -->
+          <div class="col-sm-6 mb-6">
+            <div class="js-form-message">
+              <%= f.label :return_image_3, class: "d-block small text-uppercase font-weight-medium" do %>
+                画像
+                <span class="text-danger">*</span>
+              <% end %>
+
+              <div class="js-focus-state input-group u-form mb-2">
+                <%= f.file_field :return_image_3, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
               </div>
             </div>
           </div>
