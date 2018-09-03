@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: MyString
+  project_id: MyString
+  return_id: MyString
+  return_price: MyString
+
+two:
+  user_id: MyString
+  project_id: MyString
+  return_id: MyString
+  return_price: MyString

@@ -132,7 +132,7 @@
                   <%= image_tag @project.return_image_1.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                 <div class="media-body">
                   <h4 class="h6 font-weight-normal mb-0">
-                    <%= button_to "このリターンを選択する", {controller: "projects", action: "return_follower_count"}, {method: :get, params: {project_id: 2, follow_project_return_id: 1, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                    <%= button_to "このリターンを選択する", {controller: "projects", action: "return_follower_count"}, {method: :get, params: {project_id: params[:id], follow_project_return_id: 1, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                     <p>
                       商品説明
                       <br>
@@ -169,9 +169,7 @@
                   <%= image_tag @project.return_image_2.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                 <div class="media-body">
                   <h4 class="h6 font-weight-normal mb-0">
-                    <a class="btn btn-block btn-warning u-btn-primary mb-3" href="#">
-                      このリターンを選択する
-                    </a>
+                    <%= button_to "このリターンを選択する", {controller: "projects", action: "return_follower_count"}, {method: :get, params: {project_id: params[:id], follow_project_return_id: 2, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                     <p>
                       商品説明
                       <br>
@@ -208,9 +206,7 @@
                   <%= image_tag @project.return_image_3.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                 <div class="media-body">
                   <h4 class="h6 font-weight-normal mb-0">
-                    <a class="btn btn-block btn-warning u-btn-primary mb-3" href="#">
-                      このリターンを選択する
-                    </a>
+                    <%= button_to "このリターンを選択する", {controller: "projects", action: "return_follower_count"}, {method: :get, params: {project_id: params[:id], follow_project_return_id: 1, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                     <p>
                       商品説明
                       <br>

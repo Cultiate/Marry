@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180902124359) do
+ActiveRecord::Schema.define(version: 20180903073705) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20180902124359) do
   create_table "category_projects", force: :cascade do |t|
     t.integer "category_id"
     t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "celebraters", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.integer "return_id"
+    t.integer "return_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,9 +67,6 @@ ActiveRecord::Schema.define(version: 20180902124359) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
-    t.integer "follow_project_id"
-    t.integer "follow_project_return_id"
-    t.integer "follow_project_return_price"
   end
 
 end

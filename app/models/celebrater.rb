@@ -1,0 +1,2 @@
+class Celebrater < ApplicationRecord
+end
