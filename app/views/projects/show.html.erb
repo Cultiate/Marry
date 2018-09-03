@@ -7,8 +7,6 @@
   </a>
   <!-- End Skippy -->
 
-
-
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
     <!-- Blog Classic Section -->
@@ -132,7 +130,7 @@
                   <%= image_tag @project.return_image_1.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                 <div class="media-body">
                   <h4 class="h6 font-weight-normal mb-0">
-                    <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :get, params: {project_id: params[:id], return_id: 2, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                    <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project", id: params[:id]}, {method: :post, params: {project_id: params[:id], return_id: 1, return_price: @project.return_price_1, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                     <p>
                       商品説明
                       <br>
@@ -169,7 +167,7 @@
                   <%= image_tag @project.return_image_2.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                 <div class="media-body">
                   <h4 class="h6 font-weight-normal mb-0">
-                    <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :get, params: {project_id: params[:id], return_id: 2, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                    <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :post, params: {project_id: params[:id], return_id: 2, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                     <p>
                       商品説明
                       <br>
@@ -206,7 +204,7 @@
                   <%= image_tag @project.return_image_3.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                 <div class="media-body">
                   <h4 class="h6 font-weight-normal mb-0">
-                    <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :get, params: {project_id: params[:id], return_id: 3, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                    <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :post, params: {project_id: params[:id], return_id: 3, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                     <p>
                       商品説明
                       <br>
