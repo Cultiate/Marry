@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   get "/sessions/recover" => "sessions#recover"
 
   resources :projects
-  get "return_count" => "projects#return_follower_count"
 
+  get "/projects/follow" => "celebraters#follow_project"
 end

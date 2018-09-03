@@ -25,13 +25,6 @@ class ProjectsController < ApplicationController
   def destroy
   end
 
-  def return_follower_count
-    return_follower
-    @followers = User.where(follow_project_id: params[:project_id]).where(follow_project_return_id: params[:project_return_id]).count
-    @project = Project.find_by(id: params[:project_id])
-    redirect_to project_path(@project)
-  end
-
   private
 
   def project_params
