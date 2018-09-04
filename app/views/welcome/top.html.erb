@@ -26,23 +26,24 @@
         <div class="row justify-content-between align-items-center mb-4">
           <!-- Title -->
           <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-            <h2 class="h6 mb-0">❤️ イチオシプロジェクト</h2>
+            <h2 class="h6 mb-0">❤️ 人気プロジェクト</h2>
           </div>
           <!-- End Title -->
         </div>
 
-        <% @projects.first(3).each do |project| %>
-          <% @celebraters = Celebrater.where(project_id: project.id)  %>
-          <% @total_celebraters_price = @celebraters.sum(:return_price) %>
-          <% @celebraters_count = @celebraters.count %>
+
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
+            <% @projects.first(3).each do |project| %>
+              <% @celebraters = Celebrater.where(project_id: project.id)  %>
+              <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+              <% @celebraters_count = @celebraters.count %>
 
             <!-- Projects -->
             <div class="card mb-5">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <%= image_tag project.main_image.url, class:"img-fluid rounded pr-8" ,style:"" %>
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
                     <h3 class="h5 mb-1"><%= project.title %></h3>
@@ -51,7 +52,7 @@
 
                   <!-- List of Icons -->
                   <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
+                    <div class="col-6" style="margin:0 25%;">
                       <a class="small text-secondary" href="#">
                         <span class="fa fa-bookmark text-primary mr-1"></span>
                         <%= project.user_name %>
@@ -76,7 +77,7 @@
                     <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
                   </div>
                   <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">お祝いメンバー</h5>
+                    <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
                       <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
@@ -88,10 +89,11 @@
                 <!-- End Budget & Priority -->
               </div>
             </div>
+            <% end %>
             <!-- End Projects -->
           </div>
         </div>
-        <% end %>
+
 
         <div class="row justify-content-between align-items-center mb-4">
           <!-- Title -->
@@ -103,29 +105,28 @@
 
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
+            <% @projects.first(3).each do |project| %>
+              <% @celebraters = Celebrater.where(project_id: project.id)  %>
+              <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+              <% @celebraters_count = @celebraters.count %>
+
             <!-- Projects -->
             <div class="card mb-5">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
+                    <h3 class="h5 mb-1"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 
                   <!-- List of Icons -->
                   <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
+                    <div class="col-6" style="margin:0 25%;">
                       <a class="small text-secondary" href="#">
                         <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
+                        <%= project.user_name %>
                       </a>
                     </div>
                   </div>
@@ -144,24 +145,11 @@
                     <!--
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
                   -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
+                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
                   </div>
                   <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
+                    <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                      <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
                   <div class="col-4">
@@ -172,373 +160,7 @@
                 <!-- End Budget & Priority -->
               </div>
             </div>
-            <!-- End Projects -->
-
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
-            <!-- End Projects -->
-
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
-            <!-- End Projects -->
-          </div>
-        </div>
-
-        <div class="row justify-content-between align-items-center mb-4">
-          <!-- Title -->
-          <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-            <h2 class="h6 mb-0">⤴︎ 人気急上昇中のプロジェクト</h2>
-          </div>
-          <!-- End Title -->
-        </div>
-
-        <div class="mb-7">
-          <div class="card-deck d-block d-md-flex">
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
-            <!-- End Projects -->
-
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
-            <!-- End Projects -->
-
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
+            <% end %>
             <!-- End Projects -->
           </div>
         </div>
@@ -553,29 +175,28 @@
 
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
+            <% @projects.last(3).each do |project| %>
+              <% @celebraters = Celebrater.where(project_id: project.id)  %>
+              <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+              <% @celebraters_count = @celebraters.count %>
+
             <!-- Projects -->
             <div class="card mb-5">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
+                    <h3 class="h5 mb-1"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 
                   <!-- List of Icons -->
                   <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
+                    <div class="col-6" style="margin:0 25%;">
                       <a class="small text-secondary" href="#">
                         <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
+                        <%= project.user_name %>
                       </a>
                     </div>
                   </div>
@@ -594,24 +215,11 @@
                     <!--
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
                   -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
+                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
                   </div>
                   <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
+                    <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                      <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
                   <div class="col-4">
@@ -622,148 +230,7 @@
                 <!-- End Budget & Priority -->
               </div>
             </div>
-            <!-- End Projects -->
-
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
-            <!-- End Projects -->
-
-            <!-- Projects -->
-            <div class="card mb-5">
-              <div class="card-body p-2">
-                <div class="text-center">
-                  <img class="u-mega-avatar rounded-circle mx-auto mb-3" src="/projects_index/160img.jpg" alt="Image Description">
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <h3 class="h5 mb-1">タイトル</h3>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                  </div>
-                  <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-4">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
-                  </div>
-                </div>
-                <!-- End Budget & Priority -->
-              </div>
-            </div>
+            <% end %>
             <!-- End Projects -->
           </div>
         </div>
