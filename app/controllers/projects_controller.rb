@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
     @celebraters = Celebrater.where(project_id: params[:id])
     @celebraters_count = @celebraters.count
-    @celebraters_price_sum = @celebraters.sum(:return_price)
+    @total_celebraters_price = @celebraters.sum(:return_price)
 
     if @celebraters
       @celebraters
