@@ -1,5 +1,4 @@
-
-<% provide(:title, 'マイページ') %>
+<% provide(:title, "マイページ") %>
 <body>
   <!-- Skippy -->
   <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
@@ -114,7 +113,7 @@
           <div class="col-lg-9">
             <!-- User Details -->
             <div class="mb-4">
-              <h2 class="h4"><%= @user.name %><span class="badge badge-success ml-1">Pro</span></h2>
+              <h2 class="h4"><%= @user.user_name %><span class="badge badge-success ml-1">Pro</span></h2>
               <%= @user.email %>
               <!--
               <h4 class="h6 text-secondary mb-0">London, UK <small>- Joined in July 2017</small></h4>
