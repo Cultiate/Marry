@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180904105154) do
+ActiveRecord::Schema.define(version: 20180904121538) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180904105154) do
     t.string "return_title_3"
     t.integer "return_price_3"
     t.string "user_name"
+    t.date "end_date"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
