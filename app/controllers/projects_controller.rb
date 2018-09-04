@@ -10,6 +10,18 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
+    @celebraters = Celebrater.where(project_id: params[:id])
+    @celebraters_count = @celebraters.count
+    @celebraters_price_sum = @celebraters.sum(:return_price)
+
+    if @celebraters
+      @celebraters
+    else
+      @celebraters = 0
+    end
+    @following_return_1 = Celebrater.where(project_id: params[:id]).where(return_id: 1).count
+    @following_return_2 = Celebrater.where(project_id: params[:id]).where(return_id: 2).count
+    @following_return_3 = Celebrater.where(project_id: params[:id]).where(return_id: 3).count
   end
 
   def create
@@ -23,6 +35,16 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def follow_project
+    @celebrater = Celebrater.new(user_id: current_user.id, project_id: params[:project_id], return_id: params[:return_id], return_price: params[:return_price])
+    @project = Project.find_by(id: params[:project_id])
+    if @celebrater.save
+      redirect_to project_path(@project)
+    else
+      redirect_to root_url
+    end
   end
 
   private

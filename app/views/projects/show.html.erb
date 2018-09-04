@@ -32,14 +32,14 @@
         <div class="w-md-30 w-lg-40">
           <div class="mb-4">
             <p style="margin-bottom: 0px !important;"><i class="fa fa-yen-sign fa-lg pr-2"></i>現在の支援総額</p>
-            <h2 style="font-weight: bold; font-size: 300%;">1,000,000円</h2>
+            <h2 style="font-weight: bold; font-size: 300%;"><%= @celebraters_price_sum %>円</h2>
             <div class="js-hr-progress progress" style="height: 25px;">
               <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
             </div>
           </div>
           <div class="mb-4">
             <p style="margin-bottom: 0px !important;"><i class="fa fa-users fa-lg pr-2"></i>総メンバー</p>
-            <h2 style="font-weight: bold; font-size: 250%;">679人</h2>
+            <h2 style="font-weight: bold; font-size: 250%;"><%= @celebraters_count %>人</h2>
           </div>
           <div class="mb-4">
             <p style="margin-bottom: 0px !important;"><i class="fa fa-clock fa-lg pr-2"></i>募集まで残り</p>
@@ -132,7 +132,7 @@
                     <%= image_tag @project.return_image_1.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                   <div class="media-body">
                     <h4 class="h6 font-weight-normal mb-0">
-                      <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project", id: params[:id]}, {method: :post, params: {project_id: params[:id], return_id: 1, return_price: @project.return_price_1, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                      <%= button_to "このリターンを選択する", {action: "follow_project", id: params[:id]}, {method: :post, params: {project_id: params[:id], return_id: 1, return_price: @project.return_price_1, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                       <p>
                         商品説明
                         <br>
@@ -141,7 +141,7 @@
                       <div class="row" style=" ">
                         <div class="col-sm-5" style="font-size: 90%;">
                           <span class="fa fa-user"></span>
-                          メンバー：85人
+                          メンバー：<%= @following_return_1 %>人
                         </div>
                         <div class="col-sm-7" style="font-size: 90%;">
                           <span class="fa fa-truck"></span>
@@ -170,7 +170,7 @@
                     <%= image_tag @project.return_image_2.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                   <div class="media-body">
                     <h4 class="h6 font-weight-normal mb-0">
-                      <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :post, params: {project_id: params[:id], return_id: 2, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                      <%= button_to "このリターンを選択する", {action: "follow_project"}, {method: :post, params: {project_id: params[:id], return_id: 2, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                       <p>
                         商品説明
                         <br>
@@ -179,7 +179,7 @@
                       <div class="row" style=" ">
                         <div class="col-sm-5" style="font-size: 90%;">
                           <span class="fa fa-user"></span>
-                          メンバー：85人
+                          メンバー：<%= @following_return_2 %>人
                         </div>
                         <div class="col-sm-7" style="font-size: 90%;">
                           <span class="fa fa-truck"></span>
@@ -208,7 +208,7 @@
                     <%= image_tag @project.return_image_3.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                   <div class="media-body">
                     <h4 class="h6 font-weight-normal mb-0">
-                      <%= button_to "このリターンを選択する", {controller: "celebraters", action: "follow_project"}, {method: :post, params: {project_id: params[:id], return_id: 3, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+                      <%= button_to "このリターンを選択する", {action: "follow_project"}, {method: :post, params: {project_id: params[:id], return_id: 3, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
                       <p>
                         商品説明
                         <br>
@@ -217,7 +217,7 @@
                       <div class="row" style=" ">
                         <div class="col-sm-5" style="font-size: 90%;">
                           <span class="fa fa-user"></span>
-                          メンバー：85人
+                          メンバー：<%= @following_return_3 %>人
                         </div>
                         <div class="col-sm-7" style="font-size: 90%;">
                           <span class="fa fa-truck"></span>

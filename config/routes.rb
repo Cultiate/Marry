@@ -16,5 +16,5 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  post "/projects/follow" => "celebraters#follow_project"
+  post "/projects/follow" => "projects#follow_project"
 end
