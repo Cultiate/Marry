@@ -1,4 +1,4 @@
-<% provide(:title, 'ホーム') %>
+<% provide(:title, "結婚式のクラウドファンディング - Cultiate") %>
 <body>
   <!-- Skippy -->
   <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
@@ -32,7 +32,9 @@
         </div>
 
         <% @projects.first(3).each do |project| %>
-
+          <% @celebraters = Celebrater.where(project_id: project.id)  %>
+          <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+          <% @celebraters_count = @celebraters.count %>
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
 
@@ -52,13 +54,7 @@
                     <div class="col-6">
                       <a class="small text-secondary" href="#">
                         <span class="fa fa-bookmark text-primary mr-1"></span>
-                        大草原
-                      </a>
-                    </div>
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        名前
+                        <%= project.user_name %>
                       </a>
                     </div>
                   </div>
@@ -77,24 +73,11 @@
                     <!--
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
                   -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
+                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
                   </div>
                   <div class="col-4 u-ver-divider">
-                    <h5 class="small font-weight-normal text-secondary mb-0">メンバー</h5>
-                    <!-- Members List -->
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="/projects_index/32img.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner" style="font-size:0.6rem;　font-weight:bold;">+300</span>
-                        </a>
-                      </li>
-                    </ul>
+                    <h5 class="small font-weight-normal text-secondary mb-0">お祝いメンバー</h5>
+                      <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
                   <div class="col-4">
