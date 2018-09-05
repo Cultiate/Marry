@@ -1,16 +1,7 @@
 module ProjectsHelper
-  
-  def celebraters_info
-    @celebraters = Celebrater.where(project_id: params[:id])
-    @celebraters_count = @celebraters.count
-    @total_celebraters_price = @celebraters.sum(:return_price)
-    if @celebraters
-      @celebraters
-    else
-      @celebraters = 0
-    end
-    @following_return_1 = Celebrater.where(project_id: params[:id]).where(return_id: 1).count
-    @following_return_2 = Celebrater.where(project_id: params[:id]).where(return_id: 2).count
-    @following_return_3 = Celebrater.where(project_id: params[:id]).where(return_id: 3).count
+
+  def remaining_days
+    today = Date.today
+    @remaining_days = ((@project.end_date - today).to_i - 1)
   end
 end

@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  has_many :celebraters
   has_many :category_projects
   has_many :categories, through: :category_projects
   belongs_to :user

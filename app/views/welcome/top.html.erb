@@ -38,12 +38,14 @@
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
+              <% today = Date.today %>
+              <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
             <div class="card mb-5">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded",style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
                     <h3 class="h5 mb-1"><%= project.title %></h3>
@@ -83,7 +85,7 @@
                     <!-- End Members List -->
                   <div class="col-4">
                     <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
+                    <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
                   </div>
                 </div>
                 <!-- End Budget & Priority -->
@@ -109,6 +111,8 @@
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
+              <% today = Date.today %>
+              <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
             <div class="card mb-5">
@@ -154,7 +158,7 @@
                     <!-- End Members List -->
                   <div class="col-4">
                     <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
+                    <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
                   </div>
                 </div>
                 <!-- End Budget & Priority -->
@@ -179,6 +183,8 @@
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
+              <% today = Date.today %>
+              <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
             <div class="card mb-5">
@@ -224,7 +230,7 @@
                     <!-- End Members List -->
                   <div class="col-4">
                     <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;">10日</span>
+                    <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
                   </div>
                 </div>
                 <!-- End Budget & Priority -->
