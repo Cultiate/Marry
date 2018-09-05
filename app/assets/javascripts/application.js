@@ -14,6 +14,8 @@
 //= require bootstrap-sprockets
 //= require bootstrap.min.js
 
+//= require hs.core.js
+//= require hs.megamenu.js
 //= require front.min.js
 //= require jquery3
 //= require jquery_ujs

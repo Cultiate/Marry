@@ -1,341 +1,368 @@
 <%= form_for(@project, url: projects_path) do |f| %>
 <body>
   <%= render 'shared/error_messages', model: @project %>
+  <!-- Skippy -->
+  <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
+    <div class="container">
+      <span class="u-skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- End Skippy -->
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
-    <!-- Breadcrumb Section -->
-    <div class="bg-primary">
-      <div class="container u-space-1-top pb-3">
-        <div class="row">
-          <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
-            <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
-              <!-- Breadcrumb -->
-              <!-- <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit profile</li> -->
-              </ol>
-              <!-- End Breadcrumb -->
+    <div class="p-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#project" class="nav-link active" data-toggle="tab">プロジェクトページ</a>
+        </li>
+        <li class="nav-item">
+          <a href="#return" class="nav-link" data-toggle="tab">リターン</a>
+        </li>
+        <li class="nav-item">
+          <a href="#profile" class="nav-link" data-toggle="tab">本人確認</a>
+        </li>
+      </ul>
 
-              <!-- Breadcrumb Nav Toggle Button -->
-              <div class="d-lg-none">
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-                        aria-label="Toggle navigation"
-                        aria-expanded="false"
-                        aria-controls="breadcrumbNavBar"
-                        data-toggle="collapse"
-                        data-target="#breadcrumbNavBar">
-                  <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
-                    <span class="u-hamburger__inner"></span>
-                  </span>
-                </button>
-              </div>
-              <!-- End Breadcrumb Nav Toggle Button -->
+
+      <div class="tab-content">
+        <div id="project" class="tab-pane active">
+          <div class="container u-space-2">
+            <div class="row">
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">タイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :title, placeholder: "タイトル", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                  <div class="js-form-message">
+                    <div class="js-focus-state input-group u-form mb-2">
+                      <select class="custom-select mb-2">
+                        <option value="birthMonthSelect1">大海原</option>
+                        <option value="birthMonthSelect2">大草原</option>
+                        <option value="birthMonthSelect3">教会</option>
+                        <option value="birthMonthSelect4" selected="selected">小学校</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">開催期間<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                      <!-- Datepicker -->
+                    <label class="d-block small text-uppercase font-weight-medium">From</label>
+
+                    <div id="datepickerWrapperFrom" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <%= f.text_field :end_date, class: "js-summernote-editor", placeholder: "2018-01-01" %>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="From" aria-label="From"
+                             data-rp-wrapper="#datepickerWrapperFrom"
+                             data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                    <!-- Datepicker -->
+                    <label class="d-block small text-uppercase font-weight-medium">To</label>
+
+                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="To" aria-label="To"
+                               data-rp-wrapper="#datepickerWrapperTo"
+                               data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
+                    </div>
+                  </th>
+                </tr>
+              </table>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-7 order-lg-1">
-            <!-- User Info -->
-            <div class="media d-block d-sm-flex align-items-sm-center">
-              <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-                <img class="u-lg-avatar rounded-circle" src="../../assets/img/160x160/img2.jpg" alt="Image Description">
-                <span class="u-badge u-badge-border-success u-badge--md u-badge-pos--bottom-right-0 rounded-circle">
-                  <span class="fa fa-check"></span>
-                </span>
+
+        <div id="return" class="tab-pane">
+          <div class="container u-space-2">
+            <div class="row">
+              <h2 class="w-100">リターン１</h2>
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                  <div class="js-form-message">
+                    <div class="js-focus-state input-group u-form mb-2">
+                      <select class="custom-select mb-2">
+                        <option value="birthMonthSelect1">大海原</option>
+                        <option value="birthMonthSelect2">大草原</option>
+                        <option value="birthMonthSelect3">教会</option>
+                        <option value="birthMonthSelect4" selected="selected">小学校</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <!-- Datepicker -->
+                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
+                               data-rp-wrapper="#datepickerWrapperTo"
+                               data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                  </th>
+                </tr>
+              </table>
+
+              <div class="container ">
+                <%= f.submit "保存する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover mb-9 mt-9" %>
+                <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
               </div>
-              <div class="media-body">
-                <h1 class="h3 text-white font-weight-medium mb-1">プロジェクト作成</h1>
-                <%= render 'shared/error_messages', model: @project %>
-              </div>
+
+              <h2 class="w-100">リターン２</h2>
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                  <div class="js-form-message">
+                    <div class="js-focus-state input-group u-form mb-2">
+                      <select class="custom-select mb-2">
+                        <option value="birthMonthSelect1">大海原</option>
+                        <option value="birthMonthSelect2">大草原</option>
+                        <option value="birthMonthSelect3">教会</option>
+                        <option value="birthMonthSelect4" selected="selected">小学校</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <!-- Datepicker -->
+                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
+                               data-rp-wrapper="#datepickerWrapperTo"
+                               data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                  </th>
+                </tr>
+              </table>
             </div>
-            <!-- End User Info -->
+          </div>
+        </div>
+        <div id="profile" class="tab-pane">
+          <div class="container u-space-2">
+            <div class="row">
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Breadcrumb Section -->
-
-    <!-- Content Section -->
-    <div class="u-bg-light-blue-50">
-      <div class="container u-space-2">
-
-
-        <!-- Personal Info Form -->
-        <form class="js-validate">
-          <div class="row">
-            <!-- Input -->
-            <div class="col-sm-6 mb-6">
-              <div class="js-form-message">
-                <%= f.label :title, class: "d-block small text-uppercase font-weight-medium" do %>
-                  タイトル
-                  <span class="text-danger">*</span>
-                <% end %>
-
-                <div class="js-focus-state input-group u-form mb-2">
-                  <%= f.text_field :title, placeholder: "タイトル", class:"js-summernote-editor" %>
-                </div>
-              </div>
-            </div>
-            <!-- End Input -->
-
-            <!-- Input -->
-            <div class="col-sm-6 mb-6">
-              <div class="js-form-message">
-                <%= f.label :main_image, class: "d-block small text-uppercase font-weight-medium" do %>
-                  メイン画像
-                  <span class="text-danger">*</span>
-                <% end %>
-
-                <div class="js-focus-state input-group u-form mb-2">
-                  <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-                </div>
-              </div>
-            </div>
-            <!-- End Input -->
-          </div>
-
-          <hr class="mt-1 mb-7">
-
-          <!-- Title -->
-          <div class="mb-3">
-            <%= f.label :content, class: "d-block small text-uppercase font-weight-medium" do %>
-              本文
-              <span class="text-danger">*</span>
-            <% end %>
-          </div>
-          <!-- End Title -->
-
-          <div class="mb-6">
-            <!-- Text Editor Input -->
-            <div class="u-summernote-editor">
-              <div  data-height="160">
-                <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor" %>
-              </div>
-            </div>
-            <!-- End Text Editor Input -->
-          </div>
-
-          <!-- Buttons -->
-          <!-- End Buttons -->
-          <hr class="mt-1 mb-7">
-
-          <!-- Title -->
-          <div class="mb-3">
-            <%= f.label :end_date, class: "d-block small text-uppercase font-weight-medium" do %>
-              募集終了日
-              <span class="text-danger">*</span>
-            <% end %>
-          </div>
-          <!-- End Title -->
-
-          <div class="mb-6">
-            <!-- Text Editor Input -->
-            <div class="u-summernote-editor">
-              <div  data-height="160">
-                <%= f.text_field :end_date, class: "js-summernote-editor", placeholder: "2018-01-01" %>
-              </div>
-            </div>
-            <!-- End Text Editor Input -->
-          </div>
-
-          <hr class="my-7">
-        </form>
-        <!-- End Personal Info Form -->
-
-        <!-- Title -->
-        <div class="mb-5">
-          <h3 class="h5 mb-1">リターン作成</h3>
-        </div>
-        <!-- End Title -->
-        <div class="mb-5">
-          <h2 class="h5 mb-1">リターン 1</h2>
-        </div>
-        <!-- Social Profiles Form -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_price_1, class: "d-block small text-uppercase font-weight-medium" do %>
-                金額
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_title_1, class: "d-block small text-uppercase font-weight-medium" do %>
-                リターンタイトル
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_content_1, class: "d-block small text-uppercase font-weight-medium" do %>
-                内容
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_image_1, class: "d-block small text-uppercase font-weight-medium" do %>
-                画像
-                <span class="text-danger">*</span>
-              <% end %>
-
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-          <div class="mb-5">
-            <h2 class="h5 mb-1">リターン 2</h2>
-          </div>
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_price_2, class: "d-block small text-uppercase font-weight-medium" do %>
-                金額
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_title_2, class: "d-block small text-uppercase font-weight-medium" do %>
-                リターンタイトル
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_title_2, placeholder: "タイトル", class:"js-summernote-editor" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_content_2, class: "d-block small text-uppercase font-weight-medium" do %>
-                内容
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_image_2, class: "d-block small text-uppercase font-weight-medium" do %>
-                画像
-                <span class="text-danger">*</span>
-              <% end %>
-
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.file_field :return_image_2, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-          <div class="mb-5">
-            <h2 class="h5 mb-1">リターン 3</h2>
-          </div>
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_price_3, class: "d-block small text-uppercase font-weight-medium" do %>
-                金額
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_price_3, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_title_3, class: "d-block small text-uppercase font-weight-medium" do %>
-                リターンタイトル
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_field :return_title_3, placeholder: "タイトル", class:"js-summernote-editor" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_content_3, class: "d-block small text-uppercase font-weight-medium" do %>
-                内容
-                <span class="text-danger">*</span>
-              <% end %>
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.text_area :return_content_3, placeholder: "内容", class:"js-summernote-editor" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <%= f.label :return_image_3, class: "d-block small text-uppercase font-weight-medium" do %>
-                画像
-                <span class="text-danger">*</span>
-              <% end %>
-
-              <div class="js-focus-state input-group u-form mb-2">
-                <%= f.file_field :return_image_3, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-
-          <%= f.submit "作成する" %>
+      <!-- Buttons -->
+      <div class="container">
+        <%= f.submit "作成する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
+        <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
       <% end %>
-        <!-- End Social Profiles Form -->
-      </div>
+      </div>    <!-- End Buttons -->
     </div>
     <!-- End Content Section -->
   </main>
   <!-- ========== END MAIN ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <!-- Lists -->
+    <div class="container u-space-2">
+      <div class="row justify-content-md-between">
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h3 class="h6">
+            <strong>About</strong>
+          </h3>
+
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li><a class="u-list__link" href="../pages/about-agency.html">Agency</a></li>
+            <li><a class="u-list__link" href="../pages/about-start-up.html">Start-Up</a></li>
+            <li><a class="u-list__link" href="#">Business</a></li>
+          </ul>
+          <!-- End List -->
+        </div>
+
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h3 class="h6">
+            <strong>Services</strong>
+          </h3>
+
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li><a class="u-list__link" href="../pages/services-agency.html">Agency</a></li>
+            <li><a class="u-list__link" href="../pages/services-start-up.html">Start-Up</a></li>
+            <li><a class="u-list__link" href="#">Business</a></li>
+          </ul>
+          <!-- End List -->
+        </div>
+
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h3 class="h6">
+            <strong>Account</strong>
+          </h3>
+
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li><a class="u-list__link" href="#">Profile</a></li>
+            <li><a class="u-list__link" href="#">User Contacts</a></li>
+            <li><a class="u-list__link" href="#">Projects</a></li>
+          </ul>
+          <!-- End List -->
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h3 class="h6 mb-4">
+            <strong>We are driven to deliver results for all your businesses.</strong>
+          </h3>
+
+          <!-- Button -->
+          <button type="button" class="btn btn-xs btn-dark u-btn-dark u-btn-wide transition-3d-hover text-left mb-2">
+            <span class="media align-items-center">
+              <span class="d-flex mr-3">
+                <span class="fab fa-apple font-size-26"></span>
+              </span>
+              <span class="media-body">
+                <span class="d-block">Download on the</span>
+                <strong class="font-size-14">App Store</strong>
+              </span>
+            </span>
+          </button>
+          <!-- End Button -->
+
+          <!-- Button -->
+          <button type="button" class="btn btn-xs btn-dark u-btn-dark u-btn-wide transition-3d-hover text-left mb-2">
+            <span class="media align-items-center">
+              <span class="d-flex mr-3">
+                <span class="fab fa-google-play font-size-26"></span>
+              </span>
+              <span class="media-body">
+                <span class="d-block">Get it on</span>
+                <strong class="font-size-14">Google Play</strong>
+              </span>
+            </span>
+          </button>
+          <!-- End Button -->
+        </div>
+      </div>
+    </div>
+    <!-- End Lists -->
+
+    <hr>
+
+    <!-- Copyright -->
+    <div class="container text-center u-space-1">
+      <!-- Logo -->
+      <a class="d-inline-block mb-2" href="../home/index.html" aria-label="Front">
+        <img src="../../assets/svg/logos/logo.svg" alt="Logo" style="width: 120px;">
+      </a>
+      <!-- End Logo -->
+
+      <p class="small text-muted">&copy; Front. 2018 Htmlstream. All rights reserved.</p>
+    </div>
+    <!-- End Copyright -->
+  </footer>
+  <!-- ========== END FOOTER ========== -->
 
 
   <!-- Go to Top -->

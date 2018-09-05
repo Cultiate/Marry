@@ -1,6 +1,6 @@
 <%= form_for(@project, url: projects_path) do |f| %>
-    <%= render 'shared/error_messages', model: @project %>
 <body>
+  <%= render 'shared/error_messages', model: @project %>
   <!-- Skippy -->
   <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
     <div class="container">
@@ -11,506 +11,358 @@
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
-    <!-- Breadcrumb Section -->
-    <div class="bg-primary">
-      <div class="container u-space-1-top pb-3">
-        <div class="row">
-          <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
-            <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
-              <!-- Breadcrumb -->
-              <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit profile</li>
-              </ol>
-              <!-- End Breadcrumb -->
+    <div class="p-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#project" class="nav-link active" data-toggle="tab">プロジェクトページ</a>
+        </li>
+        <li class="nav-item">
+          <a href="#return" class="nav-link" data-toggle="tab">リターン</a>
+        </li>
+        <li class="nav-item">
+          <a href="#profile" class="nav-link" data-toggle="tab">本人確認</a>
+        </li>
+      </ul>
 
-              <!-- Breadcrumb Nav Toggle Button -->
-              <div class="d-lg-none">
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-                        aria-label="Toggle navigation"
-                        aria-expanded="false"
-                        aria-controls="breadcrumbNavBar"
-                        data-toggle="collapse"
-                        data-target="#breadcrumbNavBar">
-                  <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
-                    <span class="u-hamburger__inner"></span>
-                  </span>
-                </button>
-              </div>
-              <!-- End Breadcrumb Nav Toggle Button -->
+
+      <div class="tab-content">
+        <div id="project" class="tab-pane active">
+          <div class="container u-space-2">
+            <div class="row">
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">タイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :title, placeholder: "タイトル", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                  <div class="js-form-message">
+                    <div class="js-focus-state input-group u-form mb-2">
+                      <select class="custom-select mb-2">
+                        <option value="birthMonthSelect1">大海原</option>
+                        <option value="birthMonthSelect2">大草原</option>
+                        <option value="birthMonthSelect3">教会</option>
+                        <option value="birthMonthSelect4" selected="selected">小学校</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">開催期間<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                      <!-- Datepicker -->
+                    <label class="d-block small text-uppercase font-weight-medium">From</label>
+
+                    <div id="datepickerWrapperFrom" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <%= f.text_field :end_date, class: "js-summernote-editor", placeholder: "2018-01-01" %>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="From" aria-label="From"
+                             data-rp-wrapper="#datepickerWrapperFrom"
+                             data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                    <!-- Datepicker -->
+                    <label class="d-block small text-uppercase font-weight-medium">To</label>
+
+                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="To" aria-label="To"
+                               data-rp-wrapper="#datepickerWrapperTo"
+                               data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
+                    </div>
+                  </th>
+                </tr>
+              </table>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-7 order-lg-1">
-            <!-- User Info -->
-            <div class="media d-block d-sm-flex align-items-sm-center">
-              <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-                <img class="u-lg-avatar rounded-circle" src="../../assets/img/160x160/img2.jpg" alt="Image Description">
-                <span class="u-badge u-badge-border-success u-badge--md u-badge-pos--bottom-right-0 rounded-circle">
-                  <span class="fa fa-check"></span>
-                </span>
+
+        <div id="return" class="tab-pane">
+          <div class="container u-space-2">
+            <div class="row">
+              <h2 class="w-100">リターン１</h2>
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                  <div class="js-form-message">
+                    <div class="js-focus-state input-group u-form mb-2">
+                      <select class="custom-select mb-2">
+                        <option value="birthMonthSelect1">大海原</option>
+                        <option value="birthMonthSelect2">大草原</option>
+                        <option value="birthMonthSelect3">教会</option>
+                        <option value="birthMonthSelect4" selected="selected">小学校</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <!-- Datepicker -->
+                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
+                               data-rp-wrapper="#datepickerWrapperTo"
+                               data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                  </th>
+                </tr>
+              </table>
+
+              <div class="container ">
+                <%= f.submit "保存する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover mb-9 mt-9" %>
+                <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
               </div>
-              <div class="media-body">
-                <h1 class="h3 text-white font-weight-medium mb-1">Howdy, Natalie!</h1>
-                <span class="d-block text-white">natalie.curtis@gmail.com</span>
-              </div>
+
+              <h2 class="w-100">リターン２</h2>
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                  <div class="js-form-message">
+                    <div class="js-focus-state input-group u-form mb-2">
+                      <select class="custom-select mb-2">
+                        <option value="birthMonthSelect1">大海原</option>
+                        <option value="birthMonthSelect2">大草原</option>
+                        <option value="birthMonthSelect3">教会</option>
+                        <option value="birthMonthSelect4" selected="selected">小学校</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  </th>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="p-3">
+                    <!-- Datepicker -->
+                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                      <div class="input-group-prepend u-form__prepend">
+                        <span class="input-group-text u-form__text">
+                          <span class="fa fa-calendar u-form__text-inner"></span>
+                        </span>
+                      </div>
+                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
+                               data-rp-wrapper="#datepickerWrapperTo"
+                               data-rp-date-format="d/m/Y">
+                    </div>
+                    <!-- End Datepicker -->
+                  </th>
+                </tr>
+              </table>
             </div>
-            <!-- End User Info -->
+          </div>
+        </div>
+        <div id="profile" class="tab-pane">
+          <div class="container u-space-2">
+            <div class="row">
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Breadcrumb Section -->
-
-    <!-- Content Section -->
-    <div class="u-bg-light-blue-50">
-      <div class="container u-space-2">
-
-
-        <!-- Personal Info Form -->
-        <form class="js-validate">
-          <div class="row">
-            <!-- Input -->
-            <div class="col-sm-6 mb-6">
-              <div class="js-form-message">
-                <label class="d-block small text-uppercase font-weight-medium">
-                  タイトル
-                  <span class="text-danger">*</span>
-                </label>
-
-                <div class="js-focus-state input-group u-form mb-2">
-                  <input class="form-control u-form__input" type="text" name="name" value="Natalie Curtis" required
-                         placeholder="Enter your name"
-                         aria-label="Enter your name"
-                         data-msg="Please enter your name."
-                         data-error-class="u-has-error"
-                         data-success-class="u-has-success">
-                </div>
-              </div>
-              <p class="small mb-0">Displayed on your public profile, notifications and other places.</p>
-            </div>
-            <!-- End Input -->
-
-            <!-- Input -->
-            <div class="col-sm-6 mb-6">
-              <div class="js-form-message">
-                <label class="d-block small text-uppercase font-weight-medium">
-                  メイン画像
-                  <span class="text-danger">*</span>
-                </label>
-
-                <div class="js-focus-state input-group u-form mb-2">
-                  <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-                </div>
-              </div>
-            </div>
-            <!-- End Input -->
-          </div>
-
-          <!-- Title -->
-          <div class="mb-3">
-            <h2 class="h5 mb-0">募集期間</h2>
-            <p>途中で変更できます</p>
-          </div>
-          <!-- End Title -->
-
-          <div class="row">
-            <div class="col-sm-6 mb-6">
-              <!-- Datepicker -->
-              <label class="d-block small text-uppercase font-weight-medium">いつから</label>
-
-              <div id="datepickerWrapperFrom" class="u-datepicker input-group u-form">
-                <div class="input-group-prepend u-form__prepend">
-                  <span class="input-group-text u-form__text">
-                    <span class="fa fa-calendar u-form__text-inner"></span>
-                  </span>
-                </div>
-                <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="From" aria-label="From"
-                       data-rp-wrapper="#datepickerWrapperFrom"
-                       data-rp-date-format="d/m/Y">
-              </div>
-              <!-- End Datepicker -->
-            </div>
-
-            <div class="col-sm-6 mb-6">
-              <!-- Datepicker -->
-              <label class="d-block small text-uppercase font-weight-medium">いつまで</label>
-
-              <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
-                <div class="input-group-prepend u-form__prepend">
-                  <span class="input-group-text u-form__text">
-                    <span class="fa fa-calendar u-form__text-inner"></span>
-                  </span>
-                </div>
-                <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="To" aria-label="To"
-                       data-rp-wrapper="#datepickerWrapperTo"
-                       data-rp-date-format="d/m/Y">
-              </div>
-              <!-- End Datepicker -->
-            </div>
-          </div>
-          <!--
-          <label class="d-block small text-uppercase font-weight-medium">
-            募集終了日
-            <span class="text-danger">*</span>
-          </label>
-
-          <div class="row">
-
-            <div class="col-md-6 mb-3 mb-sm-6">
-              <div class="js-form-message">
-                <div class="js-focus-state input-group u-form mb-2">
-                  <select class="custom-select mb-2">
-                    <option value="birthMonthSelect1">January</option>
-                    <option value="birthMonthSelect2">February</option>
-                    <option value="birthMonthSelect3">March</option>
-                    <option value="birthMonthSelect4" selected="selected">April</option>
-                    <option value="birthMonthSelect5">May</option>
-                    <option value="birthMonthSelect6">June</option>
-                    <option value="birthMonthSelect7">July</option>
-                    <option value="birthMonthSelect8">August</option>
-                    <option value="birthMonthSelect9">September</option>
-                    <option value="birthMonthSelect10">October</option>
-                    <option value="birthMonthSelect11">November</option>
-                    <option value="birthMonthSelect12">December</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="col-sm-4 col-md-2 mb-3 mb-sm-6">
-              <div class="js-form-message">
-                <select class="custom-select mb-2">
-                  <option value="birthDateSelect1">1</option>
-                  <option value="birthDateSelect2">2</option>
-                  <option value="birthDateSelect3">3</option>
-                  <option value="birthDateSelect4">4</option>
-                  <option value="birthDateSelect5">5</option>
-                  <option value="birthDateSelect6">6</option>
-                  <option value="birthDateSelect7">7</option>
-                  <option value="birthDateSelect8">8</option>
-                  <option value="birthDateSelect9">9</option>
-                  <option value="birthDateSelect10">10</option>
-                  <option value="birthDateSelect11">11</option>
-                  <option value="birthDateSelect12" selected="selected">12</option>
-                  <option value="birthDateSelect13">13</option>
-                  <option value="birthDateSelect14">14</option>
-                  <option value="birthDateSelect15">15</option>
-                  <option value="birthDateSelect16">16</option>
-                  <option value="birthDateSelect17">17</option>
-                  <option value="birthDateSelect18">18</option>
-                  <option value="birthDateSelect19">19</option>
-                  <option value="birthDateSelect20">20</option>
-                  <option value="birthDateSelect21">21</option>
-                  <option value="birthDateSelect22">22</option>
-                  <option value="birthDateSelect23">23</option>
-                  <option value="birthDateSelect24">24</option>
-                  <option value="birthDateSelect25">25</option>
-                  <option value="birthDateSelect26">26</option>
-                  <option value="birthDateSelect27">27</option>
-                  <option value="birthDateSelect28">28</option>
-                  <option value="birthDateSelect29">29</option>
-                  <option value="birthDateSelect30">30</option>
-                  <option value="birthDateSelect31">31</option>
-                </select>
-              </div>
-            </div>
-
-
-
-            <div class="col-sm-4 col-md-2 mb-3 mb-sm-6">
-              <div class="js-form-message">
-                <select class="custom-select mb-2">
-                  <option value="birthYearSelect1900">1900</option>
-                  <option value="birthYearSelect1901">1901</option>
-                  <option value="birthYearSelect1902">1902</option>
-                  <option value="birthYearSelect1903">1903</option>
-                  <option value="birthYearSelect1904">1904</option>
-                  <option value="birthYearSelect1905">1905</option>
-                  <option value="birthYearSelect1906">1906</option>
-                  <option value="birthYearSelect1907">1907</option>
-                  <option value="birthYearSelect1908">1908</option>
-                  <option value="birthYearSelect1909">1909</option>
-                  <option value="birthYearSelect1910">1910</option>
-                  <option value="birthYearSelect1911">1911</option>
-                  <option value="birthYearSelect1912">1912</option>
-                  <option value="birthYearSelect1913">1913</option>
-                  <option value="birthYearSelect1914">1914</option>
-                  <option value="birthYearSelect1915">1915</option>
-                  <option value="birthYearSelect1916">1916</option>
-                  <option value="birthYearSelect1917">1917</option>
-                  <option value="birthYearSelect1918">1918</option>
-                  <option value="birthYearSelect1919">1919</option>
-                  <option value="birthYearSelect1920">1920</option>
-                  <option value="birthYearSelect1921">1921</option>
-                  <option value="birthYearSelect1922">1922</option>
-                  <option value="birthYearSelect1923">1923</option>
-                  <option value="birthYearSelect1924">1924</option>
-                  <option value="birthYearSelect1925">1925</option>
-                  <option value="birthYearSelect1926">1926</option>
-                  <option value="birthYearSelect1927">1927</option>
-                  <option value="birthYearSelect1928">1928</option>
-                  <option value="birthYearSelect1929">1929</option>
-                  <option value="birthYearSelect1930">1930</option>
-                  <option value="birthYearSelect1931">1931</option>
-                  <option value="birthYearSelect1932">1932</option>
-                  <option value="birthYearSelect1933">1933</option>
-                  <option value="birthYearSelect1934">1934</option>
-                  <option value="birthYearSelect1935">1935</option>
-                  <option value="birthYearSelect1936">1936</option>
-                  <option value="birthYearSelect1937">1937</option>
-                  <option value="birthYearSelect1938">1938</option>
-                  <option value="birthYearSelect1939">1939</option>
-                  <option value="birthYearSelect1940">1940</option>
-                  <option value="birthYearSelect1941">1941</option>
-                  <option value="birthYearSelect1942">1942</option>
-                  <option value="birthYearSelect1943">1943</option>
-                  <option value="birthYearSelect1944">1944</option>
-                  <option value="birthYearSelect1945">1945</option>
-                  <option value="birthYearSelect1946">1946</option>
-                  <option value="birthYearSelect1947">1947</option>
-                  <option value="birthYearSelect1948">1948</option>
-                  <option value="birthYearSelect1949">1949</option>
-                  <option value="birthYearSelect1950">1950</option>
-                  <option value="birthYearSelect1951">1951</option>
-                  <option value="birthYearSelect1952">1952</option>
-                  <option value="birthYearSelect1953">1953</option>
-                  <option value="birthYearSelect1954">1954</option>
-                  <option value="birthYearSelect1955">1955</option>
-                  <option value="birthYearSelect1956">1956</option>
-                  <option value="birthYearSelect1957">1957</option>
-                  <option value="birthYearSelect1958">1958</option>
-                  <option value="birthYearSelect1959">1959</option>
-                  <option value="birthYearSelect1960">1960</option>
-                  <option value="birthYearSelect1961">1961</option>
-                  <option value="birthYearSelect1962">1962</option>
-                  <option value="birthYearSelect1963">1963</option>
-                  <option value="birthYearSelect1964">1964</option>
-                  <option value="birthYearSelect1965">1965</option>
-                  <option value="birthYearSelect1966">1966</option>
-                  <option value="birthYearSelect1967">1967</option>
-                  <option value="birthYearSelect1968">1968</option>
-                  <option value="birthYearSelect1969">1969</option>
-                  <option value="birthYearSelect1970">1970</option>
-                  <option value="birthYearSelect1971">1971</option>
-                  <option value="birthYearSelect1972">1972</option>
-                  <option value="birthYearSelect1973">1973</option>
-                  <option value="birthYearSelect1974">1974</option>
-                  <option value="birthYearSelect1975">1975</option>
-                  <option value="birthYearSelect1976">1976</option>
-                  <option value="birthYearSelect1977">1977</option>
-                  <option value="birthYearSelect1978">1978</option>
-                  <option value="birthYearSelect1979">1979</option>
-                  <option value="birthYearSelect1980">1980</option>
-                  <option value="birthYearSelect1981">1981</option>
-                  <option value="birthYearSelect1982">1982</option>
-                  <option value="birthYearSelect1983">1983</option>
-                  <option value="birthYearSelect1984">1984</option>
-                  <option value="birthYearSelect1985">1985</option>
-                  <option value="birthYearSelect1986" selected="selected">1986</option>
-                  <option value="birthYearSelect1987">1987</option>
-                  <option value="birthYearSelect1988">1988</option>
-                  <option value="birthYearSelect1989">1989</option>
-                  <option value="birthYearSelect1990">1990</option>
-                  <option value="birthYearSelect1991">1991</option>
-                  <option value="birthYearSelect1992">1992</option>
-                  <option value="birthYearSelect1993">1993</option>
-                  <option value="birthYearSelect1994">1994</option>
-                  <option value="birthYearSelect1995">1995</option>
-                  <option value="birthYearSelect1996">1996</option>
-                  <option value="birthYearSelect1997">1997</option>
-                  <option value="birthYearSelect1998">1998</option>
-                  <option value="birthYearSelect1999">1999</option>
-                  <option value="birthYearSelect2000">2000</option>
-                  <option value="birthYearSelect2001">2001</option>
-                  <option value="birthYearSelect2002">2002</option>
-                  <option value="birthYearSelect2003">2003</option>
-                  <option value="birthYearSelect2004">2004</option>
-                  <option value="birthYearSelect2005">2005</option>
-                  <option value="birthYearSelect2006">2006</option>
-                  <option value="birthYearSelect2007">2007</option>
-                  <option value="birthYearSelect2008">2008</option>
-                  <option value="birthYearSelect2009">2009</option>
-                  <option value="birthYearSelect2010">2010</option>
-                  <option value="birthYearSelect2011">2011</option>
-                  <option value="birthYearSelect2012">2012</option>
-                  <option value="birthYearSelect2013">2013</option>
-                  <option value="birthYearSelect2014">2014</option>
-                  <option value="birthYearSelect2015">2015</option>
-                  <option value="birthYearSelect2016">2016</option>
-                  <option value="birthYearSelect2017">2017</option>
-                </select>
-              </div>
-            </div>
-
-
-
-            <div class="col-sm-4 col-md-2 mb-6">
-            </div>
-
-          </div>
-        -->
-
-          <div class="row">
-            <!-- Input -->
-            <div class="col-sm-6 mb-6">
-              <div class="js-form-message">
-                <label class="d-block small text-uppercase font-weight-medium">
-                  カテゴリー選択
-                  <span class="text-danger">*</span>
-                </label>
-
-                <select class="custom-select mb-2">
-                  <option value="languageSelect1" selected>大草原</option>
-                  <option value="languageSelect2">大海原</option>
-                  <option value="languageSelect3">協会</option>
-                  <option value="languageSelect4">小学校</option>
-                </select>
-              </div>
-            </div>
-            <!-- End Input -->
-
-            <!-- Input -->
-            <div class="col-sm-6 mb-6">
-              <div class="js-form-message">
-                <label class="d-block small text-uppercase font-weight-medium">
-                  一言コンセプト
-                  <span class="text-danger">*</span>
-                </label>
-
-                <div class="js-focus-state input-group u-form mb-2">
-                  <input class="form-control u-form__input" type="tel" name="phoneNumber" value="" required
-                         placeholder="Enter your phone number"
-                         aria-label="Enter your phone number"
-                         data-msg="Please enter a valid phone number"
-                         data-error-class="u-has-error"
-                         data-success-class="u-has-success">
-                </div>
-              </div>
-            </div>
-            <!-- End Input -->
-          </div>
-
-          <hr class="mt-1 mb-7">
-
-          <!-- Title -->
-          <div class="mb-3">
-            <h2 class="h5 mb-0">本文</h2>
-            <p>具体的にお書きください</p>
-          </div>
-          <!-- End Title -->
-
-          <div class="mb-6">
-            <!-- Text Editor Input -->
-            <div class="u-summernote-editor">
-              <div  data-height="160">
-                <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor" %>
-              </div>
-            </div>
-            <!-- End Text Editor Input -->
-          </div>
-
-          <!-- Buttons -->
-          <%= f.submit "作成する",  class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
-          <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
-          <!-- End Buttons -->
-
-          <hr class="my-7">
-
-
-        </form>
-        <!-- End Personal Info Form -->
-
-        <!-- Title -->
-        <div class="mb-5">
-          <h3 class="h5 mb-1">金額とリターン作成</h3>
-          <p>途中で追加はできますが、削除はできません。</p>
-        </div>
-        <!-- End Title -->
-
-        <!-- Social Profiles Form -->
-        <form class="js-validate">
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
-              </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Dribbble link"
-                     aria-label="Dribbble link"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <p class="small mb-0">リターン名</p>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
-              </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Twitter profile"
-                     aria-label="Twitter profile"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <p class="small mb-0">リターン名</p>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
-              </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Facebook profile"
-                     aria-label="Facebook profile"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <p class="small mb-0">リターン名</p>
-          </div>
-          <!-- End Input Group -->
-
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state input-group u-form mb-2">
-              <div class="input-group-prepend u-form__prepend">
-                <span class="input-group-text u-form__text">画像</span>
-              </div>
-              <input type="text" class="form-control u-form__input" required
-                     placeholder="Behance profile"
-                     aria-label="Behance profile"
-                     data-msg="Please enter a valid URL address."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <p class="small mb-0">リターン名</p>
-          </div>
-          <!-- End Input Group -->
-
-          <%= f.submit "作成する",  class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
-          <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">キャンセル</button>
-        <% end %>
-        </form>
-        <!-- End Social Profiles Form -->
-      </div>
+      <!-- Buttons -->
+      <div class="container">
+        <%= f.submit "作成する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>
+        <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
+      <% end %>
+      </div>    <!-- End Buttons -->
     </div>
     <!-- End Content Section -->
   </main>
   <!-- ========== END MAIN ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <!-- Lists -->
+    <div class="container u-space-2">
+      <div class="row justify-content-md-between">
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h3 class="h6">
+            <strong>About</strong>
+          </h3>
+
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li><a class="u-list__link" href="../pages/about-agency.html">Agency</a></li>
+            <li><a class="u-list__link" href="../pages/about-start-up.html">Start-Up</a></li>
+            <li><a class="u-list__link" href="#">Business</a></li>
+          </ul>
+          <!-- End List -->
+        </div>
+
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h3 class="h6">
+            <strong>Services</strong>
+          </h3>
+
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li><a class="u-list__link" href="../pages/services-agency.html">Agency</a></li>
+            <li><a class="u-list__link" href="../pages/services-start-up.html">Start-Up</a></li>
+            <li><a class="u-list__link" href="#">Business</a></li>
+          </ul>
+          <!-- End List -->
+        </div>
+
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h3 class="h6">
+            <strong>Account</strong>
+          </h3>
+
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li><a class="u-list__link" href="#">Profile</a></li>
+            <li><a class="u-list__link" href="#">User Contacts</a></li>
+            <li><a class="u-list__link" href="#">Projects</a></li>
+          </ul>
+          <!-- End List -->
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h3 class="h6 mb-4">
+            <strong>We are driven to deliver results for all your businesses.</strong>
+          </h3>
+
+          <!-- Button -->
+          <button type="button" class="btn btn-xs btn-dark u-btn-dark u-btn-wide transition-3d-hover text-left mb-2">
+            <span class="media align-items-center">
+              <span class="d-flex mr-3">
+                <span class="fab fa-apple font-size-26"></span>
+              </span>
+              <span class="media-body">
+                <span class="d-block">Download on the</span>
+                <strong class="font-size-14">App Store</strong>
+              </span>
+            </span>
+          </button>
+          <!-- End Button -->
+
+          <!-- Button -->
+          <button type="button" class="btn btn-xs btn-dark u-btn-dark u-btn-wide transition-3d-hover text-left mb-2">
+            <span class="media align-items-center">
+              <span class="d-flex mr-3">
+                <span class="fab fa-google-play font-size-26"></span>
+              </span>
+              <span class="media-body">
+                <span class="d-block">Get it on</span>
+                <strong class="font-size-14">Google Play</strong>
+              </span>
+            </span>
+          </button>
+          <!-- End Button -->
+        </div>
+      </div>
+    </div>
+    <!-- End Lists -->
+
+    <hr>
+
+    <!-- Copyright -->
+    <div class="container text-center u-space-1">
+      <!-- Logo -->
+      <a class="d-inline-block mb-2" href="../home/index.html" aria-label="Front">
+        <img src="../../assets/svg/logos/logo.svg" alt="Logo" style="width: 120px;">
+      </a>
+      <!-- End Logo -->
+
+      <p class="small text-muted">&copy; Front. 2018 Htmlstream. All rights reserved.</p>
+    </div>
+    <!-- End Copyright -->
+  </footer>
+  <!-- ========== END FOOTER ========== -->
 
 
   <!-- Go to Top -->
