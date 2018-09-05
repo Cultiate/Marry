@@ -43,22 +43,6 @@
                   </th>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
-                  <td class="p-3">
-                  <div class="js-form-message">
-                    <div class="js-focus-state input-group u-form mb-2">
-                      <select class="custom-select mb-2">
-                        <option value="birthMonthSelect1">大海原</option>
-                        <option value="birthMonthSelect2">大草原</option>
-                        <option value="birthMonthSelect3">教会</option>
-                        <option value="birthMonthSelect4" selected="selected">小学校</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  </th>
-                </tr>
-                <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">開催期間<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
                   <td class="p-3">
                       <!-- Datepicker -->
@@ -140,22 +124,6 @@
                   </th>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
-                  <td class="p-3">
-                  <div class="js-form-message">
-                    <div class="js-focus-state input-group u-form mb-2">
-                      <select class="custom-select mb-2">
-                        <option value="birthMonthSelect1">大海原</option>
-                        <option value="birthMonthSelect2">大草原</option>
-                        <option value="birthMonthSelect3">教会</option>
-                        <option value="birthMonthSelect4" selected="selected">小学校</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  </th>
-                </tr>
-                <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
                   <td class="p-3">
                     <!-- Datepicker -->
@@ -184,13 +152,13 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
                   <td class="p-3">
-                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
+                    <%= f.text_field :return_title_2, placeholder: "タイトル", class:"js-summernote-editor" %>
                   </th>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
                   <td class="p-3">
-                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                    <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
                   </th>
                 </tr>
                 <tr>
@@ -198,30 +166,14 @@
                     <td class="p-3">
                     <div class="u-summernote-editor">
                       <div class="js-summernote-editor" data-height="160"></div>
-                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
+                      <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
                   </th>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
                   <td class="p-3">
-                    <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-                  </th>
-                </tr>
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">カテゴリ<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
-                  <td class="p-3">
-                  <div class="js-form-message">
-                    <div class="js-focus-state input-group u-form mb-2">
-                      <select class="custom-select mb-2">
-                        <option value="birthMonthSelect1">大海原</option>
-                        <option value="birthMonthSelect2">大草原</option>
-                        <option value="birthMonthSelect3">教会</option>
-                        <option value="birthMonthSelect4" selected="selected">小学校</option>
-                      </select>
-                    </div>
-                  </div>
-
+                    <%= f.file_field :return_image_2, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
                   </th>
                 </tr>
                 <tr>
