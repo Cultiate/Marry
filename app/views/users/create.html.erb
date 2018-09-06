@@ -1,4 +1,4 @@
-<% provide(:title, 'メール認証') %>
+<% provide(:title, '新規登録') %>
     <%= form_for(@user, url: signup_path) do |f| %>
     <%= render 'shared/error_messages', model: @user %>
 <body>
@@ -136,12 +136,29 @@
               </div>
               <!-- End Title -->
 
+              <!-- Input -->
+              <div class="js-form-message mb-4">
+                <%= f.label :user_name, "ユーザー名", class:"h6 small d-block text-uppercase" %>
+                <div class="js-focus-state input-group u-form">
+                  <%= f.text_field :user_name, class:"form-control u-form__input" %>
+                </div>
+              </div>
+              <!-- End Input -->
 
               <!-- Input -->
               <div class="js-form-message mb-4">
-                <%= f.label :email, "メールアドレス", class:"h6 small d-block text-uppercase" %>
+              <%= f.label :password, "パスワード", class:"h6 small d-block text-uppercase" %>
                 <div class="js-focus-state input-group u-form">
-                  <%= f.email_field :email, class:"form-control u-form__input" %>
+                <%= f.password_field :password , class:"form-control u-form__input"%>
+                </div>
+              </div>
+              <!-- End Input -->
+
+              <!-- Input -->
+              <div class="js-form-message mb-3">
+                <%= f.label :password_confirmation, "パスワード(確認)", class:"h6 small d-block text-uppercase" %>
+                <div class="js-focus-state input-group u-form">
+                  <%= f.password_field :password_confirmation, class:"form-control u-form__input" %>
                 </div>
               </div>
               <!-- End Input -->

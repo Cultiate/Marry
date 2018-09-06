@@ -31,19 +31,19 @@
             <div class="row">
               <table border="1">
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">タイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">タイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :title, placeholder: "タイトル", class:"form-control u-form__input" %>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">開催期間<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">開催期間<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                       <!-- Datepicker -->
                     <label class="d-block small text-uppercase font-weight-medium">From</label>
@@ -74,16 +74,16 @@
                                data-rp-date-format="d/m/Y">
                     </div>
                     <!-- End Datepicker -->
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
                       <div class="js-summernote-editor" data-height="160"></div>
                       <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
                     </div>
-                  </th>
+                  </td>
                 </tr>
               </table>
             </div>
@@ -97,34 +97,34 @@
               <h2 class="w-100">リターン１</h2>
               <table border="1">
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
                       <div class="js-summernote-editor" data-height="160"></div>
                       <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.file_field :return_image_1, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <!-- Datepicker -->
                     <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
@@ -138,7 +138,7 @@
                                data-rp-date-format="d/m/Y">
                     </div>
                     <!-- End Datepicker -->
-                  </th>
+                  </td>
                 </tr>
               </table>
 
@@ -150,34 +150,34 @@
               <h2 class="w-100">リターン２</h2>
               <table border="1">
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :return_title_2, placeholder: "タイトル", class:"js-summernote-editor" %>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
                       <div class="js-summernote-editor" data-height="160"></div>
                       <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.file_field :return_image_2, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></th>
+                  <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <!-- Datepicker -->
                     <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
@@ -191,7 +191,7 @@
                                data-rp-date-format="d/m/Y">
                     </div>
                     <!-- End Datepicker -->
-                  </th>
+                  </td>
                 </tr>
               </table>
             </div>
