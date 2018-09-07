@@ -17,7 +17,7 @@
 //= require hs.core.js
 //= require hs.megamenu.js
 //= require front.min.js
-//= require jquery3
+//= require jquery.min.js
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require jquery.min.js

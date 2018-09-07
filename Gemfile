@@ -22,6 +22,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # fa icon
 gem 'font-awesome-rails'
 # bootstrap
+gem 'bootstrap-sass'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
