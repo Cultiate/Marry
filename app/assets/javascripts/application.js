@@ -13,8 +13,35 @@
 //
 //= require bootstrap-sprockets
 //= require bootstrap.min.js
-
 //= require hs.core.js
+//= require components/hs.chart-pie.js
+//= require components/hs.range-datepicker.js
+//= require components/hs.countdown.js
+//= require components/hs.counter.js
+//= require components/hs.fancybox.js
+//= require components/hs.g-map.js
+//= require components/hs.go-to.js
+//= require components/hs.header-fullscreen.js
+//= require components/hs.header.js
+//= require components/hs.malihu-scrollbar.js
+//= require components/hs.modal-window.js
+//= require components/hs.onscroll-animation.js
+//= require components/hs.progress-bar.js
+//= require components/hs.quantity-counter.js
+//= require components/hs.scroll-effect.js
+//= require components/hs.scroll-nav.js
+//= require components/hs.selectpicker.js
+//= require components/hs.show-animation.js
+//= require components/hs.slick-carousel.js
+//= require components/hs.step-form.js
+//= require components/hs.sticky-block.js
+//= require components/hs.summernote-editor.js
+//= require components/hs.toggle-state.js
+//= require components/hs.unfold.js
+//= require components/hs.validation.js
+//= require components/hs.video-player.js
+
+
 //= require hs.megamenu.js
 //= require front.min.js
 //= require jquery.min.js

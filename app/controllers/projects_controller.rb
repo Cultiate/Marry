@@ -38,6 +38,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def celebrate
+  end
+
   private
 
   def project_params
