@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :content, :main_image, :user_name, :end_date,
+    params.require(:project).permit(:title, :content, :main_image, :user_name, :end_date, :display,
       :return_content_1, :return_image_1, :return_title_1, :return_price_1,
       :return_content_2, :return_image_2, :return_title_2, :return_price_2,
       :return_content_3, :return_image_3, :return_title_3, :return_price_3

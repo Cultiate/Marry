@@ -8,7 +8,9 @@ class Project < ApplicationRecord
   mount_uploader :return_image_2, MainImageUploader
   mount_uploader :return_image_3, MainImageUploader
   validates :user_id, presence: true
-  validates :content, presence: true
+  validates :title, presence: true
+  validates :main_image, presence: true
+  validates :end_date, presence: true
   validate  :main_image_size
 
   private

@@ -1,6 +1,5 @@
 <%= form_for(@project, url: projects_path) do |f| %>
 <body>
-  <%= render 'shared/error_messages', model: @project %>
   <!-- Skippy -->
   <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
     <div class="container">
@@ -11,6 +10,7 @@
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
+    <%= render 'shared/error_messages', model: @project %>
     <div class="p-3">
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -31,48 +31,30 @@
             <div class="row">
               <table border="1">
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">タイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    タイトル
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
                   <td class="p-3">
                     <%= f.text_field :title, placeholder: "タイトル", class:"form-control u-form__input" %>
                   </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
                   <td class="p-3">
                     <%= f.file_field :main_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
                   </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">開催期間<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    募集終了日
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
                   <td class="p-3">
                       <!-- Datepicker -->
-                    <label class="d-block small text-uppercase font-weight-medium">From</label>
-
-                    <div id="datepickerWrapperFrom" class="u-datepicker input-group u-form">
-                      <div class="input-group-prepend u-form__prepend">
-                        <span class="input-group-text u-form__text">
-                          <span class="fa fa-calendar u-form__text-inner"></span>
-                        </span>
-                      </div>
                       <%= f.text_field :end_date, class: "js-summernote-editor", placeholder: "2018-01-01" %>
-                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="From" aria-label="From"
-                             data-rp-wrapper="#datepickerWrapperFrom"
-                             data-rp-date-format="d/m/Y">
-                    </div>
-                    <!-- End Datepicker -->
-                    <!-- Datepicker -->
-                    <label class="d-block small text-uppercase font-weight-medium">To</label>
-
-                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
-                      <div class="input-group-prepend u-form__prepend">
-                        <span class="input-group-text u-form__text">
-                          <span class="fa fa-calendar u-form__text-inner"></span>
-                        </span>
-                      </div>
-                      <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="To" aria-label="To"
-                               data-rp-wrapper="#datepickerWrapperTo"
-                               data-rp-date-format="d/m/Y">
-                    </div>
                     <!-- End Datepicker -->
                   </td>
                 </tr>
@@ -82,6 +64,18 @@
                     <div class="u-summernote-editor">
                       <div class="js-summernote-editor" data-height="160"></div>
                       <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    TOPページへ掲載
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span>
+                  </td>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      <%= f.check_box :display, class:"js-summernote-editor w-100" %>
                     </div>
                   </td>
                 </tr>
