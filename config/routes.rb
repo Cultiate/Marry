@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :projects
 
   post "/projects/follow" => "projects#follow_project"
-  post "/projects/celebrate" => "projects#celebrate"
+  get "/projects/:id/celebrate" => "projects#celebrate"
 end
