@@ -10,131 +10,604 @@
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
     <!-- Blog Classic Section -->
-    <div class="container u-space-4-top u-space-5-top--md u-space-4-top--lg u-space-3-bottom">
-      <div class="row mb-9" style="background-color: #f1f1f1; padding: 5%;">
-        <!-- Title -->
-        <div class="w-md-70 w-lg-60">
-          <div class="col-sm-12 mb-7">
-            <!-- News Classic -->
-            <article>
-              <div class="mb-5">
-                1,000円
-              </div>
-              <small class="d-block text-secondary mb-1">キャッチコピーor感謝のメッセージ</small>
-              <div class="row" style=" ">
-                <div class="col-sm-5" style="font-size: 90%;">
-                  <span class="fa fa-user"></span>
-                  メンバー：100人
-                </div>
-                <div class="col-sm-7" style="font-size: 90%;">
-                  <span class="fa fa-truck"></span>
-                  お届け予定：2019年12月
-                </div>
-              </div>
-            </article>
-            <!-- End News Classic -->
-          </div>
-        </div>
-        <div class="w-md-30 w-lg-40">
-          <div class="">
-            <h1>1000円のリターン</h1>
-          </div>
-        </div>
-      </div>
-      <!-- End Title -->
+    <div class="p-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#payment" class="nav-link active" data-toggle="tab">お支払い方法選択</a>
+        </li>
+        <li class="nav-item">
+          <a href="#confirm" class="nav-link" data-toggle="tab">内容確認</a>
+        </li>
+        <li class="nav-item">
+          <a href="#thanks" class="nav-link" data-toggle="tab">お祝い完了</a>
+        </li>
+      </ul>
 
-      <div class="row">
-        <div class="col-lg-7 mb-9 mb-lg-0 mr-9">
-          <!-- News Classic -->
+      <div class="tab-content">
+        <div id="payment" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane active">
           <div class="row">
-            <div class="col-sm-12 mb-7">
-              <!-- News Classic -->
-              <article>
-                <h1 class="mb-9" style="text-align: center;">
-                  本文
-
-              </h1>
-                <div class="mb-5">
-
-                  <img class="img-fluid rounded" src="/projects_show/500280img.jpg" alt="Image Description">
+            <div class="col-lg-8 mb-9 mb-lg-0 mr-5">
+              <div class="row mb-9" style="border:1px solid orange; padding: 5%;">
+                <small class="text-right w-100" style="right:-5%; top:-50%;">このリターンを選択中</small>
+                <!-- Title -->
+                <div class="w-md-70 w-lg-60">
+                  <div class="col-sm-12 mb-7">
+                    <!-- News Classic -->
+                    <article>
+                      <div class="mb-5">
+                        <h1>1,000円以上</h1>
+                      </div>
+                      <p class="d-block text-secondary mb-1">キャッチコピーor感謝のメッセージ</p>
+                      <div class="row" style=" ">
+                        <div class="col-sm-5" style="font-size: 80%;">
+                          <span class="fa fa-user"></span>
+                          メンバー：100人
+                        </div>
+                        <div class="col-sm-7" style="font-size: 80%;">
+                          <span class="fa fa-truck"></span>
+                          お届け予定：2019年12月
+                        </div>
+                      </div>
+                    </article>
+                    <!-- End News Classic -->
+                  </div>
                 </div>
-                <small class="d-block text-secondary mb-1">March 20, 2018</small>
-                <h2 class="h5">
-                  <a href="single-article-classic.html">Remote workers, here's how to dodge distractions</a>
-                </h2>
-                <p>We've been working hard with our besties at Reuters to design a new reading experience for Reuters.com.</p>
-              </article>
+                <div class="w-md-30 w-lg-40">
+                  <div class="bg-warning mt-5 p-3">
+                    <h3 style="color:white;">1000円のリターン</h3>
+                  </div>
+                </div>
+              </div>
+              <!-- End Title -->
+
+              <!-- News Classic -->
+              <div class="row">
+                <!-- Content Section -->
+                <div class="u-bg-light-blue-50 w-100">
+
+                  <div class="container u-space-2">
+                    <h2 class="pb-5">お支払い方法を選択する</h2>
+                    <!-- Title -->
+                    <div class="mb-3">
+                      <h2 class="h5 mb-0">カード登録情報</h2>
+                    </div>
+                    <!-- End Title -->
+
+                    <div id="paymentDetails" class="accordion mb-9">
+                      <!-- Card -->
+                      <div class="card u-card-collapse">
+                        <div class="card-header px-4" id="cardHeadingOne">
+                          <div class="row justify-content-sm-between align-items-sm-center collapsed" data-toggle="collapse" data-target="#cardOne" aria-expanded="false" aria-controls="cardOne" role="button">
+                            <div class="col-md-6 mb-2 mb-md-0">
+                              <div class="media align-items-center">
+                                <div class="radio">
+                                  <label><input type="radio" name="radio" id="radio1" value="radio1" class="align-middle pr-2"><img class="max-width-9 mr-3" src="/payment/visa.jpg" alt="Image Description"></label>
+                                </div>
+
+                                <div class="media-body">
+                                  <span class="font-size-14">Visa Card 末尾 9909</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-4 col-md-2 text-md-right">
+                              <span class="u-label u-label--sm u-label--primary">利用中</span>
+                            </div>
+                            <div class="col-6 col-md-3">
+                              <span class="d-block font-size-14">有効期限: 12/2019</span>
+                            </div>
+                            <div class="col-2 col-md-1 text-right">
+                              <span class="fa fa-angle-up u-card-collapse__heading-icon"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="cardOne" class="collapse" aria-labelledby="cardHeadingOne" data-parent="#paymentDetails">
+                          <div class="card-body px-4">
+                            <!-- Card Details -->
+                            <div class="row">
+                              <div class="col-sm-7 mb-2 mb-sm-0">
+                                <h4 class="h6 mb-1">ユーザー名</h4>
+                                <span class="d-block font-size-14 mb-1">銀行名</span>
+                                <p class="small">
+                                  <span class="fa fa-info-circle mr-1"></span>
+                                  注意<a href="#">書き</a>
+                                </p>
+                              </div>
+                              <div class="col-sm-5 mb-2 mb-sm-0">
+                                <h5 class="h6 mb-0">請求先の住所</h5>
+                                <h5 class="h6">請求先の名前</h5>
+                                <address class="font-size-14">
+                                  77408 Satterfield Motorway<br>
+                                  Suite 469 New Antonetta, BC K3L6P6<br>
+                                  New York, NY, 09122-9122<br>
+                                  United States
+                                </address>
+                                <button type="button" class="btn btn-xs u-btn-secondary--air">削除</button>
+                                <button type="button" class="btn btn-xs btn-primary">編集</button>
+                              </div>
+                            </div>
+                            <!-- End Card Details -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Card -->
+
+                      <!-- Card -->
+                      <div class="card u-card-collapse">
+                        <div class="card-header px-4" id="cardHeadingTwo">
+                          <div class="row justify-content-sm-between align-items-sm-center collapsed" data-toggle="collapse" data-target="#cardTwo" aria-expanded="false" aria-controls="cardTwo" role="button">
+                            <div class="col-md-6 mb-2 mb-md-0">
+                              <div class="media align-items-center">
+                                <div class="radio">
+                                  <label><input type="radio" name="radio" id="radio2" value="radio2" checked="" class="align-middle pr-2"><img class="max-width-9 mr-3" src="/payment/mastercard.jpg" alt="Image Description"></label>
+                                </div>
+                                <div class="media-body">
+                                  <span class="d-block font-size-14">Master Card 末尾 1421</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-4 col-md-2 text-md-right">
+                            </div>
+                            <div class="col-6 col-md-3">
+                              <span class="font-size-14">有効期限: 06/2021</span>
+                            </div>
+                            <div class="col-2 col-md-1 text-right">
+                              <span class="fa fa-angle-up u-card-collapse__heading-icon"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="cardTwo" class="collapse" aria-labelledby="cardHeadingTwo" data-parent="#paymentDetails">
+                          <div class="card-body px-4">
+                            <!-- Card Details -->
+                            <div class="row">
+                              <div class="col-sm-7 mb-2 mb-sm-0">
+                                <h4 class="h6 mb-1">ユーザー名</h4>
+                                <span class="d-block font-size-14 mb-1">銀行名</span>
+                                <p class="small">
+                                  <span class="fa fa-info-circle mr-1"></span>
+                                  注意<a href="#">書き</a>
+                                </p>
+                              </div>
+                              <div class="col-sm-5 mb-2 mb-sm-0">
+                                <h5 class="h6 mb-0">請求先の住所</h5>
+                                <h5 class="h6">請求先の名前</h5>
+                                <address class="font-size-14">
+                                  77408 Satterfield Motorway<br>
+                                  Suite 469 New Antonetta, BC K3L6P6<br>
+                                  New York, NY, 09122-9122<br>
+                                  United States
+                                </address>
+                                <button type="button" class="btn btn-xs u-btn-secondary--air">削除</button>
+                                <button type="button" class="btn btn-xs btn-primary">編集</button>
+                              </div>
+                            </div>
+                            <!-- End Card Details -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Card -->
+
+                      <!-- Card -->
+                      <div class="card u-card-collapse">
+                        <div class="card-header px-4" id="cardHeadingThree">
+                          <div class="row justify-content-sm-between align-items-sm-center collapsed" data-toggle="collapse" data-target="#cardThree" aria-expanded="false" aria-controls="cardThree" role="button">
+                            <div class="col-md-6 mb-2 mb-md-0">
+                              <div class="media align-items-center">
+                                <div class="radio disabled">
+                                  <label><input type="radio" name="radio" id="radio3" value="radio3" disabled="" class="align-middle pr-2"><img class="max-width-9 mr-3" src="/payment/discover.jpg" alt="Image Description"></label>
+                                </div>
+
+                                <div class="media-body">
+                                  <span class="d-block font-size-14">Discover 末尾 4283</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-4 col-md-2 text-md-right">
+                            </div>
+                            <div class="col-6 col-md-3">
+                              <span class="text-danger font-size-14">期限切れ: 03/2018</span>
+                            </div>
+                            <div class="col-2 col-md-1 text-right">
+                              <span class="fa fa-angle-up u-card-collapse__heading-icon"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="cardThree" class="collapse" aria-labelledby="cardHeadingThree" data-parent="#paymentDetails">
+                          <div class="card-body px-4">
+                            <!-- Card Details -->
+                            <div class="row">
+                              <div class="col-sm-7 mb-2 mb-sm-0">
+                                <h4 class="h6 mb-1">ユーザー名</h4>
+                                <span class="d-block font-size-14 mb-1">銀行名</span>
+                                <p class="small">
+                                  <span class="fa fa-info-circle mr-1"></span>
+                                  注意<a href="#">書き</a>
+                                </p>
+                              </div>
+                              <div class="col-sm-5 mb-2 mb-sm-0">
+                                <h5 class="h6 mb-0">請求先の住所</h5>
+                                <h5 class="h6">請求先の名前</h5>
+                                <address class="font-size-14">
+                                  77408 Satterfield Motorway<br>
+                                  Suite 469 New Antonetta, BC K3L6P6<br>
+                                  New York, NY, 09122-9122<br>
+                                  United States
+                                </address>
+                                <button type="button" class="btn btn-xs u-btn-secondary--air">削除</button>
+                                <button type="button" class="btn btn-xs btn-primary">編集</button>
+                              </div>
+                            </div>
+                            <!-- End Card Details -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Card -->
+                    </div>
+
+                    <h3 class="h5 mb-0">お支払い方法を追加する</h3>
+
+                    <hr class="mt-2 mb-4">
+
+                    <!-- Add Payment -->
+                    <div class="row align-items-center">
+                      <div class="col-md-6">
+                        <h4 class="h6 mb-0">クレジット・デビットカード</h4>
+                        <p class="mb-2">有効期限が100日以上あるものをご登録ください</p>
+                        <a href="#addPaymentModal"
+                           data-modal-target="#addPaymentModal"
+                           data-overlay-color="#111722">カード情報を追加する</a>
+                      </div>
+                      <div class="col-md-6 text-md-right">
+                        <span class="d-inline-block bg-white border rounded p-1">
+                          <img class="max-width-9" src="/payment/visa.jpg" alt="Image Description">
+                        </span>
+                        <span class="d-inline-block bg-white border rounded p-1">
+                          <img class="max-width-9" src="/payment/mastercard.jpg" alt="Image Description">
+                        </span>
+                        <span class="d-inline-block bg-white border rounded p-1">
+                          <img class="max-width-9" src="/payment/discover.jpg" alt="Image Description">
+                        </span>
+                      </div>
+                    </div>
+                    <!-- End Add Payment -->
+
+                    <hr class="my-4">
+
+                    <!-- Add Payment -->
+                    <div class="row align-items-center">
+                      <div class="col-md-6">
+                        <h4 class="h6 mb-0"><span class="radio pr-2 align-middle pb-4"><input type="radio" name="radio" id="radio1" value="radio1" class=""></span>オンライン決済</h4>
+                        <p class="mb-2">PayPal, Stripe ApplePay など</p>
+                        <a href="#">こちらから</a>
+                      </div>
+                      <div class="col-md-6 text-md-right">
+                        <!-- Radio Checkbox Group -->
+                        <div class="custom-control custom-radio custom-control-inline u-checkbox-brd bg-white">
+                          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input u-checkbox-brd__input">
+                          <label class="u-checkbox-brd__label rounded p-1 mb-0" for="customRadioInline1">
+                            <img class="max-width-9" src="/payment/paypal.jpg" alt="Image Description">
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline u-checkbox-brd bg-white">
+                          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input u-checkbox-brd__input">
+                          <label class="u-checkbox-brd__label rounded p-1 mb-0" for="customRadioInline2">
+                            <img class="max-width-9" src="/payment/skrill.jpg" alt="Image Description">
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline u-checkbox-brd bg-white">
+                          <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input u-checkbox-brd__input">
+                          <label class="u-checkbox-brd__label rounded p-1 mb-0" for="customRadioInline3">
+                            <img class="max-width-9" src="/payment/applepay.jpg" alt="Image Description">
+                          </label>
+                        </div>
+                        <!-- End Radio Checkbox Group -->
+                      </div>
+                    </div>
+                    <!-- End Add Payment -->
+
+                    <hr class="my-4">
+
+                    <!-- Add Payment -->
+                    <div class="row align-items-center">
+                      <div class="col-md-6">
+                        <h4 class="h6 mb-0"><span class="radio pr-2 align-middle pb-4"><input type="radio" name="radio" id="radio1" value="radio1" class=""></span>銀行振込</h4>
+                        <p class="mb-2">三菱UFJ銀行、三井住友銀行、みずほ銀行 など</p>
+                        <a href="#">こちらから</a>
+                      </div>
+                      <div class="col-md-6 text-md-right">
+                        <!-- Radio Checkbox Group -->
+                        <div class="custom-control custom-radio custom-control-inline u-checkbox-brd bg-white">
+                          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input u-checkbox-brd__input">
+                          <label class="u-checkbox-brd__label rounded p-1 mb-0" for="customRadioInline1">
+                            <img class="max-width-9" src="/payment/ufj.jpg" alt="Image Description">
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline u-checkbox-brd bg-white">
+                          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input u-checkbox-brd__input">
+                          <label class="u-checkbox-brd__label rounded p-1 mb-0" for="customRadioInline2">
+                            <img class="max-width-9" src="/payment/smbc.jpg" alt="Image Description">
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline u-checkbox-brd bg-white">
+                          <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input u-checkbox-brd__input">
+                          <label class="u-checkbox-brd__label rounded p-1 mb-0" for="customRadioInline3">
+                            <img class="max-width-9" src="/payment/mizuho.jpg" alt="Image Description">
+                          </label>
+                        </div>
+                        <!-- End Radio Checkbox Group -->
+                      </div>
+                    </div>
+                    <!-- End Add Payment -->
+
+                    <!-- Add Payment -->
+                    <div class="row align-items-center　mt-9">
+                      <div class="col-sm-12">
+                        <label>備考欄</label>
+                        <input>
+                      </div>
+                      <div class="col-sm-12">
+                        <label>お祝いメッセージ</label>
+                        <input>
+                      </div>
+                    </div>
+                    <!-- End Add Payment -->
+                  </div>
+                </div>
+                <!-- End Content Section -->
+                <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover nav-link" data-toggle="tab" style="margin:20px 45%;"><a href="#confirm" style="color:white;">次へ</a></button>
+              </div>
               <!-- End News Classic -->
             </div>
 
-            <div class="col-sm-12 mb-7">
-              <!-- News Classic -->
-              <article>
-                <small class="d-block text-secondary mb-1">April 29, 2018</small>
-                <h3 class="h5">
-                  <a href="single-article-classic.html">5 basic tips for colors</a>
-                </h3>
-                <p>Tis the season to be jolly, and Ueno has one more thing to be cheery about in 2017.</p>
-              </article>
-              <!-- End News Classic -->
-            </div>
+            <div id="stickyBlockStartPoint" class="col-lg-3">
+              <!-- Sticky Block -->
+              <h5><span class="fa fa-gift"></span>選択中のプロジェクト</h5>
+              <hr>
+              <!-- Projects -->
+              <div class="card mb-5">
+                <div class="card-body p-2">
+                  <div class="text-center">
+                    画像
+                    <!-- Title -->
+                    <div class="mb-4">
+                      <h3 class="h5 mb-1">プロジェクトタイトル</h3>
+                    </div>
+                    <!-- End Title -->
 
-            <div class="col-sm-12 mb-7">
-              <!-- News Classic -->
-              <article>
-                <div class="mb-5">
-                  <img class="img-fluid rounded" src="/projects_show/500280img.jpg" alt="Image Description">
+                    <!-- List of Icons -->
+                    <div class="row justify-content-between align-items-center mb-3">
+                      <div class="col-6" style="margin:0 25%;">
+                        <a class="small text-secondary" href="#">
+                          <span class="fa fa-bookmark text-primary mr-1"></span>
+                          プロジェクト主催者名
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End List of Icons -->
+                    <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+                      <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
+                    </div>
+                  </div>
                 </div>
-                <small class="d-block text-secondary mb-1">March 20, 2018</small>
-                <h3 class="h5">
-                  <a href="single-article-classic.html">How to change careers or start a home-based business?</a>
-                </h3>
-                <p>The biggest collections of design principles on the internet</p>
-              </article>
-              <!-- End News Classic -->
+
+                <div class="card-footer text-center">
+                  <!-- Budget & Priority -->
+                  <div class="row align-items-center">
+                    <div class="col-4 u-ver-divider">
+                      <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
+                      <!--
+                      <span class="fa fa-arrow-up text-warning font-size-13"></span>
+                    -->
+                      <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
+                    </div>
+                    <div class="col-4 u-ver-divider">
+                      <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                        100人
+                    </div>
+                      <!-- End Members List -->
+                    <div class="col-4">
+                      <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
+                      <span class="text-dark" style="　font-weight:bold;">100日</span>
+                    </div>
+                  </div>
+                  <!-- End Budget & Priority -->
+                </div>
+              </div>
+              <!-- End Projects -->
+
+                <hr class="my-7">
+
+                <h3 class="h5 text-primary font-weight-bold mb-4">注意書き</h3>
+
+                <!-- Instafeed -->
+                <div id="instaFeed" class="js-instagram row mx-gutters-2"
+                     data-user-id="4815936096"
+                     data-client-id="60648b9247324e87a4d7ab3aa7a58f6c"
+                     data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce"
+                     data-limit="4"
+                     data-template='<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>'>
+
+                </div>
+                <!-- End Instafeed -->
+              <!-- End Sticky Block -->
             </div>
           </div>
-          <!-- End News Classic -->
-
-          <div class="u-space-2-bottom"></div>
         </div>
 
-        <div id="stickyBlockStartPoint" class="col-lg-4">
-          <!-- Sticky Block -->
-          <h2><span class="fa fa-gift"></span> リターンを選ぶ</h2>
-          <hr>
-          <div class="js-sticky-block"
-               data-has-sticky-header="true"
-               data-offset-target="#logoAndNav"
-               data-sticky-view="lg"
-               data-start-point="#stickyBlockStartPoint"
-               data-end-point="#stickyBlockEndPoint"
-               data-offset-top="32"
-               data-offset-bottom="170">
+        <!-- payment end -->
 
-              <h3 class="h5 text-primary font-weight-bold mb-4">
-                1,000,000円
-              </h3>
+        <div id="confirm" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane">
+          <div class="row">
+            <div class="col-lg-8 mb-9 mb-lg-0 mr-5">
+              <h3><span class="fa fa-check-circle">内容を確認の上「完了」ボタンを押してください</span></h3>
+              <table border="1" class="w-100">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    決済金額
+                  </td>
+                  <td class="p-3">
+                    1000円
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    リターン内容
+                  </td>
+                  <td class="p-3">
+                    透明なパンツ
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    備考欄
+                  </td>
+                  <td class="p-3">
+                      <!-- Datepicker -->
+                      当日は行きません
+                    <!-- End Datepicker -->
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">お祝いコメント</td>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      おめでとうううううう
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    お支払い方法
+                  </td>
+                    <td class="p-3">
+                    <div class="u-summernote-editor">
+                      <div class="js-summernote-editor" data-height="160"></div>
+                      クレカ情報
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover" style="margin:20px 45%;"><a href="#thanks" style="color:white;">完了</a></button>
+            </div>
 
-            <hr class="my-7">
+            <div id="stickyBlockStartPoint" class="col-lg-3">
+              <!-- Sticky Block -->
+              <h5><span class="fa fa-check-square"></span>選択中のプロジェクト</h5>
+              <hr>
+              <!-- Projects -->
+              <div class="card mb-5">
+                <div class="card-body p-2">
+                  <div class="text-center">
+                    画像
+                    <!-- Title -->
+                    <div class="mb-4">
+                      <h3 class="h5 mb-1">プロジェクトタイトル</h3>
+                    </div>
+                    <!-- End Title -->
 
-            <h3 class="h5 text-primary font-weight-bold mb-4">注意書き</h3>
+                    <!-- List of Icons -->
+                    <div class="row justify-content-between align-items-center mb-3">
+                      <div class="col-6" style="margin:0 25%;">
+                        <a class="small text-secondary" href="#">
+                          <span class="fa fa-bookmark text-primary mr-1"></span>
+                          プロジェクト主催者名
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End List of Icons -->
+                    <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+                      <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- Instafeed -->
-            <div id="instaFeed" class="js-instagram row mx-gutters-2"
-                 data-user-id="4815936096"
-                 data-client-id="60648b9247324e87a4d7ab3aa7a58f6c"
-                 data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce"
-                 data-limit="4"
-                 data-template='<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>'></div>
-            <!-- End Instafeed -->
+                <div class="card-footer text-center">
+                  <!-- Budget & Priority -->
+                  <div class="row align-items-center">
+                    <div class="col-4 u-ver-divider">
+                      <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
+                      <!--
+                      <span class="fa fa-arrow-up text-warning font-size-13"></span>
+                    -->
+                      <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
+                    </div>
+                    <div class="col-4 u-ver-divider">
+                      <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                        100人
+                    </div>
+                      <!-- End Members List -->
+                    <div class="col-4">
+                      <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
+                      <span class="text-dark" style="　font-weight:bold;">100日</span>
+                    </div>
+                  </div>
+                  <!-- End Budget & Priority -->
+                </div>
+              </div>
+              <!-- End Projects -->
+
+                <hr class="my-7">
+
+
+                <!-- Instafeed -->
+                <div id="instaFeed" class="js-instagram row mx-gutters-2"
+                     data-user-id="4815936096"
+                     data-client-id="60648b9247324e87a4d7ab3aa7a58f6c"
+                     data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce"
+                     data-limit="4"
+                     data-template='<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>'>
+
+                </div>
+                <!-- End Instafeed -->
+              <!-- End Sticky Block -->
+            </div>
           </div>
-          <!-- End Sticky Block -->
         </div>
+        <!-- confirm end -->
+
+        <div id="thanks" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane">
+          <h1>Marry meをご利用頂き、ありがとうございました！！</h1>
+          <div class="col-lg-12 mb-9 mb-lg-0 mr-5">
+            <div class="row mb-9" style="border:1px solid orange; padding: 5%;">
+              <small class="text-right w-100" style="right:-5%; top:-50%;">このリターンを選択中</small>
+              <!-- Title -->
+              <div class="w-md-70 w-lg-60">
+                <div class="col-sm-12 mb-7">
+                  <!-- News Classic -->
+                  <article>
+                    <div class="mb-5">
+                      <h1>1,000円以上</h1>
+                    </div>
+                    <p class="d-block text-secondary mb-1">キャッチコピーor感謝のメッセージ</p>
+                    <div class="row" style=" ">
+                      <div class="col-sm-5" style="font-size: 80%;">
+                        <span class="fa fa-user"></span>
+                        メンバー：100人
+                      </div>
+                      <div class="col-sm-7" style="font-size: 80%;">
+                        <span class="fa fa-truck"></span>
+                          お届け予定：2019年12月
+                      </div>
+                    </div>
+                  </article>
+                  <!-- End News Classic -->
+                </div>
+              </div>
+              <div class="w-md-30 w-lg-40">
+                <div class="bg-warning mt-5 p-3">
+                  <h3 style="color:white;">1000円のリターン</h3>
+                </div>
+              </div>
+            </div>
+            <!-- End Title -->
+          </div>
+
+        </div>
+        <!-- thanks end -->
+
       </div>
+      <!-- End Blog Classic Section -->
     </div>
-    <!-- End Blog Classic Section -->
-
 
   </main>
   <!-- ========== END MAIN ========== -->
