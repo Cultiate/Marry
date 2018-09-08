@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   before_save :downcase_email
   has_many :projects
+  mount_uploader :user_image, UserImageUploader
 
   private
 

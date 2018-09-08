@@ -41,13 +41,6 @@
           <div class="row">
             <div class="col-lg-3 mb-7 mb-lg-0">
               <!-- Profile Card -->
-              <div class="card p-1 mb-4">
-                <div class="card-body text-center">
-                  <div class="mb-3">
-                    <img class="u-xl-avatar rounded-circle" src="/projects_index/160img.jpg" alt="Image Description">
-                  </div>
-                </div>
-              </div>
               <!-- End Profile Card -->
 
               <!-- Contacts  -->
@@ -121,18 +114,12 @@
               </div>
               <!-- End User Details -->
 
-              <!-- Info -->
-              <div class="mb-4">
-                <p>I am a project manager from England. This is where I sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is key. The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
-              </div>
-              <!-- End Info -->
-
               <hr class="my-7">
 
               <div class="row justify-content-between align-items-center mb-4">
                 <!-- Title -->
                 <div id="reviews" class="mb-3 ml-4">
-                  <h3 class="h4 mb-0">プロフィール編集<span class="text-muted font-size-14">(125)</span></h3>
+                  <h3 class="h4 mb-0">プロフィール編集<span class="text-muted font-size-14"></span></h3>
                 </div>
                 <!-- End Title -->
               </div>
@@ -150,10 +137,10 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="u-bg-light-blue-50 text-center p-3">アイコン</td>
-                      <td class="p-3">
-                        画像取得
-                      </td>
+                      <td class="u-bg-light-blue-50 text-center p-3">プロフィール画像</td>
+                        <td class="p-3">
+                          <%= f.file_field :user_image, accept: "image/jpg, image/jpeg, image/gif, image/png", class:"form-control u-form__input" %>
+                        </td>
                     </tr>
                     <tr>
                       <td class="u-bg-light-blue-50 text-center p-3">メールアドレス<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
@@ -174,7 +161,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="u-bg-light-blue-50 text-center p-3">パスワード（確認）<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
+                      <td class="u-bg-light-blue-50 text-center p-3">パスワード(確認)<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                         <td class="p-3">
                         <div class="u-summernote-editor">
                           <div class="js-summernote-editor" data-height="160"></div>
