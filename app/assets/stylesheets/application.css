@@ -10,21 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require summernote-lite.css
- *= require bootstrap-tagsinput.css
- *= require flatpickr.min.css
- *= require bootstrap-select.min.css
  *= require bootstrap.css
+ *= require bootstrap-select.min.css
+ *= require bootstrap-tagsinput.css
+ *= require jquery.fancybox.css
+ *= require jquery.mCustomScrollbar.css
+ *= require font-awesome
+ *= require fontawesome-all.min.css
+ *= require front.css
+ *= require summernote-lite.css
+ *= require flatpickr.min.css
  *= require custom-front.css
  *= require front-core.css
  *= require front-components.css
- *= require front.css
- *= require font-awesome
- *= require fontawesome-all.min.css
  *= require dzsparallaxer.css
  *= require slick.css
- *= require jquery.fancybox.css
- *= require jquery.mCustomScrollbar.css
  *= require hs.megamenu.css
  *= require animate.min.css
  *= require_tree .

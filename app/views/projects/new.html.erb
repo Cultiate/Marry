@@ -9,9 +9,9 @@
   <!-- End Skippy -->
 
   <!-- ========== MAIN ========== -->
-  <main id="content" role="main">
+  <main id="content" role="main" class="pb-9">
     <%= render 'shared/error_messages', model: @project %>
-    <div class="p-3">
+    <div class="p-3 mb-9">
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a href="#project" class="nav-link active" data-toggle="tab">プロジェクトページ</a>
@@ -53,9 +53,19 @@
                     <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
                   </td>
                   <td class="p-3">
-                      <!-- Datepicker -->
                       <%= f.text_field :end_date, class: " ", placeholder: "2018-01-01" %>
-                    <!-- End Datepicker -->
+                      <!-- Datepicker -->
+                      <div id="datepickerWrapper" class="u-datepicker input-group u-form">
+                        <div class="input-group-prepend u-form__prepend">
+                          <span class="input-group-text u-form__text">
+                            <span class="fa fa-calendar u-form__text-inner"></span>
+                          </span>
+                        </div>
+                        <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
+                                 data-rp-wrapper="#datepickerWrapper"
+                                 data-rp-date-format="Y/m/d">
+                      </div>
+                      <!-- End Datepicker -->
                   </td>
                 </tr>
                 <tr>
@@ -104,7 +114,6 @@
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
-                      <div class=" " data-height="160"></div>
                       <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
                   </td>
@@ -119,15 +128,15 @@
                   <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <!-- Datepicker -->
-                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                    <div id="datepickerWrapper1" class="u-datepicker input-group u-form">
                       <div class="input-group-prepend u-form__prepend">
                         <span class="input-group-text u-form__text">
                           <span class="fa fa-calendar u-form__text-inner"></span>
                         </span>
                       </div>
                       <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
-                               data-rp-wrapper="#datepickerWrapperTo"
-                               data-rp-date-format="d/m/Y">
+                               data-rp-wrapper="#datepickerWrapper1"
+                               data-rp-date-format="Y/m/d">
                     </div>
                     <!-- End Datepicker -->
                   </td>
@@ -172,15 +181,15 @@
                   <td class="u-bg-light-blue-50 text-center p-3">お届け予定<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <!-- Datepicker -->
-                    <div id="datepickerWrapperTo" class="u-datepicker input-group u-form">
+                    <div id="datepickerWrapper2" class="u-datepicker input-group u-form">
                       <div class="input-group-prepend u-form__prepend">
                         <span class="input-group-text u-form__text">
                           <span class="fa fa-calendar u-form__text-inner"></span>
                         </span>
                       </div>
                       <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
-                               data-rp-wrapper="#datepickerWrapperTo"
-                               data-rp-date-format="d/m/Y">
+                               data-rp-wrapper="#datepickerWrapper2"
+                               data-rp-date-format="Y/m/d">
                     </div>
                     <!-- End Datepicker -->
                   </td>

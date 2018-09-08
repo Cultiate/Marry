@@ -97,3 +97,175 @@
     <!-- End Copyright -->
   </footer>
   <!-- ========== END FOOTER ========== -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- typed.github -->
+  <script src="https://cdn.rawgit.com/mattboldt/typed.js/master/lib/typed.min.js"></script>
+
+  <script src="../../assets/application.js"></script>
+
+
+  <!-- JS Global Compulsory -->
+  <script src="../../assets/jquery.min.js"></script>
+  <script src="../../assets/jquery-migrate.min.js"></script>
+  <script src="../../assets/popper.min.js"></script>
+  <script src="../../assets/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+
+  <script src="../../assets/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../../assets/jquery.validate.min.js"></script>
+  <script src="../../assets/jquery.fancybox.min.js"></script>
+  <script src="../../assets/typed.min.js"></script>
+  <script src="../../assets/slick.js"></script>
+
+  <script src="../../assets/dzsparallaxer.js"></script>
+  <script src="../../assets/gmaps.min.js"></script>
+
+  <script src="../../assets/summernote-bs4.min.js"></script>
+  <script src="../../assets/bootstrap-tagsinput.min.js"></script>
+  <script src="../../assets/flatpickr.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../../assets/hs.core.js"></script>
+  <script src="../../assets/hs.megamenu.js"></script>
+
+  <script src="../../assets/helpers/hs.focus-state.js"></script>
+
+  <script src="../../assets/components/hs.header.js"></script>
+  <script src="../../assets/components/hs.unfold.js"></script>
+  <script src="../../assets/components/hs.malihu-scrollbar.js"></script>
+  <script src="../../assets/components/hs.validation.js"></script>
+  <script src="../../assets/components/hs.fancybox.js"></script>
+  <script src="../../assets/components/hs.slick-carousel.js"></script>
+  <script src="../../assets/components/hs.show-animation.js"></script>
+  <script src="../../assets/components/hs.go-to.js"></script>
+
+  <script src="../../assets/components/hs.selectpicker.js"></script>
+
+  <script src="../../assets/components/hs.summernote-editor.js"></script>
+  <script src="../../assets/components/hs.range-datepicker.js"></script>
+
+  <script src="../../assets/components/hs.chart-pie.js"></script>
+  <script src="../../assets/components/hs.progress-bar.js"></script>
+
+  <script src="../../assets/helpers/hs.bg-video.js"></script>
+  <script src="../../assets/helpers/hs.focus-state.js"></script>
+  <script src="../../assets/helpers/hs.hamburgers-new.js"></script>
+  <script src="../../assets/helpers/hs.hamburgers.js"></script>
+
+
+　
+  <!-- JS Plugins Init. -->
+  <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767,
+        hideTimeOut: 0
+      });
+
+
+    // initialization of HSMegaMenu component
+      $('.js-breadcrumb-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991,
+        hideTimeOut: 0
+      });
+    });
+
+
+    $(document).on('ready', function () {
+      // initialization of text editors
+      $.HSCore.components.HSSummernoteEditor.init('.js-summernote-editor');
+
+      // initialization of select picker
+      $.HSCore.components.HSSelectPicker.init('.js-select');
+
+      // initialization of range datepicker
+      $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of fancybox
+      $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of forms
+      $.HSCore.helpers.HSFocusState.init();
+
+
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#password'
+          }
+        }
+      });
+
+
+
+      // initialization of text animation (typing)
+      var typed = new Typed(".u-text-animation.u-text-animation--typing", {
+        strings: ["more professional.", "perfect in every way.", "astonishing."],
+        typeSpeed: 60,
+        loop: true,
+        backSpeed: 25,
+        backDelay: 1500
+      });
+
+      // initialization of slick carousel
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+      // initialization of chart pies
+      var items = $.HSCore.components.HSChartPie.init('.js-pie');
+
+      // initialization of horizontal progress bars
+      var horizontalProgressBars = $.HSCore.components.HSProgressBar.init('.js-hr-progress', {
+        direction: 'horizontal',
+        indicatorSelector: '.js-hr-progress-bar'
+      });
+
+      var verticalProgressBars = $.HSCore.components.HSProgressBar.init('.js-vr-progress', {
+        direction: 'vertical',
+        indicatorSelector: '.js-vr-progress-bar'
+      });
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+
+    // initialization of google map
+    function initMap() {
+      $.HSCore.components.HSGMap.init('.js-g-map');
+      $.HSCore.components.HSGMap.init('#gMapMultipleMarkers', {
+        infoWindowTemplate: function (imgsrc, imgalt, date, locationname, title) {
+          return '<div class="u-gmap-v1__info">' +
+            '<img class="img-fluid mb-2" src="' + imgsrc + '" alt="' + imgalt + '">' +
+            '<small class="d-block text-muted mb-2">' + date + '</small>' +
+            '<h4 class="h6 mb-0">' + title + '</h4>' +
+            '<p class="mb-0">' + locationname + '</p>' +
+            '</div>';
+        }
+      });
+    }
+  </script>

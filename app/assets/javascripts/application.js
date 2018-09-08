@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //
+//= require jquery.min.js
 //= require jquery-migrate.min.js
 //= require popper.min.js
-//= require jquery.min.js
+//= require popper.js
 //= require bootstrap-sprockets
 //= require bootstrap.min.js
 //= require hs.core.js
@@ -67,7 +68,6 @@
 //= require dzsparallaxer.js
 //= require slick.js
 //= require typed.min.js
-//= require rails-ujs
 //= require turbolinks
 //= require autonumeric
 //= require_tree .
