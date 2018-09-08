@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //
+//= require jquery-migrate.min.js
+//= require popper.min.js
+//= require jquery.min.js
 //= require bootstrap-sprockets
 //= require bootstrap.min.js
 //= require hs.core.js
@@ -41,14 +44,16 @@
 //= require components/hs.validation.js
 //= require components/hs.video-player.js
 
+//= require helpers/hs.bg-video.js
+//= require helpers/hs.focus-state.js
+//= require helpers/hs.hamburgers-new.js
+//= require helpers/hs.hamburgers.js
 
-//= require hs.megamenu.js
+
 //= require front.min.js
-//= require jquery.min.js
+//= require hs.megamenu.js
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require jquery.min.js
-//= require jquery-migrate.min.js
 //= require jquery.fancybox.min.js
 //= require jquery.validate.min.js
 //= require jquery.mCustomScrollbar.concat.min.js
@@ -58,8 +63,6 @@
 //= require flatpickr.min.js
 
 
-//= require popper
-//= require popper.min.js
 //= require gmaps.min.js
 //= require dzsparallaxer.js
 //= require slick.js

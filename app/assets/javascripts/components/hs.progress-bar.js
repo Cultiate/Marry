@@ -1,7 +1,7 @@
 /**
  * Progress Bar wrapper.
- * 
- * @author Htmlstream 
+ *
+ * @author Htmlstream
  * @version 1.0
  * @requires appear.js (v1.0.3)
  *
@@ -12,8 +12,8 @@
 	$.HSCore.components.HSProgressBar = {
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @var Object _baseConfig
 		 */
 		_baseConfig : {
@@ -36,15 +36,15 @@
 		},
 
 		/**
-		 * 
-		 * 
+		 *
+		 *
 		 * @var jQuery _pageCollection
 		 */
 		_pageCollection : $(),
 
 		/**
 		 * Initialization of Progress Bar wrapper.
-		 * 
+		 *
 		 * @param String selector (optional)
 		 * @param Object config (optional)
 		 *
@@ -62,7 +62,7 @@
 		},
 
 		/**
-		 * 
+		 *
 		 * Initialization of each Progress Bar of the page.
 		 *
 		 * @return undefined
@@ -123,7 +123,7 @@
 
 		/**
 		 * Constructor Function of Horizontal Progress Bar
-		 * 
+		 *
 		 * @param jQuery element
 		 * @param Object config
 		 *
@@ -160,7 +160,7 @@
 			}
 			else {
 				this.element.data(
-					'value', 
+					'value',
 					this.indicator.length ? Math.round( this.indicator.outerWidth() / this.element.outerWidth() * 100 ) : 0
 				);
 				this.indicator.css('width', '0%');
@@ -170,7 +170,7 @@
 
 		/**
 		 * Constructor Function of Vertical Progress Bar
-		 * 
+		 *
 		 * @param jQuery element
 		 * @param Object config
 		 *
@@ -197,7 +197,7 @@
 
 			/**
 			 * Sets new value of the Progress Bar.
-			 * 
+			 *
 			 * @param Number value
 			 *
 			 * @return undefined
@@ -276,11 +276,11 @@
 			};
 
 			/**
-			 * 
-			 * 
-			 * @param 
 			 *
-			 * @return 
+			 *
+			 * @param
+			 *
+			 * @return
 			 */
 			this.HorizontalProgressBar.prototype.moveSubElement = function(value, duration) {
 
@@ -296,7 +296,7 @@
 
 		/**
 		 * Extends VerticalProgressBars.
-		 * 
+		 *
 		 *
 		 * @return undefined
 		 */
@@ -304,7 +304,7 @@
 
 			/**
 			 * Sets new value of the Progress Bar.
-			 * 
+			 *
 			 * @param Number value
 			 *
 			 * @return undefined
@@ -314,7 +314,7 @@
 				this.indicator.stop().animate({
 					height: value + '%'
 				});
-				
+
 			}
 
 		},
@@ -322,7 +322,7 @@
 
 		/**
 		 * Returns full collection of all initialized progress bars.
-		 * 
+		 *
 		 *
 		 * @return jQuery _pageCollection
 		 */
@@ -334,7 +334,7 @@
 
 		/**
 		 * Returns API of the progress bar by index in collection.
-		 * 
+		 *
 		 * @param Number index
 		 *
 		 * @return HorizontalProgressBar | VerticalProgressBar
@@ -347,7 +347,7 @@
 
 		}
 
-		
+
 	};
 
 })(jQuery);

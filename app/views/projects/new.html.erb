@@ -54,7 +54,7 @@
                   </td>
                   <td class="p-3">
                       <!-- Datepicker -->
-                      <%= f.text_field :end_date, class: "js-summernote-editor", placeholder: "2018-01-01" %>
+                      <%= f.text_field :end_date, class: " ", placeholder: "2018-01-01" %>
                     <!-- End Datepicker -->
                   </td>
                 </tr>
@@ -62,7 +62,6 @@
                   <td class="u-bg-light-blue-50 text-center p-3">本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
-                      <div class="js-summernote-editor" data-height="160"></div>
                       <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
                     </div>
                   </td>
@@ -74,8 +73,7 @@
                   </td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
-                      <div class="js-summernote-editor" data-height="160"></div>
-                      <%= f.check_box :display, class:"js-summernote-editor w-100" %>
+                      <%= f.check_box :display, class:"w-100" %>
                     </div>
                   </td>
                 </tr>
@@ -93,20 +91,20 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"js-summernote-editor" %>
+                    <%= f.text_field :return_title_1, placeholder: "タイトル", class:"" %>
                   </td>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"" %>円
                   </td>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
-                      <div class="js-summernote-editor" data-height="160"></div>
+                      <div class=" " data-height="160"></div>
                       <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
                   </td>
@@ -146,20 +144,20 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">リターンタイトル<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_title_2, placeholder: "タイトル", class:"js-summernote-editor" %>
+                    <%= f.text_field :return_title_2, placeholder: "タイトル", class:" " %>
                   </td>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:"js-summernote-editor" %>円
+                    <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:" " %>円
                   </td>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
-                      <div class="js-summernote-editor" data-height="160"></div>
+                      <div class=" " data-height="160"></div>
                       <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
                   </td>
