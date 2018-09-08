@@ -22,7 +22,6 @@ body {
 main {
   position: relative;
   overflow: hidden;
-  margin-top: 100px;
 }
 
 p {
@@ -72,7 +71,7 @@ header {
 ------------------------------------*/
 .firstview::before{
 	/* 透過した黒を重ねる */
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(255,255,255,0.3);
 	/* どの範囲に重ねるかを指定 */
 	position: absolute;
 	top: 0;
@@ -94,6 +93,7 @@ header {
 .firstview {
   background-image: url("../bg/wedding-bg1.png");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /*------------------------------------

@@ -17,8 +17,10 @@
           <div class="col-sm-12 mb-7">
             <!-- News Classic -->
             <article>
-              <div class="mb-5">
-                <%= image_tag @project.main_image.url, class:"img-fluid rounded pr-8" ,style:"" %>
+              <div class="image_attach mb-5">
+                  <%= f.hidden_field :main_image_id, id: "thumb", data: { draggable: true } %>
+                  <%= f.hidden_field :main_image_pos %>
+                      <%= image_tag @project.main_image.url, class:"img-fluid rounded pr-8", style: "top: #{@project.main_image_pos}%" %>
               </div>
               <small class="d-block text-secondary mb-1">日時</small>
               <h2 class="h5">
