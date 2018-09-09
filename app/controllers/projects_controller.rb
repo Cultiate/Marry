@@ -49,6 +49,9 @@ class ProjectsController < ApplicationController
   end
 
   def celebrate
+    @project = Project.find_by(id: params[:id])
+    remaining_days
+    celebraters_info
   end
 
   private
