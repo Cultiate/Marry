@@ -27,7 +27,6 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 
-gem 'autonumeric-rails'
 gem 'faker'
 # trioming photo
 

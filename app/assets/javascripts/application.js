@@ -69,5 +69,4 @@
 //= require slick.js
 //= require typed.min.js
 //= require turbolinks
-//= require autonumeric
 //= require_tree .
