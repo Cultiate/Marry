@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
     @celebrater = Celebrater.new(user_id: current_user.id, project_id: params[:project_id], return_id: params[:return_id], return_price: params[:return_price])
     @project = Project.find_by(id: params[:project_id])
     if @celebrater.save
-      redirect_to project_path(@project)
+      redirect_to project_celebrate_url(@project, return_id: params[:return_id])
     else
       redirect_to root_url
     end
@@ -54,7 +54,11 @@ class ProjectsController < ApplicationController
     celebraters_info
   end
 
-  def confirm
+  def project_confirm
+    @project = Project.find_by(id: params[:id])
+  end
+
+  def return_confirm
     @project = Project.find_by(id: params[:id])
     remaining_days
     celebraters_info
@@ -64,7 +68,7 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
   end
 
-  def create_confirm
+  def confirm
     @project = Project.find_by(id: params[:id])
   end
 

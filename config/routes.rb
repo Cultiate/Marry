@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   resources :projects
 
   post "/projects/follow" => "projects#follow_project"
-  get "/projects/:id/celebrate" => "projects#celebrate"
-  get "/projects/:id/confirm" => "projects#confirm"
-  get "/projects/:id/thanks" => "projects#thanks"
-  get "/projects/:id/create_confirm" => "projects#create_confirm"
+  get "/projects/:id/confirm" => "projects#project_confirm", as: "project_confirm"
+  get "/projects/:id/celebrate/:return_id" => "projects#celebrate", as: "project_celebrate"
+  get "/projects/:id/thanks/:return_id" => "projects#thanks", as: "project_thanks"
+  get "/projects/:id/confirm/:return_id" => "projects#return_confirm", as: "return_confirm"
 
 end

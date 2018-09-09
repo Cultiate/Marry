@@ -58,8 +58,7 @@
                   </td>
                 </tr>
               </table>
-              <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover" style="margin:20px 45%;">
-                <a href="/projects/2/thanks" style="color:white;">完了ページへ</a></button>
+              <%= link_to "確認ページへ", project_thanks_path(@project, return_id: params[:return_id]) %>
             </div>
 
             <div id="stickyBlockStartPoint" class="col-lg-3">

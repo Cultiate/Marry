@@ -345,8 +345,7 @@
                   </div>
                 </div>
                 <!-- End Content Section -->
-                <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover nav-link" style="margin:20px 45%;">
-                  <a href="/projects/2/confirm" style="color:white;">確認ページへ</a></button>
+                <%= link_to "確認ページへ", return_confirm_path(@project, return_id: params[:return_id]) %>
               </div>
               <!-- End News Classic -->
             </div>
@@ -417,7 +416,7 @@
                      data-client-id="60648b9247324e87a4d7ab3aa7a58f6c"
                      data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce"
                      data-limit="4"
-                     data-template='<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>'>
+                     data-template="<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>">
 
                 </div>
                 <!-- End Instafeed -->
