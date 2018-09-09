@@ -53,7 +53,7 @@
                     <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
                   </td>
                   <td class="p-3">
-                      <%= f.text_field :end_date, class: " ", placeholder: "2018-01-01" %>
+                      <%= f.text_field :end_date, class: "", placeholder: "2018-01-01" %>
                       <!-- Datepicker -->
                       <div id="datepickerWrapper" class="u-datepicker input-group u-form">
                         <div class="input-group-prepend u-form__prepend">
@@ -107,7 +107,7 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_price_1, placeholder: "例)3,000", data: { autonumeric: true }, class:"" %>円
+                    <%= f.text_field :return_price_1, placeholder: "例) 3,000", data: { autonumeric: true }, class:"" %>円
                   </td>
                 </tr>
                 <tr>

@@ -15,8 +15,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @celebrate_datas = Celebrater.where(user_id: params[:id]).order("created_at desc")
-    # @celebrate_projects = Project.where().order("created_at desc")
-    # @celebrate_projects = Celebrater.where(user_id: params[:id]).order("created_at desc")
   end
 
   def create
