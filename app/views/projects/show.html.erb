@@ -20,11 +20,8 @@
               <div class="image_attach mb-5">
                 <%= image_tag @project.main_image.url, class:"img-fluid rounded pr-8" %>
               </div>
-              <small class="d-block text-secondary mb-1">日時</small>
-              <h2 class="h5">
-                <a href="single-article-classic.html">キャッチコピー</a>
-              </h2>
-              <p>想い</p>
+              <h2 class="h5"><%= @project.title %></h2>
+              <p><%= @project.user_name %></p>
             </article>
             <!-- End News Classic -->
           </div>

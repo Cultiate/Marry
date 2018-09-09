@@ -54,6 +54,20 @@ class ProjectsController < ApplicationController
     celebraters_info
   end
 
+  def confirm
+    @project = Project.find_by(id: params[:id])
+    remaining_days
+    celebraters_info
+  end
+
+  def thanks
+    @project = Project.find_by(id: params[:id])
+  end
+
+  def create_confirm
+    @project = Project.find_by(id: params[:id])
+  end
+
   private
 
   def project_params

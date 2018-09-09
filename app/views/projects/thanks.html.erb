@@ -1,0 +1,164 @@
+<body>
+  <!-- Skippy -->
+  <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
+    <div class="container">
+      <span class="u-skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- End Skippy -->
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Blog Classic Section -->
+    <div class="p-3">
+
+      <div id="thanks" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane">
+          <h1>Marry meをご利用頂き、ありがとうございました！！</h1>
+          <div class="col-lg-12 mb-9 mb-lg-0 mr-5">
+            <div class="row mb-9" style="border:1px solid orange; padding: 5%;">
+              <small class="text-right w-100" style="right:-5%; top:-50%;">このリターンを選択中</small>
+              <!-- Title -->
+              <div class="w-md-70 w-lg-60">
+                <div class="col-sm-12 mb-7">
+                  <!-- News Classic -->
+                  <article>
+                    <div class="mb-5">
+                      <h1>1,000円以上</h1>
+                    </div>
+                    <p class="d-block text-secondary mb-1">キャッチコピーor感謝のメッセージ</p>
+                    <div class="row" style=" ">
+                      <div class="col-sm-5" style="font-size: 80%;">
+                        <span class="fa fa-user"></span>
+                        メンバー：100人
+                      </div>
+                      <div class="col-sm-7" style="font-size: 80%;">
+                        <span class="fa fa-truck"></span>
+                          お届け予定：2019年12月
+                      </div>
+                    </div>
+                  </article>
+                  <!-- End News Classic -->
+                </div>
+              </div>
+              <div class="w-md-30 w-lg-40">
+                <div class="bg-warning mt-5 p-3">
+                  <h3 style="color:white;">1000円のリターン</h3>
+                </div>
+              </div>
+            </div>
+            <!-- End Title -->
+          </div>
+
+        </div>
+      <!-- thanks end -->
+
+      <!-- End Blog Classic Section -->
+    </div>
+
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fa fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="../../assets/vendor/instafeed.js/instafeed.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../../assets/js/hs.core.js"></script>
+  <script src="../../assets/js/components/hs.header.js"></script>
+  <script src="../../assets/js/components/hs.unfold.js"></script>
+  <script src="../../assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="../../assets/js/components/hs.validation.js"></script>
+  <script src="../../assets/js/helpers/hs.focus-state.js"></script>
+  <script src="../../assets/js/components/hs.show-animation.js"></script>
+  <script src="../../assets/js/components/hs.sticky-block.js"></script>
+  <script src="../../assets/js/components/hs.instagram.js"></script>
+  <script src="../../assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767,
+        hideTimeOut: 0
+      });
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#password'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.helpers.HSFocusState.init();
+
+      // initialization of sticky blocks
+      setTimeout(function () {
+        $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
+      }, 300);
+
+      // initialization of instagram api
+      $.HSCore.components.HSInstagram.init('#instaFeed', {
+        resolution: 'standard_resolution',
+        after: function () {
+          // initialization of masonry.js
+          var $grid = $('.js-instagram').masonry({
+            percentPosition: true
+          });
+
+          // initialization of images loaded
+          $grid.imagesLoaded().progress(function () {
+            $grid.masonry();
+          });
+        }
+      });
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>

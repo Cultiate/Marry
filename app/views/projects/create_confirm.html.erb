@@ -12,23 +12,11 @@
   <main id="content" role="main" class="pb-9">
     <%= render 'shared/error_messages', model: @project %>
     <div class="p-3 mb-9">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a href="#project" class="nav-link active" data-toggle="tab">プロジェクトページ</a>
-        </li>
-        <li class="nav-item">
-          <a href="#return" class="nav-link" data-toggle="tab">リターン</a>
-        </li>
-        <li class="nav-item">
-          <a href="#profile" class="nav-link" data-toggle="tab">本人確認</a>
-        </li>
-      </ul>
-
-
-      <div class="tab-content">
-        <div id="project" class="tab-pane active">
+      <h2 class="w-100 mt-5" style="text-align:center;">確認ページ</h2>
+      <div class="tab-pane active">
           <div class="container u-space-2">
             <div class="row">
+              <h2 class="w-100">プロジェクト</h2>
               <table border="1">
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">
@@ -91,9 +79,7 @@
             </div>
           </div>
         </div>
-
-
-        <div id="return" class="tab-pane">
+      <div class="tab-pane">
           <div class="container u-space-2">
             <div class="row">
               <h2 class="w-100">リターン１</h2>
@@ -198,14 +184,14 @@
             </div>
           </div>
         </div>
-        <div id="profile" class="tab-pane">
+      <div class="tab-pane">
           <div class="container u-space-2">
             <div class="row">
+              <h2 class="w-100">本人確認</h2>
 
             </div>
           </div>
         </div>
-      </div>
       <!-- Buttons -->
       <div class="container">
         <%= f.submit "作成する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover" %>

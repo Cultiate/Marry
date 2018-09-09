@@ -28,7 +28,12 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 
 gem 'faker'
-# trioming photo
+
+# 認証系
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

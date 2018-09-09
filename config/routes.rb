@@ -18,4 +18,8 @@ Rails.application.routes.draw do
 
   post "/projects/follow" => "projects#follow_project"
   get "/projects/:id/celebrate" => "projects#celebrate"
+  get "/projects/:id/confirm" => "projects#confirm"
+  get "/projects/:id/thanks" => "projects#thanks"
+  get "/projects/:id/create_confirm" => "projects#create_confirm"
+
 end

@@ -11,20 +11,8 @@
   <main id="content" role="main">
     <!-- Blog Classic Section -->
     <div class="p-3">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a href="#payment" class="nav-link active" data-toggle="tab">お支払い方法選択</a>
-        </li>
-        <li class="nav-item">
-          <a href="#confirm" class="nav-link" data-toggle="tab">内容確認</a>
-        </li>
-        <li class="nav-item">
-          <a href="#thanks" class="nav-link" data-toggle="tab">お祝い完了</a>
-        </li>
-      </ul>
 
-      <div class="tab-content">
-        <div id="payment" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane active">
+      <div id="payment" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane active">
           <div class="row">
             <div class="col-lg-8 mb-9 mb-lg-0 mr-5">
               <div class="row mb-9" style="border:1px solid orange; padding: 5%;">
@@ -341,19 +329,24 @@
                     <!-- Add Payment -->
                     <div class="row align-items-center　mt-9">
                       <div class="col-sm-12">
-                        <label>備考欄</label>
-                        <input>
+                        <label class="mt-5" style="border-bottom:1px solid black;">備考欄</label>
+                        <div class="u-summernote-editor">
+                          <div class="js-summernote-editor" data-height="160"></div>
+                        </div>
                       </div>
                       <div class="col-sm-12">
-                        <label>お祝いメッセージ</label>
-                        <input>
+                        <label class="mt-5" style="border-bottom:1px solid black;">お祝いコメント</label>
+                        <div class="u-summernote-editor">
+                          <div class="js-summernote-editor" data-height="160"></div>
+                        </div>
                       </div>
                     </div>
                     <!-- End Add Payment -->
                   </div>
                 </div>
                 <!-- End Content Section -->
-                <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover nav-link" data-toggle="tab" style="margin:20px 45%;"><a href="#confirm" style="color:white;">次へ</a></button>
+                <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover nav-link" style="margin:20px 45%;">
+                  <a href="/projects/2/confirm" style="color:white;">確認ページへ</a></button>
               </div>
               <!-- End News Classic -->
             </div>
@@ -433,179 +426,8 @@
           </div>
         </div>
 
-        <!-- payment end -->
+      <!-- payment end -->
 
-        <div id="confirm" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane">
-          <div class="row">
-            <div class="col-lg-8 mb-9 mb-lg-0 mr-5">
-              <h3><span class="fa fa-check-circle">内容を確認の上「完了」ボタンを押してください</span></h3>
-              <table border="1" class="w-100">
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">
-                    決済金額
-                  </td>
-                  <td class="p-3">
-                    1000円
-                  </td>
-                </tr>
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">
-                    リターン内容
-                  </td>
-                  <td class="p-3">
-                    透明なパンツ
-                  </td>
-                </tr>
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">
-                    備考欄
-                  </td>
-                  <td class="p-3">
-                      <!-- Datepicker -->
-                      当日は行きません
-                    <!-- End Datepicker -->
-                  </td>
-                </tr>
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">お祝いコメント</td>
-                    <td class="p-3">
-                    <div class="u-summernote-editor">
-                      <div class="js-summernote-editor" data-height="160"></div>
-                      おめでとうううううう
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">
-                    お支払い方法
-                  </td>
-                    <td class="p-3">
-                    <div class="u-summernote-editor">
-                      <div class="js-summernote-editor" data-height="160"></div>
-                      クレカ情報
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <button class="btn btn-sm btn-primary u-btn-primary transition-3d-hover" style="margin:20px 45%;"><a href="#thanks" style="color:white;">完了</a></button>
-            </div>
-
-            <div id="stickyBlockStartPoint" class="col-lg-3">
-              <!-- Sticky Block -->
-              <h5><span class="fa fa-check-square"></span>選択中のプロジェクト</h5>
-              <hr>
-              <!-- Projects -->
-              <div class="card mb-5">
-                <div class="card-body p-2">
-                  <div class="text-center">
-                    画像
-                    <!-- Title -->
-                    <div class="mb-4">
-                      <h3 class="h5 mb-1">プロジェクトタイトル</h3>
-                    </div>
-                    <!-- End Title -->
-
-                    <!-- List of Icons -->
-                    <div class="row justify-content-between align-items-center mb-3">
-                      <div class="col-6" style="margin:0 25%;">
-                        <a class="small text-secondary" href="#">
-                          <span class="fa fa-bookmark text-primary mr-1"></span>
-                          プロジェクト主催者名
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End List of Icons -->
-                    <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                      <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-footer text-center">
-                  <!-- Budget & Priority -->
-                  <div class="row align-items-center">
-                    <div class="col-4 u-ver-divider">
-                      <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                      <!--
-                      <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                    -->
-                      <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥100,000円</span>
-                    </div>
-                    <div class="col-4 u-ver-divider">
-                      <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
-                        100人
-                    </div>
-                      <!-- End Members List -->
-                    <div class="col-4">
-                      <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                      <span class="text-dark" style="　font-weight:bold;">100日</span>
-                    </div>
-                  </div>
-                  <!-- End Budget & Priority -->
-                </div>
-              </div>
-              <!-- End Projects -->
-
-                <hr class="my-7">
-
-
-                <!-- Instafeed -->
-                <div id="instaFeed" class="js-instagram row mx-gutters-2"
-                     data-user-id="4815936096"
-                     data-client-id="60648b9247324e87a4d7ab3aa7a58f6c"
-                     data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce"
-                     data-limit="4"
-                     data-template='<div class="col-3"><a href="{{link}}" target="_blank"><img class="img-fluid w-100 rounded" src="{{icon}}" /></a></div>'>
-
-                </div>
-                <!-- End Instafeed -->
-              <!-- End Sticky Block -->
-            </div>
-          </div>
-        </div>
-        <!-- confirm end -->
-
-        <div id="thanks" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane">
-          <h1>Marry meをご利用頂き、ありがとうございました！！</h1>
-          <div class="col-lg-12 mb-9 mb-lg-0 mr-5">
-            <div class="row mb-9" style="border:1px solid orange; padding: 5%;">
-              <small class="text-right w-100" style="right:-5%; top:-50%;">このリターンを選択中</small>
-              <!-- Title -->
-              <div class="w-md-70 w-lg-60">
-                <div class="col-sm-12 mb-7">
-                  <!-- News Classic -->
-                  <article>
-                    <div class="mb-5">
-                      <h1>1,000円以上</h1>
-                    </div>
-                    <p class="d-block text-secondary mb-1">キャッチコピーor感謝のメッセージ</p>
-                    <div class="row" style=" ">
-                      <div class="col-sm-5" style="font-size: 80%;">
-                        <span class="fa fa-user"></span>
-                        メンバー：100人
-                      </div>
-                      <div class="col-sm-7" style="font-size: 80%;">
-                        <span class="fa fa-truck"></span>
-                          お届け予定：2019年12月
-                      </div>
-                    </div>
-                  </article>
-                  <!-- End News Classic -->
-                </div>
-              </div>
-              <div class="w-md-30 w-lg-40">
-                <div class="bg-warning mt-5 p-3">
-                  <h3 style="color:white;">1000円のリターン</h3>
-                </div>
-              </div>
-            </div>
-            <!-- End Title -->
-          </div>
-
-        </div>
-        <!-- thanks end -->
-
-      </div>
       <!-- End Blog Classic Section -->
     </div>
 
