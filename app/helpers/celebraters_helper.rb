@@ -2,7 +2,7 @@ module CelebratersHelper
 
   def celebraters_info
     @celebraters = Celebrater.where(project_id: params[:id])
-    @celebraters_count = @celebraters.count
+    @celebraters_count = @celebraters.select(:user_id).distinct.count
     @total_celebraters_price = @celebraters.sum(:return_price)
     if @celebraters
       @celebraters

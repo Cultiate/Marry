@@ -386,7 +386,7 @@
                   <br>
                   <br>
                   <%= link_to user_path(current_user) do %>
-                    <span class="fa fa-user-circle u-btn--icon__inner font-size-32" style="font-size:200%; padding-left:4%;"></span>
+                    <%= image_tag current_user.user_image.url, class:"img-fluid rounded pr-8" %>
                   <% end %>
                 </a>
 
