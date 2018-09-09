@@ -129,7 +129,7 @@
             <%= render 'shared/error_messages', model: @user %>
               <div class="container u-space-2">
                 <div class="row">
-                  <table border="1"　class="" style="margin:0 15%;">
+                  <table border="1"　class="w-80" style="margin:0 10%;">
                     <tr>
                       <td class="u-bg-light-blue-50 text-center p-3">ユーザー名</td>
                       <td class="p-3">
@@ -145,28 +145,19 @@
                     <tr>
                       <td class="u-bg-light-blue-50 text-center p-3">メールアドレス<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                         <td class="p-3">
-                        <div class="u-summernote-editor">
-                          <div class="js-summernote-editor" data-height="160"></div>
                           <%= f.email_field :email, class:"form-control u-form__input" %>
-                        </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="u-bg-light-blue-50 text-center p-3">パスワード<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                         <td class="p-3">
-                        <div class="u-summernote-editor">
-                          <div class="js-summernote-editor" data-height="160"></div>
                           <%= f.password_field :password, class:"form-control u-form__input" %>
-                        </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="u-bg-light-blue-50 text-center p-3">パスワード(確認)<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                         <td class="p-3">
-                        <div class="u-summernote-editor">
-                          <div class="js-summernote-editor" data-height="160"></div>
                           <%= f.password_field :password_confirmation, class:"form-control u-form__input" %>
-                        </div>
                       </td>
                     </tr>
                   </table>
