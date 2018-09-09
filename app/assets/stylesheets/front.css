@@ -68,6 +68,30 @@ header {
 }
 
 /*------------------------------------
+  shadow
+------------------------------------*/
+@font-face {
+  font-family: myFonts;
+  src: url("sample-font.eot");/*For IE*/
+  src: url("sample-font.woff") format("woff"),/*For Modern browser*/
+  url("sample-font.ttf") format("truetype");/*For iOS Android*/
+}
+.myfonts {
+  font-family: myFonts;
+}
+
+/*------------------------------------
+  shadow
+------------------------------------*/
+.text {
+  color: #fff;
+  text-shadow: 1px 1px 0 #000,
+               -1px 1px 0 #000,
+               1px -1px 0 #000,
+               -1px -1px 0 #000;
+}
+
+/*------------------------------------
   amikake
 ------------------------------------*/
 .firstview::before{

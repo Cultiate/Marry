@@ -9,14 +9,14 @@
       <!-- projects -->
       <div class="container mb-9">
         <div class="row">
-          <h1 class="mb-5 pl-5 font-size-64" style="color:white; font-weight:bold;">人生最高の瞬間を、<br>最高の仲間とともに</h1>
+          <h1 class="mb-5 pl-5 font-size-64 text" style="color:white; font-weight:bold; font-family:'Nanum Gothic'; margin:0 auto;">人生最高の瞬間を、<br>最高の仲間とともに</h1>
         </div>
       </div>
       <!-- END projects -->
 
     </div>
     <!-- End firstview Section -->
-    <div class="container">
+    <div class="container" style="margin-top:40px;">
         <br>
         <div class="row justify-content-between align-items-center mb-4">
           <!-- Title -->
@@ -37,7 +37,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5" style="width:33% !important;">
+            <div class="card mb-5" style="max-width:33%;  margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
                   <%= image_tag project.main_image.url, class:"img-fluid rounded",style:"" %>
@@ -110,7 +110,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5">
+            <div class="card mb-5" style="max-width:33%; margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
                   <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
@@ -182,7 +182,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5">
+            <div class="card mb-5" style="max-width:33%; margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
                   <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
