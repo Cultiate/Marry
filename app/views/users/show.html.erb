@@ -1,13 +1,5 @@
 <% provide(:title, "マイページ") %>
 <body>
-  <!-- Skippy -->
-  <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
-    <div class="container">
-      <span class="u-skiplink-text">Skip to main content</span>
-    </div>
-  </a>
-  <!-- End Skippy -->
-
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
     <!-- Breadcrumb Section -->
@@ -44,7 +36,7 @@
             <div class="card p-1 mb-4">
               <div class="card-body text-center">
                 <div class="mb-3">
-                  <img class="u-xl-avatar rounded-circle" src="/projects_index/160img.jpg" alt="Image Description">
+                  <%= image_tag @user.user_image.url, class:"img-fluid rounded",style:"" %>
                 </div>
               </div>
             </div>
