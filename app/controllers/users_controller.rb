@@ -18,13 +18,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      log_in(@user)
+    if request.env['omniauth.auth'].present?
+      @user = User.from_omniauth(request.env['omniauth.auth'])
+      result = @user.save(context: :facebook_login)
+      fb = "Facebook"
       flash[:info] = "登録成功"
-      redirect_to user_path(current_user)
     else
-      render 'new'
+      @user = User.new(user_params)
+      @user.save
+      fb = ""
+    end
+
+    if result
+        log_in(@user)
+        flash[:success] = "#{fb}ログインしました。"
+        redirect_to user_path(@user)
+    else
+        if fb.present?
+            redirect_to root_path
+        else
+            render 'new'
+        end
     end
   end
 
@@ -41,7 +55,9 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:user_name, :email, :password, :password_confirmation, :user_image)
+      params.require(:user).permit(
+        :user_name, :email, :password, :password_confirmation, :user_image, :provider, :uid
+      )
     end
 
 end

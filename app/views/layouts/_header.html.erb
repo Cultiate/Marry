@@ -386,7 +386,7 @@
                   <br>
                   <br>
                   <%= link_to user_path(current_user) do %>
-                    <%= image_tag current_user.user_image.url, class:"img-fluid rounded pr-8" %>
+                    <%= image_tag current_user.user_image.url, class:"img-fluid rounded pr-8" unless current_user.user_image.blank? %>
                   <% end %>
                 </a>
 
