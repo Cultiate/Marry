@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new]
   get  "signup" => "users#new"
+  get '/auth/:provider/callback' =>'users#create', as: :auth_callback
   post  "signup" => "users#create"
 
   get "login" => "sessions#new"
@@ -22,5 +23,4 @@ Rails.application.routes.draw do
   get "/projects/:id/confirm/:return_id" => "projects#return_confirm", as: "return_confirm"
   get "/projects/:id/thanks/:return_id" => "projects#thanks", as: "project_thanks"
 
-  get '/auth/:provider/callback', to: 'users#create', as: :auth_callback
 end
