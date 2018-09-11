@@ -4,6 +4,11 @@ class UserImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_fit: [300, 300]
 
+
+  def default_url
+   "default.jpg"
+  end
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

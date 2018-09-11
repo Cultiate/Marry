@@ -41,6 +41,17 @@
           <div class="row">
             <div class="col-lg-3 mb-7 mb-lg-0">
               <!-- Profile Card -->
+              <div class="card p-1 mb-4">
+                <div class="card-body text-center">
+                  <div class="mb-3">
+                    <% if @user.user_image.blank? %>
+                      <img src="/default.jpg">
+                    <% else %>
+                      <%= image_tag @user.user_image.url, class:"img-fluid rounded",style:""%>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
               <!-- End Profile Card -->
 
               <!-- Contacts  -->

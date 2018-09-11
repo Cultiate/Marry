@@ -384,8 +384,14 @@
               <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="440px" data-position="right">
                 <a id="shopMegaMenu" class="" href="javascript:;" aria-haspopup="true" aria-expanded="false">
                   <%= link_to user_path(current_user) do %>
-                    <%= image_tag current_user.user_image.url, class:"img-fluid rounded pr-8" unless current_user.user_image.blank? %>
+                    <% if current_user.user_image.blank? %>
+                      <img src="/default.jpg" class="mt-2" style="height:83px; width:auto;">
+                    <% else %>
+                      <%= image_tag current_user.user_image.url, class:"img-fluid rounded",style:""%>
+                    <% end %>
                   <% end %>
+
+
                 </a>
 
                 <!-- Shop - Mega Menu -->
