@@ -7474,6 +7474,11 @@ button.bg-dark:focus {
 .h-65 {
   height: 65% !important;
 }
+.h-96px {
+  max-height: 96px !important;
+  width:50%;
+  top:0px;
+}
 
 .h-80 {
   height: 80% !important;
