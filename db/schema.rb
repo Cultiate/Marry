@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180907100538) do
+ActiveRecord::Schema.define(version: 20180910082218) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20180907100538) do
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.string "user_image"
+    t.string "provider"
+    t.string "uid"
   end
 
 end
