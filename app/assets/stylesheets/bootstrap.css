@@ -4895,7 +4895,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   border-radius: 0;
 }
-@media (min-width: 720px)　{
+@media (min-width: 720px) {
   .alert {
     position: relative;
     padding: 0.75rem 1.25rem;
