@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :user_name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
+  has_secure_password
   before_save :downcase_email
   has_many :projects
   mount_uploader :user_image, UserImageUploader
