@@ -36,7 +36,7 @@ class UsersController < ApplicationController
           redirect_to root_url
         else
           log_in(@user)
-          flash[:info] = "登録成功"
+          flash[:success] = "登録成功"
           redirect_to user_url(@user)
         end
     end

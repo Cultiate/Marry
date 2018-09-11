@@ -1,4 +1,4 @@
-<% provide(:title, 'メール認証') %>
+<% provide(:title, "新規登録") %>
     <%= form_for(@user, url: signup_path) do |f| %>
     <%= render 'shared/error_messages', model: @user %>
 <body>
@@ -181,8 +181,7 @@
                          data-success-class="u-has-success">
                   <label class="custom-control-label" for="termsCheckbox">
                     <small>
-                      I agree to the
-                      <a class="u-link-muted" href="../pages/terms.html">Terms and Conditions</a>
+                      <a class="u-link-muted" href="../pages/terms.html">利用規約に同意しました。</a>
                     </small>
                   </label>
                 </div>
