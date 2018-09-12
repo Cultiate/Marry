@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
     )
     @project = Project.find_by(id: params[:project_id])
     if @celebrater.save
-      redirect_to project_celebrate_url(@project, return_id: params[:return_id])
+      redirect_to project_thanks_url(@project, return_id: params[:return_id])
     else
       redirect_to root_url
     end
@@ -65,6 +65,7 @@ class ProjectsController < ApplicationController
 
   def return_confirm
     @project = Project.find_by(id: params[:id])
+    @return = Celebrater.find_by(project_id: params[:id], return_id: params[:return_id])
     remaining_days
     celebraters_info
   end
