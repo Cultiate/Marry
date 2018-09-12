@@ -70,6 +70,15 @@ header {
 /*------------------------------------
   shadow
 ------------------------------------*/
+.header-image {
+  height:83px;
+  width:auto;
+  border-radius:40px;
+}
+
+/*------------------------------------
+  shadow
+------------------------------------*/
 @font-face {
   font-family: myFonts;
   src: url("sample-font.eot");/*For IE*/

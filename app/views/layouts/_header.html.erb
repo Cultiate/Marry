@@ -385,9 +385,9 @@
                 <a id="shopMegaMenu" class="" href="javascript:;" aria-haspopup="true" aria-expanded="false">
                   <%= link_to user_path(current_user) do %>
                     <% if current_user.user_image.blank? %>
-                      <img src="/default.jpg" class="mt-2" style="height:83px; width:auto; border-radius:40px;">
+                      <img src="/default.jpg" class="mt-2 header-image">
                     <% else %>
-                      <%= image_tag current_user.user_image.url, class:"img-fluid rounded",style:""%>
+                      <%= image_tag current_user.user_image.url, class:"img-fluid rounded header-image" %>
                     <% end %>
                   <% end %>
 
