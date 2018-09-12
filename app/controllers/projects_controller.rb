@@ -65,7 +65,13 @@ class ProjectsController < ApplicationController
 
   def return_confirm
     @project = Project.find_by(id: params[:id])
-    @return = Celebrater.find_by(project_id: params[:id], return_id: params[:return_id])
+    if params[:return_id] == 1
+      project_return_price = @project.return_price_1
+    elsif params[:return_id] == 2
+      @project_return_price = @project.return_price_2
+    else params[:return_id] == 3
+      @project_return_price = @project.return_price_3
+    end
     remaining_days
     celebraters_info
   end
