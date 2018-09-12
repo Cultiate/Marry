@@ -45,9 +45,9 @@
                 <div class="card-body text-center">
                   <div class="mb-3">
                     <% if @user.user_image.blank? %>
-                      <img src="/default.jpg">
+                      <img src="/default.jpg" class="mh-250px">
                     <% else %>
-                      <%= image_tag @user.user_image.url, class:"img-fluid rounded",style:""%>
+                      <%= image_tag @user.user_image.url, class:"img-fluid rounded mh-250px",style:""%>
                     <% end %>
                   </div>
                 </div>

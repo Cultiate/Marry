@@ -37,9 +37,9 @@
               <div class="card-body text-center">
                 <div class="mb-3">
                   <% if @user.user_image.blank? %>
-                    <img src="/default.jpg">
+                    <img src="/default.jpg" class="mh-250px">
                   <% else %>
-                    <%= image_tag @user.user_image.url, class:"img-fluid rounded",style:""%>
+                    <%= image_tag @user.user_image.url, class:"img-fluid rounded mh-250px",style:""%>
                   <% end %>
                 </div>
               </div>
@@ -55,14 +55,6 @@
                 <a class="d-flex align-items-start mb-4 mt-4" href="#">
                   <div class="ml-2">
                     <p class="d-block text-dark font-size-13">支援・寄附したプロジェクト<span class="fa fa-angle-right pl-3" style=""></span></p>
-                  </div>
-                </a>
-                <!-- End User -->
-
-                <!-- User -->
-                <a class="d-flex align-items-start mb-4" href="#">
-                  <div class="ml-2">
-                    <p class="d-block text-dark font-size-13">購入履歴（ストア）<span class="fa fa-angle-right pl-9" style=""></span></p>
                   </div>
                 </a>
                 <!-- End User -->
