@@ -58,7 +58,7 @@
                   </td>
                 </tr>
               </table>
-              <%= link_to "確認ページへ", project_thanks_path(@project, return_id: params[:return_id]) %>
+              <%= button_to "支援する！", {action: "follow_project", id: params[:id]}, {method: :post, params: {project_id: params[:id], return_id: params[:return_id], return_price: @return.return_price, class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
             </div>
 
             <div id="stickyBlockStartPoint" class="col-lg-3">
