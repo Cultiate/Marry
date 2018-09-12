@@ -53,6 +53,7 @@
 
 //= require front.min.js
 //= require hs.megamenu.js
+//= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require jquery.fancybox.min.js
