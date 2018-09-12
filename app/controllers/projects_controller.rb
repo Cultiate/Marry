@@ -65,11 +65,19 @@ class ProjectsController < ApplicationController
 
   def return_confirm
     @project = Project.find_by(id: params[:id])
+<<<<<<< HEAD
     if params[:return_id] == 1
       project_return_price = @project.return_price_1
     elsif params[:return_id] == 2
       @project_return_price = @project.return_price_2
     else params[:return_id] == 3
+=======
+    if params[:return_id].to_i == 1
+      @project_return_price = @project.return_price_1
+    elsif params[:return_id].to_i == 2
+      @project_return_price = @project.return_price_2
+    else params[:return_id].to_i == 3
+>>>>>>> 8b979a4ae021bfc66e07220dff78625baff60d79
       @project_return_price = @project.return_price_3
     end
     remaining_days
