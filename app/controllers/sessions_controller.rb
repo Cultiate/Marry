@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
           else
             forget(@user)
           end
+          redirect_to @user
         else
           message  = "アカウントを有効化できませんでした。再度お送りしたリンクをご確認ください。"
           flash[:warning] = message
