@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
       @project_return_price = @project.return_price_1
     elsif params[:return_id].to_i == 2
       @project_return_price = @project.return_price_2
-    else params[:return_id].to_i == 3
+    elsif params[:return_id].to_i == 3
       @project_return_price = @project.return_price_3
     end
     remaining_days

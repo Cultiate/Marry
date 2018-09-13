@@ -23,4 +23,10 @@ Rails.application.routes.draw do
   get "/projects/:id/confirm/:return_id" => "projects#return_confirm", as: "return_confirm"
   get "/projects/:id/thanks/:return_id" => "projects#thanks", as: "project_thanks"
 
+  resources :account_activations, only: [:edit]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 end

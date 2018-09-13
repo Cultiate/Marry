@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     redirect_to root_url
@@ -20,25 +22,19 @@ class UsersController < ApplicationController
   def create
     if request.env['omniauth.auth'].present?
       @user = User.from_omniauth(request.env['omniauth.auth'])
-      result = @user.save(context: :facebook_login)
-      fb = "Facebook"
+      if @user.save
+        log_in(@user)
+        fb = "Facebook"
+        flash[:success] = "#{fb}ログインしました。"
+        redirect_to @user
+      end
     else
       @user = User.new(user_params)
-      @user.save
-    end
-
-    if result
-        log_in(@user)
-        flash[:success] = "#{fb}ログインしました。"
-        redirect_to user_url(@user)
-    else
-        if fb.present?
-          redirect_to root_url
-        else
-          log_in(@user)
-          flash[:success] = "登録成功"
-          redirect_to user_url(@user)
-        end
+      if @user.save
+        @user.send_activation_email
+        flash[:info] = "確認メールを送信しました。"
+        redirect_to root_url
+      end
     end
   end
 
@@ -50,6 +46,18 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "ログインしてください"
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
+    @user = User.find_by(id: params[:id])
+    redirect_to root_url unless @user == current_user
   end
 
   private

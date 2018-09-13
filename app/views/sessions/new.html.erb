@@ -150,6 +150,11 @@
                 <div class="js-focus-state input-group u-form">
                   <%= f.password_field :password, class:"form-control u-form__input" %>
                 </div>
+
+                  <%= f.label :remember_me do %>
+                    <%= f.check_box :remember_me %>
+                    <span>ログイン情報を記憶する</span>
+                  <% end %>
               </div>
               <!-- End Input -->
 
