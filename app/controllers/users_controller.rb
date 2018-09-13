@@ -23,6 +23,8 @@ class UsersController < ApplicationController
     if request.env['omniauth.auth'].present?
       @user = User.from_omniauth(request.env['omniauth.auth'])
       if @user.save
+        @user.update_attribute(:activated, true)
+        @user.update_attribute(:activated_at, Time.zone.now)
         log_in(@user)
         fb = "Facebook"
         flash[:success] = "#{fb}ログインしました。"
