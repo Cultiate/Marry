@@ -29,7 +29,7 @@
 
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
-            <% @projects.first(3).each do |project| %>
+            <% @projects.first(4).each do |project| %>
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
@@ -37,7 +37,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5" style="max-width:30%;  margin:auto;">
+            <div class="card mb-5" style="max-width:23%;  margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
                   <%= image_tag project.main_image.url, class:"img-fluid rounded",style:"" %>
