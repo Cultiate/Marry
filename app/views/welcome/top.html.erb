@@ -29,7 +29,7 @@
 
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
-            <% @projects.first(3).each do |project| %>
+            <% @projects.first(4).each do |project| %>
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
@@ -37,10 +37,10 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5" style="max-width:30%;  margin:auto;">
+            <div class="card mb-5" style="max-width:23%;  margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <%= image_tag project.main_image.url, class:"img-fluid rounded",style:"" %>
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px",style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
                     <h3 class="h5 mb-1"><%= project.title %></h3>
@@ -66,19 +66,19 @@
               <div class="card-footer text-center">
                 <!-- Budget & Priority -->
                 <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
+                  <div class="col-5 u-ver-divider" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
                     <!--
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
                   -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;"><%= @total_celebraters_price %>円</span>
                   </div>
-                  <div class="col-4 u-ver-divider">
+                  <div class="col-4 u-ver-divider" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
                       <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
-                  <div class="col-4">
+                  <div class="col-3" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
                     <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
                   </div>
@@ -102,7 +102,7 @@
 
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
-            <% @projects.first(3).each do |project| %>
+            <% @projects.first(4).each do |project| %>
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
@@ -110,10 +110,10 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5" style="max-width:30%; margin:auto;">
+            <div class="card mb-5" style="max-width:23%; margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
                     <h3 class="h5 mb-1"><%= project.title %></h3>
@@ -139,19 +139,19 @@
               <div class="card-footer text-center">
                 <!-- Budget & Priority -->
                 <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
+                  <div class="col-5 u-ver-divider" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
                     <!--
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
                   -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;"><%= @total_celebraters_price %>円</span>
                   </div>
-                  <div class="col-4 u-ver-divider">
+                  <div class="col-4 u-ver-divider" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
                       <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
-                  <div class="col-4">
+                  <div class="col-3" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
                     <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
                   </div>
@@ -174,7 +174,7 @@
 
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
-            <% @projects.last(3).reverse.each do |project| %>
+            <% @projects.last(4).reverse.each do |project| %>
               <% @celebraters = Celebrater.where(project_id: project.id)  %>
               <% @total_celebraters_price = @celebraters.sum(:return_price) %>
               <% @celebraters_count = @celebraters.count %>
@@ -182,10 +182,10 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-            <div class="card mb-5" style="max-width:30%; margin:auto;">
+            <div class="card mb-5" style="max-width:23%; margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
-                  <%= image_tag project.main_image.url, class:"img-fluid rounded" ,style:"" %>
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
                     <h3 class="h5 mb-1"><%= project.title %></h3>
@@ -211,19 +211,19 @@
               <div class="card-footer text-center">
                 <!-- Budget & Priority -->
                 <div class="row align-items-center">
-                  <div class="col-4 u-ver-divider">
+                  <div class="col-5 u-ver-divider" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
                     <!--
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
                   -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;"><%= @total_celebraters_price %>円</span>
                   </div>
-                  <div class="col-4 u-ver-divider">
+                  <div class="col-4 u-ver-divider" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
                       <%= @celebraters_count %>人
                   </div>
                     <!-- End Members List -->
-                  <div class="col-4">
+                  <div class="col-3" style="padding:0 10px;">
                     <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
                     <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
                   </div>
