@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root "welcome#top"
   get "about" => "welcome#about"
 
@@ -12,9 +16,6 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
-  # temporary
-  get "/sessions/recover" => "sessions#recover"
-
   resources :projects
 
   post "/projects/follow" => "projects#follow_project"
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   get "/projects/:id/thanks/:return_id" => "projects#thanks", as: "project_thanks"
 
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

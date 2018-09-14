@@ -1,0 +1,9 @@
+<% provide(:title, "パスワードを忘れた方はこちら") %>
+<main>
+  <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email %>
+
+    <%= f.submit "送信" %>
+  <% end %>
+</main>
