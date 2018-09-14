@@ -2,7 +2,7 @@
 <main>
   <%= form_for(:password_reset, url: password_resets_path) do |f| %>
     <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class: "form-control" %>
 
     <%= f.submit "送信" %>
   <% end %>
