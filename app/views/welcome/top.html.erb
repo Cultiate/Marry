@@ -37,6 +37,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
+            <%= link_to project_path(project) do %>
             <div class="card mb-5" style="max-width:23%;  margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
@@ -88,6 +89,7 @@
             </div>
             <% end %>
             <!-- End Projects -->
+            <% end %>
           </div>
         </div>
 
@@ -100,6 +102,7 @@
           <!-- End Title -->
         </div>
 
+
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
             <% @projects.first(4).each do |project| %>
@@ -110,6 +113,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
+            <%= link_to project_path(project) do %>
             <div class="card mb-5" style="max-width:23%; margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
@@ -161,6 +165,7 @@
             </div>
             <% end %>
             <!-- End Projects -->
+            <% end %>
           </div>
         </div>
 
@@ -182,6 +187,7 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
+            <%= link_to project_path(project) do %>
             <div class="card mb-5" style="max-width:23%; margin:auto;">
               <div class="card-body p-2">
                 <div class="text-center">
@@ -233,6 +239,7 @@
             </div>
             <% end %>
             <!-- End Projects -->
+            <% end %>
           </div>
         </div>
 

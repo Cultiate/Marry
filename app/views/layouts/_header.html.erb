@@ -282,7 +282,7 @@
               <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="440px" data-position="right">
                 <a id="shopMegaMenu" class="" href="javascript:;" aria-haspopup="true" aria-expanded="false">
                   <%= link_to user_path(current_user) do %>
-                    <% if current_user.user_image.blank? %>
+                    <% unless current_user.user_image %>
                       <img src="/default.jpg" class="mt-2 header-image">
                     <% else %>
                       <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"img-fluid rounded header-image" %>

@@ -36,10 +36,10 @@
             <div class="card p-1 mb-4">
               <div class="card-body text-center">
                 <div class="mb-3">
-                  <% if @user.user_image.blank? %>
-                    <img src="/default.jpg" class="mh-250px">
+                  <% unless @user.user_image %>
+                    <img src="/default.jpg" class="mt-2 header-image">
                   <% else %>
-                    <%= image_tag "http://graph.facebook.com/#{@user.uid}/picture?type=large", class:"img-fluid rounded mh-250px",style:""%>
+                    <%= image_tag "http://graph.facebook.com/#{@user.uid}/picture?type=large", class:"img-fluid rounded header-image" %>
                   <% end %>
                 </div>
               </div>
