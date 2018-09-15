@@ -18,7 +18,7 @@ class User < ApplicationRecord
     user.provider = auth.provider
     user.user_name  = auth.info.name
     user.email = auth.info.email
-    user.user_image  = auth.info.image
+    user.user_image  = URI.parse(auth.info.image)
     user.password = User.new_token
     user.password_confirmation = user.password
     user

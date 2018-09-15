@@ -184,7 +184,7 @@
               <!-- Button -->
               <div class="row align-items-center mb-5">
                 <div class="col-5 col-sm-6">
-                  <%= link_to "え、もうアカウント持ってんの？", "/login" %>
+                  <%= link_to "すでにアカウントをお持ちの方", "/login" %>
                 </div>
 
                 <div class="col-7 col-sm-6 text-right">
@@ -197,8 +197,10 @@
                   <%= link_to '/auth/facebook' do %>
                     <img src="/icon/facebook-login_button.png" class="mb-3">
                   <% end %>
-                  <img src="/icon/twitter-login_button.png" class="mb-3">
-                  <img src="/icon/google-login_button.png" class="mb-3">
+                    <img src="/icon/twitter-login_button.png" class="mb-3">
+                  <%= link_to '/auth/google_oauth2' do %>
+                    <img src="/icon/google-login_button.png" class="mb-3">
+                  <% end %>
                 </div>
               </div>
             <% end %>
