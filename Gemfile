@@ -7,7 +7,9 @@ end
 
 gem 'rails', '~> 5.1.6'
 gem 'bcrypt', '~> 3.1.11'
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+# 本番ではpostgressを使用する
+gem 'pg', group: :production
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
