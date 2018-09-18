@@ -7506,6 +7506,11 @@ button.bg-dark:focus {
   max-height: 250px !important;
 }
 
+.welcome-project {
+  max-width:23%;
+  margin:auto !important;
+}
+
 .m-0 {
   margin: 0 !important;
 }
