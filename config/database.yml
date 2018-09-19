@@ -20,12 +20,16 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+<<<<<<< HEAD
 
 #production:
 #  <<: *default
 #  database: db/production.sqlite3
 
   production:
+=======
+production:
+>>>>>>> 1f214a53896661420a96b01a1f29820de22331b2
  <<: *default
  adapter: postgresql
  encoding: unicode

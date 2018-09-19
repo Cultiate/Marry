@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
-
   root "welcome#top"
   get "about" => "welcome#about"
 
-  resources :users, except: [:new]
+  resources :users
   get  "signup" => "users#new"
   get '/auth/:provider/callback' =>'users#create', as: :auth_callback
   post  "signup" => "users#create"
