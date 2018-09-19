@@ -33,8 +33,10 @@ class UsersController < ApplicationController
     else
       @user = User.new(user_params)
       if @user.save
-        flash[:info] = "確認メールを送信しました。"
-        redirect_to root_url
+        @user.update_attribute(:activated, true)
+        @user.update_attribute(:activated_at, Time.zone.now)
+        log_in(@user)
+        redirect_to @user
       end
     end
   end
