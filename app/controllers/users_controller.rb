@@ -33,16 +33,15 @@ class UsersController < ApplicationController
     else
       @user = User.new(user_params)
       if @user.save
-        @user.update_attribute(:activated, true)
-        @user.update_attribute(:activated_at, Time.zone.now)
-        log_in(@user)
-        redirect_to @user
+        @user.send_activation_email
+        flash[:info] = "確認メールを送信しました。"
+        redirect_to root_url
       end
     end
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "プロフィールが更新されました。"
       redirect_to @user
@@ -53,7 +52,7 @@ class UsersController < ApplicationController
 
   def logged_in_user
     unless logged_in?
-      flash[:danger] = "ログインしてください。"
+      flash[:danger] = "ログインしてください"
       redirect_to login_url
     end
   end

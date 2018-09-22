@@ -129,7 +129,7 @@
                     <%= image_tag @project.return_image_1.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                   <div class="media-body">
                     <h4 class="h6 font-weight-normal mb-0">
-                      <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 1), method: "get", class: "btn btn-block btn-warning u-btn-primary mb-3" %>
+                      <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 1), method: "get", class: "btn btn-block btn-warning u-btn-primary mb-3", data: { disable_with: "選択中" } %>
                         <br>
                         <%= @project.return_content_1 %>
                       </p>
@@ -165,7 +165,7 @@
                     <%= image_tag @project.return_image_2.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                   <div class="media-body">
                     <h4 class="h6 font-weight-normal mb-0">
-                      <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 2), method: "get", class: "btn btn-block btn-warning u-btn-primary mb-3" %>
+                      <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 2), method: "get", class: "btn btn-block btn-warning u-btn-primary mb-3", data: { disable_with: "選択中" } %>
                       <p>
                         商品説明
                         <br>
@@ -203,7 +203,7 @@
                     <%= image_tag @project.return_image_3.url, class:"mb-5" ,style:"width: 80%; margin:0 10%; display: block;" %>
                   <div class="media-body">
                     <h4 class="h6 font-weight-normal mb-0">
-                      <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 3), method: "get", class: "btn btn-block btn-warning u-btn-primary mb-3" %>
+                      <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 3), method: "get", class: "btn btn-block btn-warning u-btn-primary mb-3", data: { disable_with: "選択中" } %>
                       <p>
                         商品説明
                         <br>
