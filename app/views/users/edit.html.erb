@@ -44,10 +44,12 @@
               <div class="card p-1 mb-4">
                 <div class="card-body text-center">
                   <div class="mb-3">
-                    <% if @user.user_image.blank? %>
-                      <img src="/default.jpg" class="mh-250px">
+                    <% if current_user.user_image.url == "default.jpg" && current_user.provider == nil %>
+                      <%= image_tag "/default.jpg", class:"mt-2 header-image" %>
+                    <% elsif current_user.provider == "facebook"%>
+                      <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"img-fluid rounded header-image" %>
                     <% else %>
-                      <%= image_tag @user.user_image.url, class:"img-fluid rounded mh-250px",style:""%>
+                      <%= image_tag current_user.user_image.url %>
                     <% end %>
                   </div>
                 </div>
