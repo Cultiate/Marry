@@ -70,7 +70,8 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
                     <div class="u-summernote-editor">
                       <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
@@ -106,7 +107,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
+                  <td class="u-bg-light-blue-50 text-center p-3">価格<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :return_price_1, placeholder: "例) 3,000", class:" u-form__input" %>円
                   </td>
@@ -144,11 +145,6 @@
                 </tr>
               </table>
 
-              <div class="container ">
-                <%= f.submit "保存する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover mb-9 mt-9" %>
-                <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
-              </div>
-
               <h2 class="w-100">リターン２</h2>
               <table border="1">
                 <tr>
@@ -158,7 +154,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">値段<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
+                  <td class="u-bg-light-blue-50 text-center p-3">価格<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
                     <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:" " %>円
                   </td>
@@ -196,16 +192,71 @@
                   </td>
                 </tr>
               </table>
+              <div class="container ">
+                <%= f.submit "保存する", class:"btn btn-sm btn-primary u-btn-primary transition-3d-hover mb-9 mt-9" %>
+                <button type="submit" class="btn btn-sm u-btn-secondary--air transition-3d-hover">Cancel</button>
+              </div>
             </div>
           </div>
         </div>
+
+        <%= fields_for(@user, url: projects_path) do |ff| %>
         <div id="profile" class="tab-pane">
           <div class="container u-space-2">
             <div class="row">
-
+              <table border="1">
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    名前
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
+                  <td class="p-3">
+                    <%= ff.text_field :name, placeholder: "姓名", class:"form-control u-form__input" %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    郵便番号
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
+                  <td class="p-3">
+                    <%= ff.text_field :postcode, placeholder: "1234567", class:"form-control u-form__input" %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    都道府県
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
+                  <td class="p-3">
+                    <%= ff.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, placeholder: "1234567", class:"form-control u-form__input" %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    住所
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
+                  <td class="p-3">
+                    <%= ff.text_field :address, placeholder: "◯◯区△△町 ◯-◯-◯ △△タワー ◯◯号室", class:"form-control u-form__input" %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3">
+                    電話番号
+                    <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                  </td>
+                  <td class="p-3">
+                    <%= ff.text_field :phonenumber, placeholder: "09012345678", class:"form-control u-form__input" %>
+                  </td>
+                </tr>
+                <% end %>
+              </table>
             </div>
           </div>
+
         </div>
+
       </div>
       <!-- Buttons -->
       <div class="container">

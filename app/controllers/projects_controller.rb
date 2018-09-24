@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @user = User.new
   end
 
   def edit
@@ -17,6 +18,9 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.new(project_params)
     @project.user_name = current_user.user_name
+    @user = current_user
+    @user.assign_attributes(user_params)
+    @user.save(validate: false)
     if @project.save
       flash[:success] = "プロジェクトが作成されました。"
       redirect_to project_url(@project)
@@ -29,7 +33,7 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
     if @project.update_attributes(project_params)
       flash[:success] = "プロジェクトが更新されました"
-      redirect_to project_path(@project)
+      redirect_to project_url(@project)
     else
       render 'edit'
     end
@@ -95,4 +99,11 @@ class ProjectsController < ApplicationController
     )
   end
 
+  def user_params
+    params.require(:user).permit(
+      :user_name, :email, :password, :password_confirmation,
+      :user_image, :provider, :uid,
+      :name, :postcode, :prefecture_code, :address, :phonenumber
+    )
+  end
 end

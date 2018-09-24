@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180914032222) do
+ActiveRecord::Schema.define(version: 20180924101750) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 20180914032222) do
     t.string "uid"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "name"
+    t.string "postcode"
+    t.integer "prefecture_code"
+    t.string "address"
+    t.string "phonenumber"
   end
 
 end
