@@ -58,20 +58,20 @@ svg {
 ------------------------------------*/
 ::-moz-selection {
   color: #fff;
-  background-color: #377dff;
+  background-color: #e67b80;
 }
 
 ::selection {
   color: #fff;
-  background-color: #377dff;
+  background-color: #e67b80;
 }
 
 .bg-primary ::-moz-selection {
-  color: #377dff;
+  color: #e67b80;
   background-color: #fff;
 }
 
 .bg-primary ::selection {
-  color: #377dff;
+  color: #e67b80;
   background-color: #fff;
 }

@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20180914032222) do
   end
 
   create_table "celebraters", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "project_id"
-    t.integer "return_id"
-    t.integer "return_price"
+    t.string "user_id"
+    t.string "project_id"
+    t.string "return_id"
+    t.string "return_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
