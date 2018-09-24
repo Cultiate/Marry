@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
+  include JpPrefecture
+  jp_prefecture :prefecture_code
   before_create :create_activation_digest
   before_save :downcase_email
   validates :user_name, presence: true, length: { maximum: 50 }
