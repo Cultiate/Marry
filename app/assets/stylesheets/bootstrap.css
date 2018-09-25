@@ -4379,7 +4379,7 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid #e7eaf3;
+  border: 1px solid #e67b80;
   border-radius: 0.25rem;
 }
 
@@ -4429,7 +4429,7 @@ input[type="button"].btn-block {
   padding: 1rem 1rem;
   margin-bottom: 0;
   background-color: #fff;
-  border-bottom: 1px solid #e7eaf3;
+  border-bottom: 1px solid #e67b80;
 }
 
 .card-header:first-child {
@@ -4441,9 +4441,9 @@ input[type="button"].btn-block {
 }
 
 .card-footer {
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   background-color: #fff;
-  border-top: 1px solid #e7eaf3;
+  border-top: 1px solid #e67b80;
 }
 
 .card-footer:last-child {
