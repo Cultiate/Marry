@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --subpink:#ec9498;
   --main:#e67b80;
   --blue: #377dff;
   --indigo: #6610f2;
@@ -3888,11 +3889,11 @@ input[type="button"].btn-block {
 }
 
 .nav-link.disabled {
-  color: #8c98a4;
+  color: #828286;
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #e7eaf3;
+  border-bottom: 1px solid #e67b80;
 }
 
 .nav-tabs .nav-item {
@@ -3910,16 +3911,23 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #8c98a4;
+  color: #828286;
   background-color: transparent;
   border-color: transparent;
 }
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #5a5f69;
-  background-color: #fff;
-  border-color: #e7eaf3 #e7eaf3 #fff;
+  color: white;
+  background-color: #e67b80;
+  border-color: #e67b80;
+}
+/**** custom ****/
+.nav-tabs .nav-item.active,
+.nav-tabs .nav-item.show .nav-link{
+  color: white;
+  background-color: #ec9498;
+  border-color: #ec9498;
 }
 
 .nav-tabs .dropdown-menu {
@@ -9732,6 +9740,10 @@ button.bg-dark:focus {
 
 .text-white {
   color: #fff !important;
+}
+
+.text-def {
+  color: #77838f !important;
 }
 
 .text-primary {

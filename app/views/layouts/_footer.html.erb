@@ -4,9 +4,9 @@
     <!-- Lists -->
     <div class="container u-space-2">
       <div class="row justify-content-md-between">
-        <div class="col-sm-4 col-lg-3 mb-4 mb-lg-0">
+        <div class="col-sm-4 mb-4 mb-lg-0">
           <h3 class="h6">
-            <strong>About</strong>
+            <strong class="text-primary font-size-20">About</strong>
           </h3>
 
           <!-- List -->
@@ -21,9 +21,9 @@
           <!-- End List -->
         </div>
 
-        <div class="col-sm-4 col-lg-3 mb-4 mb-lg-0">
+        <div class="col-sm-4 mb-4 mb-lg-0">
           <h3 class="h6">
-            <strong>Services</strong>
+            <strong class="text-primary font-size-20">Services</strong>
           </h3>
 
           <!-- List -->
@@ -34,14 +34,14 @@
           <!-- End List -->
         </div>
 
-        <div class="col-sm-4 col-lg-3 mb-4 mb-lg-0">
+        <div class="col-sm-4 mb-4 mb-lg-0">
           <h3 class="h6">
-            <strong>Account</strong>
+            <strong class="text-primary font-size-20">Account</strong>
           </h3>
 
           <!-- List -->
           <ul class="list-unstyled mb-0">
-            <li><%= link_to "ログアウト", logout_path, method: "delete", class:"nav-link u-list__link py-2 px-0" %></li>
+            <li><%= link_to "ログアウト", logout_path, method: "delete", class:"u-list__link py-2 px-0" %></li>
             <li><%= link_to "マイページ", "#", class:"u-list__link" %></a></li>
             <li><%= link_to "プロフィール編集", "#", class:"u-list__link" %></a></li>
             <li><%= link_to "パスワード設定", "#", class:"u-list__link" %></a></li>
@@ -50,35 +50,38 @@
           </ul>
           <!-- End List -->
         </div>
+      </div>
 
-        <div class="col-md-6 col-lg-3">
-          <h3 class="h6 mb-4">
-            <strong>繋がろうよ</strong>
-          </h3>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
-                <%= image_tag "/icon/facebook-icon.png" %>
+        <div class="col-6 mt-5" style="margin:auto;">
+          <ul class="list-unstyled mb-0 row">
+            <li class="col-2">
+              <%= link_to "#", class:"", target: "_blank" do %>
+                <%= image_tag "/icon/facebook.png" %>
               <% end %>
             </li>
-            <li>
-              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
-                <%= image_tag "/icon/twitter-icon.png" %>
+            <li class="col-1">
+            </li>
+            <li class="col-2">
+              <%= link_to "#", class:"", target: "_blank" do %>
+                <%= image_tag "/icon/twitter.png" %>
               <% end %>
             </li>
-            <li>
-              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
-                <%= image_tag "/icon/instagram-icon.png" %>
+            <li class="col-1">
+            </li>
+            <li class="col-2">
+              <%= link_to "#", class:"", target: "_blank" do %>
+                <%= image_tag "/icon/instagram.png" %>
               <% end %>
             </li>
-            <li>
-              <%= link_to "#", class:"u-list__link", target: "_blank" do %>
-                <%= image_tag "/icon/line-icon.png" %>
+            <li class="col-1">
+            </li>
+            <li class="col-2">
+              <%= link_to "#", class:"", target: "_blank" do %>
+                <%= image_tag "/icon/line.png" %>
               <% end %>
             </li>
           </ul>
         </div>
-      </div>
     </div>
     <!-- End Lists -->
 
