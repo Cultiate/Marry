@@ -74,16 +74,16 @@
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
 
             <!-- Projects -->
-              <%= link_to project_path(project) do %>
-              <div class="card mb-5 welcome-project">
-                <div class="card-body p-2">
-                  <div class="text-center">
-                    <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px",style:"" %>
-                    <!-- Title -->
-                    <div class="mb-4">
-                      <h3 class="h5 mb-1"><%= project.title %></h3>
-                    </div>
-                    <!-- End Title -->
+            <%= link_to project_path(project) do %>
+            <div class="card mb-5 welcome-project">
+              <div class="card-body pb-2">
+                <div class="text-center">
+                  <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px",style:"" %>
+                  <!-- Title -->
+                  <div class="mb-4">
+                    <h3 class="h5 mb-1" style="color:#828286;"><%= project.title %></h3>
+                  </div>
+                  <!-- End Title -->
 
                     <!-- List of Icons -->
                     <div class="row justify-content-between align-items-center mb-3">
@@ -152,12 +152,12 @@
             <!-- Projects -->
             <%= link_to project_path(project) do %>
             <div class="card mb-5" style="max-width:23%; margin:auto;">
-              <div class="card-body p-2">
+              <div class="card-body pb-2">
                 <div class="text-center">
                   <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1"><%= project.title %></h3>
+                    <h3 class="h5 mb-1" style="color:#828286;"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 
@@ -226,12 +226,12 @@
             <!-- Projects -->
             <%= link_to project_path(project) do %>
             <div class="card mb-5" style="max-width:23%; margin:auto;">
-              <div class="card-body p-2">
+              <div class="card-body pb-2">
                 <div class="text-center">
                   <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1"><%= project.title %></h3>
+                    <h3 class="h5 mb-1" style="color:#828286;"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 

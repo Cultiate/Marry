@@ -2,200 +2,315 @@
 <body>
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
-    <!-- Breadcrumb Section -->
-    <div class="bg-primary">
-      <div class="container u-space-1">
-        <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-          <div class="mb-3 mb-sm-0">
-            <!-- Breadcrumb -->
-            <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
-              <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Profile</li>
-            </ol>
-            <!-- End Breadcrumb -->
-          </div>
-
-          <!-- Edit Profile -->
-          <div class="btn btn-sm u-btn-white--air transition-3d-hover">
-            <%= link_to "プロフィール編集", edit_user_path(current_user), class:"fa fa-user-cog font-size-13 mr-2" %>
-          </div>
-          <!-- End Edit Profile -->
-        </div>
-
-      </div>
-    </div>
-    <!-- End Breadcrumb Section -->
-
+    <ul class="nav nav-tabs">
+      <li class="nav-item active">
+        <a href="#profile" class="nav-link" data-toggle="tab">プロフィール</a>
+      </li>
+      <li class="nav-item">
+        <a href="#message" class="nav-link" data-toggle="tab">メッセージ</a>
+      </li>
+    </ul>
     <!-- Content Section -->
-    <div class="u-bg-light-blue-50">
-      <div class="container u-space-2">
-        <div class="row">
-          <div class="col-lg-3 mb-7 mb-lg-0">
-            <!-- Profile Card -->
-            <div class="card p-1 mb-4">
-              <div class="card-body text-center">
-                <div class="mb-3">
-                  <% if current_user.user_image.url == "default.jpg" && current_user.provider == nil %>
-                    <%= image_tag "/default.jpg", class:"mt-2 header-image" %>
-                  <% elsif current_user.provider == "facebook"%>
-                    <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"img-fluid rounded header-image" %>
-                  <% else %>
-                    <%= image_tag current_user.user_image.url %>
-                  <% end %>
-                </div>
+    <div class="tab-content">
+      <div id="profile" class="tab-pane active">
+        <div class="container u-space-2">
+          <div class="row profile mb-4" style="border-bottom:1px solid #e67b80;">
+            <div class="col-sm-4 text-center">
+              <div class="">
+                <% if current_user.user_image.url == "default.jpg" && current_user.provider == nil %>
+                  <%= image_tag "/default.jpg", class:"mt-2 rounded-image" %>
+                <% elsif current_user.provider == "facebook"%>
+                  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"img-fluid rounded header-image" %>
+                <% else %>
+                  <%= image_tag current_user.user_image.url %>
+                <% end %>
               </div>
             </div>
-            <!-- End Profile Card -->
-
-            <!-- Contacts  -->
-            <div class="card p-1 mb-4">
-              <div class="card-body">
-                <h4 class="h6 mb-0"><span class="fa fa-users min-width-6 text-center text-secondary mr-2"></span>支援・寄附・購入</h4>
-                <hr>
-                <!-- User -->
-                <a class="d-flex align-items-start mb-4 mt-4" href="#">
-                  <div class="ml-2">
-                    <p class="d-block text-dark font-size-13">支援・寄附したプロジェクト<span class="fa fa-angle-right pl-3" style=""></span></p>
-                  </div>
-                </a>
-                <!-- End User -->
-
-                <!-- User -->
-                <a class="d-flex align-items-start" href="#">
-                  <div class="ml-2">
-                    <p class="d-block text-dark font-size-13">メッセージ<span class="fa fa-angle-right pl-9 ml-8" style=""></span></p>
-                  </div>
-                </a>
-                <!-- End User -->
+            <div class="col-sm-8">
+              <div class="align-middle mt-5 mb-7"　style="">
+                <h1 class=""><%= @user.user_name %></h1>
+                <h3>ID：<%= @user.id %></h3>
+                <h3>メールアドレス：<%= @user.email %></h3>
               </div>
             </div>
-            <!-- End Contacts  -->
-
-
-            <!-- Social Profiles -->
-            <div class="card p-1 mb-4">
-              <div class="card-body">
-                <h4 class="h6 mb-0">アカウント情報</h4>
-
-                <hr>
-
-                <!-- Social Profiles -->
-                <a class="d-flex mb-4" href="#">
-                  <div>
-                    <p class="d-block text-dark">プロフィール編集<span class="fa fa-angle-right pl-7" style=""></span></p>
-                  </div>
-                </a>
-                <!-- End Social Profiles -->
-
-                <!-- Social Profiles -->
-                <a class="d-flex mb-4" href="#">
-                  <div>
-                    <p class="d-block text-dark">メール通知設定<span class="fa fa-angle-right pl-9" style=""></span></p>
-                  </div>
-                </a>
-                <!-- End Social Profiles -->
-              </div>
-            </div>
-            <!-- End Social Profiles -->
           </div>
 
-          <div class="col-lg-9">
-            <!-- User Details -->
-            <div class="mb-4">
-              <h2 class="h4"><%= @user.user_name %></h2>
-              <%= @user.email %>
-              <!--
-              <h4 class="h6 text-secondary mb-0">London, UK <small>- Joined in July 2017</small></h4>
-            -->
+          <div class="row">
+            <div class="col-lg-3 mb-7 mb-lg-0">
+              <ul class="nav nav-tabs" style="border-bottom:none;">
+                <!-- Profile Card -->
+                <div class="card mb-4 w-100">
+                  <h4 class="text-primary text-center my-1">プロジェクト情報</h4>
+                </div>
+                <!-- End Profile Card -->
+                <li class="nav-item w-100 mb-2 active">
+                  <a href="#enjoy" class="nav-link" data-toggle="tab">投稿したプロジェクト</a>
+                </li>
+                <li class="nav-item w-100 mb-2">
+                  <a href="#celebrate" class="nav-link" data-toggle="tab">支援したプロジェクト</a>
+                </li>
+                <li class="nav-item w-100 mb-2">
+                  <a href="#favorite" class="nav-link" data-toggle="tab">お気に入り</a>
+                </li>
+                <!-- Profile Card -->
+                <div class="card mb-4 w-100">
+                  <h4 class="text-primary text-center my-1">アカウント情報</h4>
+                </div>
+                <!-- End Profile Card -->
+                <li class="nav-item w-100 mb-2">
+                  <a href="#edit-profile" class="nav-link" data-toggle="tab">プロフィール設定</a>
+                </li>
+                <li class="nav-item w-100 mb-2">
+                  <a href="#mail" class="nav-link" data-toggle="tab">メール通知設定</a>
+                </li>
+              </ul>
             </div>
-            <!-- End User Details -->
 
-            <!-- Info -->
-            <div class="mb-4">
-            </div>
-            <!-- End Info -->
+            <div class="col-lg-9">
+              <!-- Content Section -->
+              <div class="tab-content">
+                <div id="enjoy" class="tab-pane active">
+                  <div class="row justify-content-between align-items-center mb-4">
+                    <!-- Title -->
+                    <div class="mb-3 ml-4">
+                      <h4 class="h4 mb-0">投稿したプロジェクト</h4>
+                    </div>
+                    <!-- End Title -->
+                  </div>
 
-            <hr class="my-7">
+                  <div class="mb-7">
+                    <div class="card-deck d-block d-md-flex">
+                      <% @celebrate_datas.each do |celebrate_data| %>
+                        <% @project = Project.find_by(id: celebrate_data.project_id) %>
+                        <% @celebraters = Celebrater.where(project_id: @project.id)  %>
+                        <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+                        <% @celebraters_count = @celebraters.count %>
+                        <% today = Date.today %>
+                        <% @remaining_days = ((@project.end_date - today).to_i - 1) %>
+                      <!-- Projects -->
+                      <div class="card mb-5" style="max-width:30% !important; min-width:25% !important;">
+                        <div class="card-body p-2">
+                          <div class="text-center">
+                            <%= image_tag @project.main_image.url, class:"img-fluid rounded",style:"" %>
+                            <!-- Title -->
+                            <div class="mb-4">
+                              <h3 class="h5 mb-1"><%= @project.title %></h3>
+                            </div>
+                            <!-- End Title -->
 
-            <div class="row justify-content-between align-items-center mb-4">
-              <!-- Title -->
-              <div id="reviews" class="mb-3 ml-4">
-                <h3 class="h4 mb-0">支援したプロジェクト</h3>
-              </div>
-              <!-- End Title -->
-            </div>
+                            <!-- List of Icons -->
+                            <div class="row justify-content-between align-items-center mb-3">
+                              <div class="col-6" style="margin:0 25%;">
+                                <a class="small text-secondary" href="#">
+                                  <span class="fa fa-bookmark text-primary mr-1"></span>
+                                  <%= @project.user_name %>
+                                </a>
+                              </div>
+                            </div>
+                            <!-- End List of Icons -->
+                            <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+                              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
+                            </div>
+                          </div>
+                        </div>
 
-            <div class="mb-7">
-              <div class="card-deck d-block d-md-flex">
-                <% @celebrate_datas.each do |celebrate_data| %>
-                  <% @project = Project.find_by(id: celebrate_data.project_id) %>
-                  <% @celebraters = Celebrater.where(project_id: @project.id)  %>
-                  <% @total_celebraters_price = @celebraters.sum(:return_price) %>
-                  <% @celebraters_count = @celebraters.count %>
-                  <% today = Date.today %>
-                  <% @remaining_days = ((@project.end_date - today).to_i - 1) %>
-                <!-- Projects -->
-                <div class="card mb-5" style="max-width:30% !important; min-width:25% !important;">
-                  <div class="card-body p-2">
-                    <div class="text-center">
-                      <%= image_tag @project.main_image.url, class:"img-fluid rounded",style:"" %>
-                      <!-- Title -->
-                      <div class="mb-4">
-                        <h3 class="h5 mb-1"><%= @project.title %></h3>
-                      </div>
-                      <!-- End Title -->
-
-                      <!-- List of Icons -->
-                      <div class="row justify-content-between align-items-center mb-3">
-                        <div class="col-6" style="margin:0 25%;">
-                          <a class="small text-secondary" href="#">
-                            <span class="fa fa-bookmark text-primary mr-1"></span>
-                            <%= @project.user_name %>
-                          </a>
+                        <div class="card-footer text-center">
+                          <!-- Budget & Priority -->
+                          <div class="row align-items-center">
+                            <div class="col-4 u-ver-divider">
+                              <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
+                              <!--
+                              <span class="fa fa-arrow-up text-warning font-size-13"></span>
+                            -->
+                              <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                            </div>
+                            <div class="col-4 u-ver-divider">
+                              <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                                <%= @celebraters_count %>人
+                            </div>
+                              <!-- End Members List -->
+                            <div class="col-4">
+                              <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
+                              <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
+                            </div>
+                          </div>
+                          <!-- End Budget & Priority -->
                         </div>
                       </div>
-                      <!-- End List of Icons -->
-                      <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                        <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                      </div>
+                      <% end %>
+                      <!-- End Projects -->
                     </div>
+                  </div>
+                </div>
+                <div id="celebrate" class="tab-pane">
+                  <div class="row justify-content-between align-items-center mb-4">
+                    <!-- Title -->
+                    <div class="mb-3 ml-4">
+                      <h4 class="h4 mb-0">支援したプロジェクト</h4>
+                    </div>
+                    <!-- End Title -->
                   </div>
 
-                  <div class="card-footer text-center">
-                    <!-- Budget & Priority -->
-                    <div class="row align-items-center">
-                      <div class="col-4 u-ver-divider">
-                        <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                        <!--
-                        <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                      -->
-                        <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                  <div class="mb-7">
+                    <div class="card-deck d-block d-md-flex">
+                      <% @celebrate_datas.each do |celebrate_data| %>
+                        <% @project = Project.find_by(id: celebrate_data.project_id) %>
+                        <% @celebraters = Celebrater.where(project_id: @project.id)  %>
+                        <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+                        <% @celebraters_count = @celebraters.count %>
+                        <% today = Date.today %>
+                        <% @remaining_days = ((@project.end_date - today).to_i - 1) %>
+                      <!-- Projects -->
+                      <div class="card mb-5" style="max-width:30% !important; min-width:25% !important;">
+                        <div class="card-body p-2">
+                          <div class="text-center">
+                            <%= image_tag @project.main_image.url, class:"img-fluid rounded",style:"" %>
+                            <!-- Title -->
+                            <div class="mb-4">
+                              <h3 class="h5 mb-1"><%= @project.title %></h3>
+                            </div>
+                            <!-- End Title -->
+
+                            <!-- List of Icons -->
+                            <div class="row justify-content-between align-items-center mb-3">
+                              <div class="col-6" style="margin:0 25%;">
+                                <a class="small text-secondary" href="#">
+                                  <span class="fa fa-bookmark text-primary mr-1"></span>
+                                  <%= @project.user_name %>
+                                </a>
+                              </div>
+                            </div>
+                            <!-- End List of Icons -->
+                            <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+                              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card-footer text-center">
+                          <!-- Budget & Priority -->
+                          <div class="row align-items-center">
+                            <div class="col-4 u-ver-divider">
+                              <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
+                              <!--
+                              <span class="fa fa-arrow-up text-warning font-size-13"></span>
+                            -->
+                              <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                            </div>
+                            <div class="col-4 u-ver-divider">
+                              <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                                <%= @celebraters_count %>人
+                            </div>
+                              <!-- End Members List -->
+                            <div class="col-4">
+                              <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
+                              <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
+                            </div>
+                          </div>
+                          <!-- End Budget & Priority -->
+                        </div>
                       </div>
-                      <div class="col-4 u-ver-divider">
-                        <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
-                          <%= @celebraters_count %>人
-                      </div>
-                        <!-- End Members List -->
-                      <div class="col-4">
-                        <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                        <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
-                      </div>
+                      <% end %>
+                      <!-- End Projects -->
                     </div>
-                    <!-- End Budget & Priority -->
                   </div>
                 </div>
-                <% end %>
+                <div id="favorite" class="tab-pane">
+                  <div class="row justify-content-between align-items-center mb-4">
+                    <!-- Title -->
+                    <div class="mb-3 ml-4">
+                      <h4 class="h4 mb-0">お気に入りしたプロジェクト</h4>
+                    </div>
+                    <!-- End Title -->
+                  </div>
+
+                  <div class="mb-7">
+                    <div class="card-deck d-block d-md-flex">
+                      <% @celebrate_datas.each do |celebrate_data| %>
+                        <% @project = Project.find_by(id: celebrate_data.project_id) %>
+                        <% @celebraters = Celebrater.where(project_id: @project.id)  %>
+                        <% @total_celebraters_price = @celebraters.sum(:return_price) %>
+                        <% @celebraters_count = @celebraters.count %>
+                        <% today = Date.today %>
+                        <% @remaining_days = ((@project.end_date - today).to_i - 1) %>
+                      <!-- Projects -->
+                      <div class="card mb-5" style="max-width:30% !important; min-width:25% !important;">
+                        <div class="card-body p-2">
+                          <div class="text-center">
+                            <%= image_tag @project.main_image.url, class:"img-fluid rounded",style:"" %>
+                            <!-- Title -->
+                            <div class="mb-4">
+                              <h3 class="h5 mb-1"><%= @project.title %></h3>
+                            </div>
+                            <!-- End Title -->
+
+                            <!-- List of Icons -->
+                            <div class="row justify-content-between align-items-center mb-3">
+                              <div class="col-6" style="margin:0 25%;">
+                                <a class="small text-secondary" href="#">
+                                  <span class="fa fa-bookmark text-primary mr-1"></span>
+                                  <%= @project.user_name %>
+                                </a>
+                              </div>
+                            </div>
+                            <!-- End List of Icons -->
+                            <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+                              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card-footer text-center">
+                          <!-- Budget & Priority -->
+                          <div class="row align-items-center">
+                            <div class="col-4 u-ver-divider">
+                              <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
+                              <!--
+                              <span class="fa fa-arrow-up text-warning font-size-13"></span>
+                            -->
+                              <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;">￥<%= @total_celebraters_price %>円</span>
+                            </div>
+                            <div class="col-4 u-ver-divider">
+                              <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                                <%= @celebraters_count %>人
+                            </div>
+                              <!-- End Members List -->
+                            <div class="col-4">
+                              <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
+                              <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
+                            </div>
+                          </div>
+                          <!-- End Budget & Priority -->
+                        </div>
+                      </div>
+                      <% end %>
+                      <!-- End Projects -->
+                    </div>
                   </div>
                 </div>
-                <!-- End Projects -->
+                <div id="edit-profile" class="tab-pane">
+                  <div class="container u-space-2">
+                    <div class="row profile mb-4" style="">
+                      プロフィール設定してね〜
+                    </div>
+                  </div>
+                </div>
+                <div id="mail" class="tab-pane">
+                  <div class="container u-space-2">
+                    <div class="row profile mb-4" style="">
+                      メール設定してね〜
+                    </div>
+                  </div>
+                </div>
               </div>
+              <!-- End Reviews -->
             </div>
-
-            <hr class="my-7">
-
-            </div>
-            <!-- End Reviews -->
+          </div>
+        </div>
+      </div>
+      <div id="message" class="tab-pane">
+        <div class="container u-space-2">
+          <div class="row profile mb-4" style="border-bottom:1px solid #e67b80;">
           </div>
         </div>
       </div>
