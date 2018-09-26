@@ -85,46 +85,46 @@
                   </div>
                   <!-- End Title -->
 
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-3">
-                    <div class="col-6" style="margin:0 25%;">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                        <%= project.user_name %>
-                      </a>
+                    <!-- List of Icons -->
+                    <div class="row justify-content-between align-items-center mb-3">
+                      <div class="col-6" style="margin:0 25%;">
+                        <a class="small text-secondary" href="#">
+                          <span class="fa fa-bookmark text-primary mr-1"></span>
+                          <%= project.user_name %>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End List of Icons -->
+                    <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+                      <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
                     </div>
                   </div>
-                  <!-- End List of Icons -->
-                  <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
-                    <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">80%</span></div>
-                  </div>
                 </div>
-              </div>
 
-              <div class="card-footer text-center">
-                <!-- Budget & Priority -->
-                <div class="row align-items-center">
-                  <div class="col-5 u-ver-divider" style="padding:0 10px;">
-                    <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
-                    <!--
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                  -->
-                    <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;"><%= @total_celebraters_price %>円</span>
+                <div class="card-footer text-center">
+                  <!-- Budget & Priority -->
+                  <div class="row align-items-center">
+                    <div class="col-5 u-ver-divider" style="padding:0 10px;">
+                      <h5 class="small font-weight-normal text-secondary mb-0" style="font-size:0.6rem;">現在</h5>
+                      <!--
+                      <span class="fa fa-arrow-up text-warning font-size-13"></span>
+                    -->
+                      <span class="text-dark" style="font-size:0.8rem;　font-weight:bold;"><%= @total_celebraters_price %>円</span>
+                    </div>
+                    <div class="col-4 u-ver-divider" style="padding:0 10px;">
+                      <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
+                        <%= @celebraters_count %>人
+                    </div>
+                      <!-- End Members List -->
+                    <div class="col-3" style="padding:0 10px;">
+                      <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
+                      <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
+                    </div>
                   </div>
-                  <div class="col-4 u-ver-divider" style="padding:0 10px;">
-                    <h5 class="small font-weight-normal text-secondary mb-0">ご祝儀人</h5>
-                      <%= @celebraters_count %>人
-                  </div>
-                    <!-- End Members List -->
-                  <div class="col-3" style="padding:0 10px;">
-                    <h5 class="small font-weight-normal text-secondary mb-0">残り</h5>
-                    <span class="text-dark" style="　font-weight:bold;"><%= @remaining_days %>日</span>
-                  </div>
+                  <!-- End Budget & Priority -->
                 </div>
-                <!-- End Budget & Priority -->
               </div>
-            </div>
-            <% end %>
+              <% end %>
             <!-- End Projects -->
             <% end %>
           </div>
@@ -287,13 +287,7 @@
       <!-- projects -->
       <div class="container" style="">
         <div class="row w-60" style="margin:auto;">
-          <!-- Input -->
-            <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--no-brd">
-              <input type="search" class="form-control u-form__input bg-search" placeholder="Search Marry" aria-label="Search Front">
-              <div class="input-group-append">
-                <button type="button" class="btn btn-primary u-btn-primary">検索</button>
-              </div>
-            </form>
+            <!-- </form> -->
             <!-- End Input -->
             <h2 class="mt-2 mincho text-white d-block font-size-48" style="margin:auto;">More marry search</h2>
         </div>
@@ -305,6 +299,10 @@
     </div>
     <!-- End Content Section -->
 
+    <%= search_form_for(@search, url:search_path) do |f| %>
+      <%= f.search_field :title_cont %>
+      <%= f.submit "検索" %>
+    <% end %>
 
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
