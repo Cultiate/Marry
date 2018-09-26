@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   before_action :set_search
-
   def top
     @projects = Project.all.order("created_at desc")
   end

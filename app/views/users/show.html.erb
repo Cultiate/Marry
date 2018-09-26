@@ -80,21 +80,20 @@
 
                   <div class="mb-7">
                     <div class="card-deck d-block d-md-flex">
-                      <% @celebrate_datas.each do |celebrate_data| %>
-                        <% @project = Project.find_by(id: celebrate_data.project_id) %>
-                        <% @celebraters = Celebrater.where(project_id: @project.id)  %>
+                      <% @create_projects.each do |project| %>
+                        <% @celebraters = Celebrater.where(project_id: project.id)  %>
                         <% @total_celebraters_price = @celebraters.sum(:return_price) %>
                         <% @celebraters_count = @celebraters.count %>
                         <% today = Date.today %>
-                        <% @remaining_days = ((@project.end_date - today).to_i - 1) %>
+                        <% @remaining_days = ((project.end_date - today).to_i - 1) %>
                       <!-- Projects -->
                       <div class="card mb-5" style="max-width:30% !important; min-width:25% !important;">
                         <div class="card-body p-2">
                           <div class="text-center">
-                            <%= image_tag @project.main_image.url, class:"img-fluid rounded",style:"" %>
+                            <%= image_tag project.main_image.url, class:"img-fluid rounded",style:"" %>
                             <!-- Title -->
                             <div class="mb-4">
-                              <h3 class="h5 mb-1"><%= @project.title %></h3>
+                              <h3 class="h5 mb-1"><%= project.title %></h3>
                             </div>
                             <!-- End Title -->
 
@@ -103,7 +102,7 @@
                               <div class="col-6" style="margin:0 25%;">
                                 <a class="small text-secondary" href="#">
                                   <span class="fa fa-bookmark text-primary mr-1"></span>
-                                  <%= @project.user_name %>
+                                  <%= project.user_name %>
                                 </a>
                               </div>
                             </div>
