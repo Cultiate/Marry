@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "welcome#top"
   get "about" => "welcome#about"
+  get "search" => "welcome#index"
 
   resources :users
   get  "signup" => "users#new"
