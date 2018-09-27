@@ -18,6 +18,24 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @celebrate_datas = Celebrater.where(user_id: params[:id]).order("created_at desc")
     @create_projects = Project.where(user_id: params[:id]).order("created_at desc")
+    @currentUserEntry= Entry.where(user_id: current_user.id)
+    @userEntry= Entry.where(user_id: @user.id)
+    @currentUserEntry.each do |cu|
+      @userEntry.each do |u|
+        if cu.room_id == u.room_id
+          @isRoom = true
+          @roomId = cu.room_id
+        end
+      end
+    end
+    if @isRoom
+    else
+      @room = Room.new
+      @entry = Entry.new
+    end
+
+
+
   end
 
   def create

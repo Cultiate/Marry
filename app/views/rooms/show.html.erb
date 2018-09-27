@@ -1,0 +1,28 @@
+<h1>メッセージ</h1>
+
+<h4>参加ユーザー</h4>
+<% @entries.includes(:user).each do |ent| %>
+  <%= link_to user_path(ent.user_id) do %>
+   <%= ent.user.user_name %>さん
+  <% end %>
+<% end %>
+
+<hr>
+<% if @messages.present? %>
+  <% @messages.includes(:user).each do |msg| %>
+    <%= msg.content %>
+    <%= link_to user_path(msg.user_id) do %>
+      by <%= msg.user.user_name %>さん
+    <hr>
+    <% end %>
+  <% end %>
+<% else %>
+  <h3>メッセージはまだありません</h3>
+<% end %>
+
+<%= form_for @message do |f| %>
+  <%= f.text_field :content, placeholder: "メッセージを入力して下さい" %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <br>
+  <%= f.submit "投稿する" %>
+<% end %>

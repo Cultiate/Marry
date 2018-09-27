@@ -310,10 +310,95 @@
       <div id="message" class="tab-pane">
         <div class="container u-space-2">
           <div class="row profile mb-4" style="border-bottom:1px solid #e67b80;">
+            <h1>メッセージ</h1>
+              <% if @isRoom == true %>
+                <%= link_to "チャットへ", room_path(@roomId) %>
+              <% else %>
+                <%= form_for @room do |f| %>
+                  <%= fields_for @entry do |e| %>
+                    <%= e.hidden_field :user_id, value: @user.id %>
+                  <% end %>
+                  <%= f.submit "チャットを始める" %>
+                <% end %>
+            <% end %>
           </div>
+          aaa
+
+          <div class="row">
+            <table border="1">
+              <tr>
+                <td class="u-bg-light-blue-50 text-center p-3">
+                  タイトル
+                  <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                </td>
+                <td class="p-3">
+                  文字
+                </td>
+                <td>トトロ</td>
+                <td>名ちゃん</td>
+              </tr>
+              <tr>
+                <td class="u-bg-light-blue-50 text-center p-3">
+                  メイン画像<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                </td>
+                <td class="p-3">
+                  文字
+                </td>
+                <td>トトロ</td>
+                <td>名ちゃん</td>
+              </tr>
+              <tr>
+                <td class="u-bg-light-blue-50 text-center p-3">
+                  募集終了日
+                  <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
+                </td>
+                <td class="p-3">
+                  文字
+                </td>
+                <td>トトロ</td>
+                <td>名ちゃん</td>
+              </tr>
+              <tr>
+                <td class="u-bg-light-blue-50 text-center p-3">
+                  本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
+                  <td class="p-3">
+                  <div class="u-summernote-editor">
+                    文字
+                  </div>
+                </td>
+                <td>トトロ</td>
+                <td>名ちゃん</td>
+              </tr>
+              <tr>
+                <td class="u-bg-light-blue-50 text-center p-3">
+                  TOPページへ掲載
+                  <span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span>
+                </td>
+                  <td class="p-3">
+                  <div class="u-summernote-editor">
+                    文字
+                  </div>
+                </td>
+                <td>トトロ</td>
+                <td>名ちゃん</td>
+              </tr>
+            </table>
+          </div>
+
+
+
+
+
+
         </div>
       </div>
     </div>
+
+
+
+
+
+
     <!-- End Content Section -->
   </main>
   <!-- ========== END MAIN ========== -->

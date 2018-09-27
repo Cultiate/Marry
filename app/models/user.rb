@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
   has_many :projects
+  has_many :messages
+  has_many :entries
   mount_uploader :user_image, UserImageUploader
 
   def self.from_omniauth(auth)
