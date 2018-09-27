@@ -76,6 +76,39 @@ header {
 }
 
 /*------------------------------------
+  icon
+------------------------------------*/
+.icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 0.3rem;
+}
+
+/*------------------------------------
+  primary-btn
+------------------------------------*/
+.primary-btn {
+  border-width: 3px;
+}
+
+/*------------------------------------
+  bg-primary-round
+------------------------------------*/
+.bg-primary-round {
+  background-color: #e67b80;
+  border-radius:50% !important;
+  height: 200px;
+  width:200px;
+}
+
+/*------------------------------------
+  round-image
+------------------------------------*/
+.round-image {
+  border-radius:50% !important;
+}
+
+/*------------------------------------
   round-image
 ------------------------------------*/
 .rounded-image {
