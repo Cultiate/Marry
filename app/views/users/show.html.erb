@@ -17,12 +17,12 @@
           <div class="row profile mb-4" style="border-bottom:1px solid #e67b80;">
             <div class="col-sm-4 text-center">
               <div class="">
-                <% if current_user.user_image.url == "default.jpg" && current_user.provider == nil %>
+                <% if @user.user_image.url == "default.jpg" && @user.provider == nil %>
                   <%= image_tag "/default.jpg", class:"mt-2 rounded-image" %>
-                <% elsif current_user.provider == "facebook"%>
-                  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"img-fluid rounded rounded-image" %>
+                <% elsif @user.provider == "facebook"%>
+                  <%= image_tag "http://graph.facebook.com/#{@user.uid}/picture?type=large", class:"img-fluid rounded rounded-image" %>
                 <% else %>
-                  <%= image_tag current_user.user_image.url, class:"rounded-image" %>
+                  <%= image_tag @user.user_image.url, class:"rounded-image" %>
                 <% end %>
               </div>
             </div>

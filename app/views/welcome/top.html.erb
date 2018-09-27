@@ -72,6 +72,7 @@
               <% @celebraters_count = @celebraters.count %>
               <% today = Date.today %>
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
+              <% @project_user = User.find_by(user_name: project.user_name) %>
 
             <!-- Projects -->
             <%= link_to project_path(project) do %>
@@ -88,9 +89,10 @@
                     <!-- List of Icons -->
                     <div class="row justify-content-between align-items-center mb-3">
                       <div class="col-6" style="margin:0 25%;">
-                        <a class="small text-secondary" href="#">
+                        <%= link_to user_path(@project_user), class:"small text-secondary" do%>
                           <span class="fa fa-bookmark text-primary mr-1"></span>
                           <%= project.user_name %>
+                          <% end %>
                         </a>
                       </div>
                     </div>
@@ -148,6 +150,7 @@
               <% @celebraters_count = @celebraters.count %>
               <% today = Date.today %>
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
+              <% @project_user = User.find_by(user_name: project.user_name) %>
 
             <!-- Projects -->
             <%= link_to project_path(project) do %>
@@ -164,10 +167,10 @@
                   <!-- List of Icons -->
                   <div class="row justify-content-between align-items-center mb-3">
                     <div class="col-6" style="margin:0 25%;">
-                      <a class="small text-secondary" href="#">
+                      <%= link_to user_path(@project_user), class:"small text-secondary" do%>
                         <span class="fa fa-bookmark text-primary mr-1"></span>
                         <%= project.user_name %>
-                      </a>
+                        <% end %>
                     </div>
                   </div>
                   <!-- End List of Icons -->
@@ -222,6 +225,7 @@
               <% @celebraters_count = @celebraters.count %>
               <% today = Date.today %>
               <% @remaining_days = ((project.end_date - today).to_i - 1) %>
+              <% @project_user = User.find_by(user_name: project.user_name) %>
 
             <!-- Projects -->
             <%= link_to project_path(project) do %>
@@ -238,10 +242,10 @@
                   <!-- List of Icons -->
                   <div class="row justify-content-between align-items-center mb-3">
                     <div class="col-6" style="margin:0 25%;">
-                      <a class="small text-secondary" href="#">
+                      <%= link_to user_path(@project_user), class:"small text-secondary" do%>
                         <span class="fa fa-bookmark text-primary mr-1"></span>
                         <%= project.user_name %>
-                      </a>
+                        <% end %>
                     </div>
                   </div>
                   <!-- End List of Icons -->
