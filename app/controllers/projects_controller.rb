@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  protect_from_forgery except: :destroy
 
   def new
     @project = Project.new
