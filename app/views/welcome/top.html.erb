@@ -291,8 +291,18 @@
       <!-- projects -->
       <div class="container" style="">
         <div class="row w-60" style="margin:auto;">
-            <!-- </form> -->
+            <!-- Input -->
+            <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--no-brd">
+              <%= search_form_for(@search, url:search_path) do |f| %>
+                <%= f.search_field :title_cont, class:"form-control u-form__input bg-search", placeholder:"search marry" %>
+                <div class="input-group-append">
+                <%= f.submit "検索", class:"btn btn-primary u-btn-primary" %>
+                </div>
+              <% end %>
+            </form>
             <!-- End Input -->
+
+
             <h2 class="mt-2 mincho text-white d-block font-size-48" style="margin:auto;">More marry search</h2>
         </div>
       </div>
@@ -302,11 +312,6 @@
     <!-- End search Section -->
     </div>
     <!-- End Content Section -->
-
-    <%= search_form_for(@search, url:search_path) do |f| %>
-      <%= f.search_field :title_cont %>
-      <%= f.submit "検索" %>
-    <% end %>
 
   </main>
   <!-- ========== END MAIN CONTENT ========== -->

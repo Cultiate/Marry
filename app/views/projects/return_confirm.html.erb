@@ -58,9 +58,10 @@
                   </td>
                 </tr>
               </table>
-              <%= button_to "支援する！", {action: "follow_project", id: params[:id]},
-              {method: :post, params: {project_id: params[:id], return_id: params[:return_id], return_price: @project_return_price,
-                class: "btn btn-block btn-warning u-btn-primary mb-3" }} %>
+              <div class="" style="margin:auto;">
+              <%= link_to "支援する！", {action: "follow_project", id: params[:id]},
+              {method: :post, params: {project_id: params[:id], return_id: params[:return_id], return_price: @project_return_price} ,class:"btn btn-outline-primary primary-btn mt-4",style:"margin:auto;"} %>
+               </div>
             </div>
 
             <div id="stickyBlockStartPoint" class="col-lg-3">
