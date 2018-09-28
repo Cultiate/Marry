@@ -11,8 +11,14 @@
 // about supported directives.
 //
 //
+//= require jquery
 //= require jquery.min.js
 //= require jquery-migrate.min.js
+//= require jquery_ujs
+//= require jquery.turbolinks
+//= require jquery.fancybox.min.js
+//= require jquery.validate.min.js
+//= require jquery.mCustomScrollbar.concat.min.js
 //= require popper.min.js
 //= require popper.js
 //= require bootstrap-sprockets
@@ -53,12 +59,6 @@
 
 //= require front.min.js
 //= require hs.megamenu.js
-//= require jquery
-//= require jquery_ujs
-//= require jquery.turbolinks
-//= require jquery.fancybox.min.js
-//= require jquery.validate.min.js
-//= require jquery.mCustomScrollbar.concat.min.js
 
 //= require summernote-bs4.min.js
 //= require bootstrap-tagsinput.min.js
