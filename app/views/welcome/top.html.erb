@@ -292,14 +292,14 @@
       <div class="container" style="">
         <div class="row w-60" style="margin:auto;">
             <!-- Input -->
-            <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--no-brd">
+            <!-- <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--no-brd"> -->
               <%= search_form_for(@search, url:search_path) do |f| %>
-                <%= f.search_field :title_cont, class:"form-control u-form__input bg-search", placeholder:"search marry" %>
-                <div class="input-group-append">
+                <%= f.search_field :title_cont, placeholder:"search marry" %>
+                <!-- <div class="input-group-append"> -->
                 <%= f.submit "検索", class:"btn btn-primary u-btn-primary" %>
                 </div>
               <% end %>
-            </form>
+            <!-- </form> -->
             <!-- End Input -->
 
 
@@ -307,6 +307,11 @@
         </div>
       </div>
       <!-- END projects -->
+
+      <%= search_form_for(@search, url:search_path) do |f| %>
+        <%= f.search_field :title_cont, placeholder:"search marry" %>
+        <%= f.submit "検索", class:"btn btn-primary u-btn-primary" %>
+      <% end %>
 
     </div>
     <!-- End search Section -->

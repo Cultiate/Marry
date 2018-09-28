@@ -111,6 +111,16 @@
                 <% end %>
               </div>
               <h5 class="p-2 mt-4">プロフィールを見る</h5>
+              <% if @isRoom == true %>
+                <%= link_to "メッセージを送る", room_path(@roomId) %>
+              <% else %>
+                <%= form_for @room do |f| %>
+                  <%= fields_for @entry do |e| %>
+                    <%= e.hidden_field :user_id, value: @project.user_id %>
+                  <% end %>
+                  <%= f.submit "メッセージを送る" %>
+                <% end %>
+            <% end %>
               <a class="btn btn-lg bg-primary text-white p-2 pl-4 pr-4"><span class="pr-2"><img src="/icon/mail.png" style="width:25px;"></span>メッセージを送る</a>
             </div>
           </div>
