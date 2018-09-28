@@ -310,27 +310,80 @@
       <div id="message" class="tab-pane">
         <div class="container u-space-2">
           <div class="row profile mb-4" style="border-bottom:1px solid #e67b80;">
-            <h1>受信メッセージ</h1>
+            <h1>受信メッセージ一覧</h1>
           </div>
+
+          <div class="row">
+            <table border="1">
+
+                <tr>
+                  <td class="u-bg-light-blue-50 text-center p-3" style="min-width:150px;">
+                    プロジェクト名
+                  </td>
+                  <td class="p-3" style="min-width:200px;">
+                    送信者名
+                  </td>
+                  <td class="" style="min-width:200px;">
+                    本文
+                  </td>
+                  <td class="w-10" style="min-width:150px;">
+                    ボタン
+                  </td>
+                </tr>
+
+            </table>
+          </div>
+
           <% @messages.includes(:room).each do |message| %>
             <% @send_user_name = User.find_by(id: message.user_id).user_name %>
             <% @project_name = Project.find_by(id: message.room.project_id).title %>
             <div class="row">
               <table border="1">
-                <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">
-                    <%= @project_name %>
-                  </td>
-                  <td class="p-3">
-                    <%= @send_user_name %>
-                  </td>
-                  <td>
-                    <%= message.content %>
-                  </td>
-                </tr>
+
+                  <tr>
+                    <td class="u-bg-light-blue-50 text-center p-3" style="min-width:150px;">
+                      <%= @project_name %>
+                    </td>
+                    <td class="p-3" style="min-width:200px;">
+                      <%= @send_user_name %>
+                    </td>
+                    <td class="" style="min-width:200px;">
+                      <%= message.content %>
+                    </td>
+                    <td class="text-center" style="min-width:150px;">
+                      <button type="button" id="sampleButton" class="btn btn-primary  ">
+                        返信する
+                      </button>
+                    </td>
+                  </tr>
+
               </table>
             </div>
-          <% end %>
+              <!-- モーダル・ダイアログ -->
+              <div class="modal fade" id="sampleModal" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">プロジェクト名：<%= @project_name %></h4>
+                      <button type="button" class="close　" data-dismiss="modal"><span>×</span></button>
+                    </div>
+                    <div class="modal-body" style="border-bottom:1px solid #333;">
+                      本文：<%= message.content %>
+                    </div>
+
+                    <div class="modal-body">
+                      <textarea>返信内容</textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
+                      <button type="button" class="btn btn-primary">送信する</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- モーダル・ダイアログ -->
+            <% end %>
+
         </div>
       </div>
     </div>
@@ -343,6 +396,18 @@
     <!-- End Content Section -->
   </main>
   <!-- ========== END MAIN ========== -->
+  <script>
+$( function() {
+	$('#sampleButton').click( function () {
+		$('#sampleModal').modal(
+			{
+				keyboard: false,
+				backdrop: "static",
+			}
+		);
+	});
+});
+</script>
 
 </body>
 </html>
