@@ -312,7 +312,7 @@
           <div class="row profile mb-4" style="border-bottom:1px solid #e67b80;">
             <h1>受信メッセージ</h1>
           </div>
-          <% @messages.each do |message| %>
+          <% @messages.includes(:room).each do |message| %>
             <% @send_user_name = User.find_by(id: message.user_id).user_name %>
             <% @project_name = Project.find_by(id: message.room.project_id).title %>
             <div class="row">
