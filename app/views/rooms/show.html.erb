@@ -1,9 +1,9 @@
 <h1>メッセージ</h1>
 
 <h4>参加ユーザー</h4>
-<% @entries.includes(:user).each do |ent| %>
-  <%= link_to user_path(ent.user_id) do %>
-   <%= ent.user.user_name %>さん
+<% @entries.includes(:user).each do |entry| %>
+  <%= link_to user_path(entry.user_id) do %>
+   <%= entry.user.user_name %>さん
   <% end %>
 <% end %>
 
@@ -23,6 +23,11 @@
 <%= form_for @message do |f| %>
   <%= f.text_field :content, placeholder: "メッセージを入力して下さい" %>
   <%= f.hidden_field :room_id, value: @room.id %>
+  <% @entries.each do |entry| %>
+    <% if entry.project_id.present? %>
+      <%= f.hidden_field :to_user_id, value: entry.user_id %>
+    <% end %>
+  <% end %>
   <br>
   <%= f.submit "投稿する" %>
 <% end %>

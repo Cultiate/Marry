@@ -117,7 +117,9 @@
                 <%= form_for @room do |f| %>
                   <%= fields_for @entry do |e| %>
                     <%= e.hidden_field :user_id, value: @project.user_id %>
+                    <%= e.hidden_field :project_id, value: params[:id] %>
                   <% end %>
+                  <%= f.hidden_field :project_id, value: params[:id] %>
                   <%= f.submit "メッセージを送る" %>
                 <% end %>
             <% end %>

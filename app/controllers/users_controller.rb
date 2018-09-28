@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @celebrate_datas = Celebrater.where(user_id: params[:id]).order("created_at desc")
     @create_projects = Project.where(user_id: params[:id]).order("created_at desc")
+    @messages = Message.where(to_user_id: current_user.id).order("created_at desc")
     @currentUserEntry= Entry.where(user_id: current_user.id)
     @userEntry= Entry.where(user_id: @user.id)
     @currentUserEntry.each do |cu|
@@ -33,9 +34,6 @@ class UsersController < ApplicationController
       @room = Room.new
       @entry = Entry.new
     end
-
-
-
   end
 
   def create

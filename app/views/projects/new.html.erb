@@ -1,14 +1,6 @@
 <% provide(:title, "プロジェクトを始める") %>
 <%= form_for(@project, url: projects_path) do |f| %>
 <body>
-  <!-- Skippy -->
-  <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
-    <div class="container">
-      <span class="u-skiplink-text">Skip to main content</span>
-    </div>
-  </a>
-  <!-- End Skippy -->
-
   <!-- ========== MAIN ========== -->
   <main id="content" role="main" class="pb-9">
     <%= render 'shared/error_messages', model: @project %>
