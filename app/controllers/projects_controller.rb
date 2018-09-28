@@ -86,11 +86,20 @@ class ProjectsController < ApplicationController
   def return_confirm
     @project = Project.find_by(id: params[:id])
     if params[:return_id].to_i == 1
+      @project_return_title = @project.return_title_1
+      @project_return_content = @project.return_content_1
       @project_return_price = @project.return_price_1
+      @project_return_image = @project.return_image_1
     elsif params[:return_id].to_i == 2
+      @project_return_title = @project.return_title_2
+      @project_return_content = @project.return_content_2
       @project_return_price = @project.return_price_2
+      @project_return_image = @project.return_image_2
     elsif params[:return_id].to_i == 3
+      @project_return_title = @project.return_title_3
+      @project_return_content = @project.return_content_3
       @project_return_price = @project.return_price_3
+      @project_return_image = @project.return_image_3
     end
     remaining_days
     celebraters_info
