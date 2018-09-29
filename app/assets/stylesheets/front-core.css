@@ -7,7 +7,7 @@ html {
 
 body {
   font-family: "Poppins", Helvetica, Arial, sans-serif;
-  color: #1e2022;
+  color: #77838f;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga", "kern";
@@ -31,7 +31,7 @@ h4, h5, h6,
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
 .h1 > a, .h2 > a, .h3 > a, .h4 > a, .h5 > a, .h6 > a {
-  color: #1e2022;
+  color: #77838f;
 }
 
 h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover,

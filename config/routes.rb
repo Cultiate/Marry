@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get "/projects/:id/celebrate/:return_id" => "projects#celebrate", as: "project_celebrate"
   get "/projects/:id/confirm/:return_id" => "projects#return_confirm", as: "return_confirm"
   get "/projects/:id/thanks/:return_id" => "projects#thanks", as: "project_thanks"
+  get "/invitations/new" => "invitations#new"
+  get "/invitations/make" => "invitations#make"
 
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]

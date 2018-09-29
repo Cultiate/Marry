@@ -1,0 +1,82 @@
+<body>
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main" style="margin-top:0px !important;">
+
+    <div class="container" style="margin-top:100px;">
+      <div class="row justify-content-between align-items-center mb-4">
+        <!-- Title -->
+        <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
+          <h1 class="mb-0 text-primary font-weight-bold">
+            <span><img src="/icon/fire.png" style="width:10%" class="mb-4"></span>招待状を作成する</h1>
+        </div>
+      </div>
+        <!-- End Title -->
+        <div class="w-50 d-block invitation" style="margin:auto;">
+          <img src="/invitations/card-avocado.jpg">
+          <textarea class="inv-av-text">
+拝啓 〇〇〇〇〇〇〇〇〇〇〇〇
+
+皆様　いかがお過ごしでしょうか
+さて　このたび　私たちは結婚することとなりました
+つきましては、ご挨拶をかねて
+ささやかなパーティーを催したいと思います
+この日が皆様にとって、楽しい一日になればと思います
+ご多用中誠に恐縮でございますが
+ぜひご出席くださいますようご案内申し上げます
+          </textarea>
+        </div>
+        <div class="container u-space-1 text-center text-primary">
+          <button class="btn btn-outline-primary primary-btn mr-4">保存する</button>
+          <button type="button" id="sampleButton" class="btn btn-primary primary-btn">プレビュー</button>
+        </div>
+        <!-- モーダル・ダイアログ -->
+        <div class="modal fade" id="sampleModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">プレビュー</h4>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+              </div>
+              <div class="modal-body" style="border-bottom:1px solid #333;">
+                <div class="w-50 d-block invitation" style="margin:auto;">
+                  <img src="/invitations/card-avocado.jpg">
+                  <textarea class="inv-av-text" style="font-size:0.1vw;">
+拝啓 〇〇〇〇〇〇〇〇〇〇〇〇
+
+皆様　いかがお過ごしでしょうか
+さて　このたび　私たちは結婚することとなりました
+つきましては、ご挨拶をかねて
+ささやかなパーティーを催したいと思います
+この日が皆様にとって、楽しい一日になればと思います
+ご多用中誠に恐縮でございますが
+ぜひご出席くださいますようご案内申し上げます
+                  </textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary primary-btn mr-4" data-dismiss="modal">戻る</button>
+                <button type="button" class="btn btn-primary">送信する</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- モーダル・ダイアログ -->
+    </div>
+  <!-- End Content Section -->
+
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+<script>
+$( function() {
+$('#sampleButton').click( function () {
+  $('#sampleModal').modal(
+    {
+      keyboard: false,
+      backdrop: "static",
+    }
+  );
+});
+});
+</script>
+
+</body>
