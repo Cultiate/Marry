@@ -15,7 +15,8 @@
     </div>
     <!-- End firstview Section -->
     <div class="container" style="margin-top:40px;">
-      <div class="js-slick-carousel u-slick u-slick--gutters-1"
+      <h2 class="font-size-48 text-primary text-center p-3 font-weight-bold">pick up</h2>
+      <div style="" class="js-slick-carousel u-slick u-slick--gutters-1"
              data-infinite="true"
              data-slides-show="1"
              data-slides-scroll="1"
@@ -39,18 +40,84 @@
                "settings": {
                  "centerPadding": "50px"
                }
-             }]'>
-        <div class="js-slide u-bg-img-hero-center" style="background-image: url('/bg/wedding-bg2.jpg');">
-          <div class="text-center u-space-3">
-            Hellooooooo
+             }]'
+             data-interval="5000">
+        <div class="js-slide u-bg-img-hero-center shadow-sm" style="background-image: url(/bg/wedding-bg2.jpg);">
+          <div class="bg-gray text-center u-space-4-top text-white">
+            <h1 class="u-space-4-top" style="">Hellooooooo</h1>
+            <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 57%;" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">57%</span></div>
+            </div>
+            <!-- Budget & Priority -->
+            <div class="row align-items-center p-4">
+              <div class="col-5 u-ver-divider" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0" style="font-size:0.8rem;">現在：<span class="" style="font-size:0.8rem;　font-weight:bold;">800,000円</span></h5>
+                <!--
+                <span class="fa fa-arrow-up text-warning font-size-13"></span>
+              -->
+
+              </div>
+              <div class="col-4 u-ver-divider" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0">ご祝儀人：7,000人</h5>
+              </div>
+                <!-- End Members List -->
+              <div class="col-3" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0">残り：<span class="" style="　font-weight:bold;">11日</span></h5>
+              </div>
+            </div>
+            <!-- End Budget & Priority -->
           </div>
         </div>
-        <div class="js-slide u-bg-img-hero-center" style="background-image: url(/bg/wedding-bg2.jpg);">
-          <div class="text-center u-space-3">
+        <div class="js-slide u-bg-img-hero-center" style="background-image: url(/bg/wedding-bg1.png);">
+          <div class="bg-gray text-center u-space-4-top text-white">
+            <h1 class="u-space-4-top" style="">welcomeeee</h1>
+            <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 57%;" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">57%</span></div>
+            </div>
+            <!-- Budget & Priority -->
+            <div class="row align-items-center p-4">
+              <div class="col-5 u-ver-divider" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0" style="font-size:0.8rem;">現在：<span class="" style="font-size:0.8rem;　font-weight:bold;">800,000円</span></h5>
+                <!--
+                <span class="fa fa-arrow-up text-warning font-size-13"></span>
+              -->
+
+              </div>
+              <div class="col-4 u-ver-divider" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0">ご祝儀人：7,000人</h5>
+              </div>
+                <!-- End Members List -->
+              <div class="col-3" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0">残り：<span class="" style="　font-weight:bold;">11日</span></h5>
+              </div>
+            </div>
+            <!-- End Budget & Priority -->
           </div>
         </div>
-        <div class="js-slide u-bg-img-hero-center" style="background-image: url(/bg/wedding-bg2.jpg);">
-          <div class="text-center u-space-3">
+        <div class="js-slide u-bg-img-hero-center" style="background-image: url(/bg/wedding-bg3.jpg);">
+          <div class="bg-gray text-center u-space-4-top text-white">
+            <h1 class="u-space-4-top" style="">olaaaaaa</h1>
+            <div class="js-hr-progress progress mb-2" style="height: 15px; width: 90%; margin: 0 5%;">
+              <div class="js-hr-progress-bar progress-bar bg-warning" role="progressbar" style="width: 57%;" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"><span class="" style="font-size: 150%;">57%</span></div>
+            </div>
+            <!-- Budget & Priority -->
+            <div class="row align-items-center p-4">
+              <div class="col-5 u-ver-divider" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0" style="font-size:0.8rem;">現在：<span class="" style="font-size:0.8rem;　font-weight:bold;">800,000円</span></h5>
+                <!--
+                <span class="fa fa-arrow-up text-warning font-size-13"></span>
+              -->
+
+              </div>
+              <div class="col-4 u-ver-divider" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0">ご祝儀人：7,000人</h5>
+              </div>
+                <!-- End Members List -->
+              <div class="col-3" style="padding:0 10px;">
+                <h5 class="small font-weight-normal mb-0">残り：<span class="" style="　font-weight:bold;">11日</span></h5>
+              </div>
+            </div>
+            <!-- End Budget & Priority -->
           </div>
         </div>
       </div>
@@ -82,7 +149,7 @@
                   <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px",style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1" style="color:#828286;"><%= project.title %></h3>
+                    <h3 class="mb-1" style="color:#828286;"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 
@@ -160,7 +227,7 @@
                   <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1" style="color:#828286;"><%= project.title %></h3>
+                    <h3 class="mb-1" style="color:#828286;"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 
@@ -235,7 +302,7 @@
                   <%= image_tag project.main_image.url, class:"img-fluid rounded mh-250px" ,style:"" %>
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1" style="color:#828286;"><%= project.title %></h3>
+                    <h3 class="mb-1" style="color:#828286;"><%= project.title %></h3>
                   </div>
                   <!-- End Title -->
 
@@ -294,8 +361,8 @@
             <!-- Input -->
             <!-- <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--no-brd"> -->
               <%= search_form_for(@search, url:search_path) do |f| %>
+                <div class="input-group-append" style="margin:auto;">
                 <%= f.search_field :title_cont, placeholder:"search marry", class:"js-focus-state input-group input-group-lg u-form u-form--lg u-form--no-brd" %>
-                <div class="input-group-append">
                 <%= f.submit "検索", class:"btn btn-primary u-btn-primary" %>
                 </div>
               <% end %>
@@ -315,13 +382,13 @@
 
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
-  <script src="">
-  </script>
   <script>
   $(document).on('ready', function () {
     // initialization of slick carousel
     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
   });
+
+
 </script>
 </body>
 </html>

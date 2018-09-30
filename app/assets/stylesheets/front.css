@@ -66,7 +66,23 @@ img {
 header {
 
 }
-
+/*------------------------------------
+  bg-gray
+------------------------------------*/
+.bg-gray {
+  background-color: rgba(0,0,0, 0.2)
+}
+/*------------------------------------
+  colorfilter
+------------------------------------*/
+.colorfilter-base {
+    background-color: black;  /* カラーフィルタ効果の色を指定 */
+    display: inline-block;    /* (任意：インラインブロック化したい場合) */
+}
+.colorfilter-image {
+    opacity: 0.6;    /* カラーフィルタ効果の度合いを指定 */
+    display: block;
+}
 /*------------------------------------
   invitation
 ------------------------------------*/
@@ -7050,7 +7066,7 @@ header {
   line-height: 0;
   display: inline-block;
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #e67b80;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 0.875rem;
@@ -7059,8 +7075,8 @@ header {
 }
 
 .u-slick__arrow-classic:hover {
-  color: #fff;
-  background-color: #e67b80;
+  color: #e67b80;
+  background-color: #fff;
 }
 
 .u-slick__arrow-classic-inner:before {
@@ -8243,6 +8259,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: rgba(0,0,0,0.5)
 }
 
 /*------------------------------------

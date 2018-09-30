@@ -62,10 +62,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="u-bg-light-blue-50 text-center p-3">
+                  <td class="u-bg-light-blue-50 text-center">
                     本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
-                    <div class="u-summernote-editor">
+                    <div class="u-summernote-editor mh-250px">
                       <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
                     </div>
                   </td>
@@ -76,7 +76,7 @@
                     <span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span>
                   </td>
                     <td class="p-3">
-                    <div class="u-summernote-editor">
+                    <div class="">
                       <%= f.check_box :display, class:"w-100" %>
                     </div>
                   </td>
@@ -107,7 +107,7 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
-                    <div class="u-summernote-editor">
+                    <div class="u-summernote-editor mh-250px">
                       <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
                   </td>
@@ -154,8 +154,7 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
-                    <div class="u-summernote-editor">
-                      <div class=" " data-height="160"></div>
+                    <div class="u-summernote-editor mh-250px">
                       <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
                     </div>
                   </td>
@@ -264,10 +263,7 @@
   <script>
 
   $(document).on('ready', function () {
-
-      // initialization of malihu scrollbar
-      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
-
+      $('#summernote').summernote();
       // initialization of text editors
       $.HSCore.components.HSSummernoteEditor.init('.js-summernote-editor');
 
@@ -275,9 +271,6 @@
       $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
 
     });
-    $(document).on('turbolinks:load', function() {
-FontAwesome.dom.i2svg()
-})
     </script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 </body>

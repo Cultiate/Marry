@@ -12,17 +12,16 @@
 //
 //
 //= require jquery
-//= require jquery.min.js
-//= require jquery-migrate.min.js
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery.min.js
+//= require jquery-migrate.min.js
 //= require jquery.fancybox.min.js
 //= require jquery.validate.min.js
 //= require jquery.mCustomScrollbar.concat.min.js
+//= require turbolinks
 //= require popper.min.js
 //= require popper.js
-//= require bootstrap-sprockets
-//= require bootstrap.min.js
 //= require hs.core.js
 //= require components/hs.chart-pie.js
 //= require components/hs.range-datepicker.js
@@ -61,13 +60,15 @@
 //= require hs.megamenu.js
 
 //= require summernote-bs4.min.js
-//= require bootstrap-tagsinput.min.js
 //= require flatpickr.min.js
-
 
 //= require gmaps.min.js
 //= require dzsparallaxer.js
 //= require slick.js
 //= require typed.min.js
-//= require turbolinks
+
+//= require bootstrap-tagsinput.min.js
+//= require bootstrap-sprockets
+//= require bootstrap.min.js
+
 //= require_tree .

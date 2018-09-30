@@ -7394,6 +7394,10 @@ button.bg-dark:focus {
   box-shadow: 0 0.15rem 1rem 0.05rem rgba(140, 152, 164, 0.135) !important;
 }
 
+.gray-shadow {
+  box-shadow: 0 0.15rem 1rem 0.05rem rgba(3, 3, 3, 0.3) !important;
+}
+
 .shadow-lg {
   box-shadow: 0 10px 40px 10px rgba(140, 152, 164, 0.175) !important;
 }
@@ -7522,6 +7526,11 @@ button.bg-dark:focus {
 .welcome-project {
   max-width:23%;
   margin:auto !important;
+}
+
+.project_search {
+  margin:auto !important;
+  width: 60%;
 }
 
 .m-0 {
