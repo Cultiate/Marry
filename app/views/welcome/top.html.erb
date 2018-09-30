@@ -14,15 +14,6 @@
 
     </div>
     <!-- End firstview Section -->
-    <% @projects.first(3).each do |project| %>
-      <% @celebraters = Celebrater.where(project_id: project.id)  %>
-      <% @total_celebraters_price = @celebraters.sum(:return_price) %>
-      <% @celebraters_count = @celebraters.count %>
-      <% today = Date.today %>
-      <% @remaining_days = ((project.end_date - today).to_i - 1) %>
-      <% @project_user = User.find_by(user_name: project.user_name) %>
-
-    <%= link_to project_path(project) do %>
     <div class="container" style="margin-top:40px;">
       <h2 class="font-size-48 text-primary text-center p-3 font-weight-bold">pick up</h2>
       <div style="" class="js-slick-carousel u-slick u-slick--gutters-1"
@@ -140,8 +131,6 @@
           </div>
           <!-- End Title -->
         </div>
-        <% end %>
-        <% end %>
 
 
         <div class="mb-7">
