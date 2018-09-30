@@ -91,12 +91,12 @@
           <!-- Sticky Block -->
           <div class="card mb-4">
             <div class="card-body text-center">
-              <% if current_user.user_image.url == "default.jpg" && current_user.provider == nil %>
+              <% if @create_project_user.user_image.url == "default.jpg" && @create_project_user.provider == nil %>
                 <%= image_tag "/default.jpg", class:"rounded-image mb-4" %>
-              <% elsif current_user.provider == "facebook"%>
-                <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"rounded-image mb-4" %>
+              <% elsif @create_project_user.provider == "facebook"%>
+                <%= image_tag "http://graph.facebook.com/#{@create_project_user.uid}/picture?type=large", class:"rounded-image mb-4" %>
               <% else %>
-                <%= image_tag current_user.user_image.url, class:"rounded-image mb-4" %>
+                <%= image_tag @create_project_user.user_image.url, class:"rounded-image mb-4" %>
               <% end %>
               <h2 class=""><%= @project.user_name %></h2>
               <div class="row" style="margin:auto;">

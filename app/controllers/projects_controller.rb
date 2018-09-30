@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
+    @create_project_user = User.find_by(id: @project.user_id)
     remaining_days
     celebraters_info
     @currentUserEntry= Entry.where(user_id: current_user.id)
