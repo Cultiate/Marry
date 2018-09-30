@@ -7,5 +7,8 @@ class MessagesController < ApplicationController
     else
       redirect_back(fallback_location: root_path)
     end
+    @user = User.find_by(id: params[:message][:to_user_id])
+    @user.receive_notification
+    flash[:success] = "メッセージを送信しました"
   end
 end

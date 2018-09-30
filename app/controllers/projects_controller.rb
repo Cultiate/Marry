@@ -20,8 +20,10 @@ class ProjectsController < ApplicationController
     @currentUserEntry.each do |cu|
       @userEntry.each do |u|
         if cu.room_id == u.room_id
-          @isRoom = true
-          @roomId = cu.room_id
+          unless Entry.select(user_id: cu.user_id, user_id: u.user_id, project_id: @project.id).distinct
+            @isRoom = true
+            @roomId = cu.room_id
+          end
         end
       end
     end
