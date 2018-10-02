@@ -12,36 +12,21 @@
     <!-- Blog Classic Section -->
     <div class="p-3">
 
-      <div id="thanks" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg u-space-3-bottom tab-pane">
-          <h1>Marry meをご利用頂き、ありがとうございました！！</h1>
+      <div id="thanks" class="container u-space-2-top u-space-2-top--md u-space-2-top--lg tab-pane">
+          <h1 class="text-primary">SHUKUFUKUをご利用頂き、ありがとうございました！</h1>
+          <hr style="border-color:#e67b80;">
           <div class="col-lg-12 mb-9 mb-lg-0 mr-5">
-            <div class="row mb-9" style="border:1px solid orange; padding: 5%;">
-              <small class="text-right w-100" style="right:-5%; top:-50%;">このリターンを選択中</small>
-              <!-- Title -->
-              <div class="w-md-70 w-lg-60">
-                <div class="col-sm-12 mb-7">
-                  <!-- News Classic -->
-                  <article>
-                    <div class="bg-warning mt-2 mb-3 p-2">
-                      <h3 style="color:white; text-align:center">1000円のリターン</h3>
-                    </div>
-                    <p class="d-block text-secondary mb-1">キャッチコピーor感謝のメッセージ</p>
-                    <div class="row" style=" ">
-                      <div class="col-sm-5" style="font-size: 80%;">
-                        <span class="fa fa-user"></span>
-                        メンバー：100人
-                      </div>
-                      <div class="col-sm-7" style="font-size: 80%;">
-                        <span class="fa fa-truck"></span>
-                          お届け予定：2019年12月
-                      </div>
-                    </div>
-                  </article>
-                  <!-- End News Classic -->
-                </div>
+            <div class="mb-9 p-3">
+              <h5>このリターンを選択しました！</h5>
+              <div class="image_attach mb-5">
+                <%= image_tag @project.main_image.url, class:"img-fluid rounded pr-8" %>
               </div>
-              <div class="w-md-30 w-lg-40">
-
+              <h2 class="text-left font-size-48 mb-9" style="margin:auto;"><%= @project.title %></h2>
+              <div class="mb-4">
+                <p class="text-primary"　style="margin-bottom: 0px !important;"><span class="pr-2"><img src="/icon/human.png" style="width:25px"></span>ご祝儀人：<%= @celebraters_count %>人</p>
+              </div>
+              <div class="mb-4">
+                <p class="text-primary" style="margin-bottom: 0px !important;"><span class="pr-2"><img src="/icon/watch.png" style="width:25px"></span>お届け予定日：<%= @remaining_days %>日</p>
               </div>
             </div>
             <!-- End Title -->
