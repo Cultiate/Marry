@@ -1818,7 +1818,7 @@ pre code {
   font-size: 1rem;
   line-height: 1.5;
   color: #77838f;
-  background-color: #fff;
+  background-color: #eee;
   background-clip: padding-box;
   border: 1px solid #d4d7dd;
   border-radius: 0.25rem;
@@ -7521,6 +7521,18 @@ button.bg-dark:focus {
 
 .mh-250px {
   max-height: 250px !important;
+}
+
+.mh-400px {
+  max-height: 400px !important;
+}
+
+.mh-1000px {
+  max-height: 1000px !important;
+}
+
+.mnh-250px {
+  min-height: 250px !important;
 }
 
 .welcome-project {

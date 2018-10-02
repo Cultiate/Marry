@@ -67,7 +67,7 @@
         $this.flatpickr({
           inline: optIsInline, // boolean
           mode: optType ? optType : 'single', // 'single', 'multiple', 'range'
-          dateFormat: optDateFormat ? optDateFormat : 'd M Y',
+          dateFormat: optDateFormat ? optDateFormat : 'Y-M-d',
           defaultDate: optDefaultDate,
           appendTo: $(optWrapper)[0],
           maxDate: optIsDisableFutureDates ? 'today' : false,

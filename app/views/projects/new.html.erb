@@ -29,7 +29,7 @@
                     <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
                   </td>
                   <td class="p-3">
-                    <%= f.text_field :title, placeholder: "タイトル", class:"form-control u-form__input" %>
+                    <%= f.text_field :title, placeholder: "タイトル", class:"form-control u-form__input bg-form"  %>
                   </td>
                 </tr>
                 <tr>
@@ -46,17 +46,15 @@
                     <span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span>
                   </td>
                   <td class="p-3">
-                      <%= f.text_field :end_date, class: "", placeholder: "2018-01-01" %>
+
                       <!-- Datepicker -->
-                      <div id="datepickerWrapper" class="u-datepicker input-group u-form">
+                      <div id="datepickerWrapper" class="u-datepicker input-group u-form text-white">
                         <div class="input-group-prepend u-form__prepend">
                           <span class="input-group-text u-form__text">
                             <span class="fa fa-calendar u-form__text-inner"></span>
                           </span>
                         </div>
-                        <input class="js-range-datepicker form-control u-form__input bg-white rounded-right" type="text" placeholder="On" aria-label="On"
-                                 data-rp-wrapper="#datepickerWrapper"
-                                 data-rp-date-format="Y/m/d">
+                        <%= f.text_field :end_date, class: "js-range-datepicker form-control u-form__input bg-white rounded-right", placeholder: "2018-01-01" %>
                       </div>
                       <!-- End Datepicker -->
                   </td>
@@ -65,8 +63,23 @@
                   <td class="u-bg-light-blue-50 text-center">
                     本文<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
-                    <div class="u-summernote-editor mh-250px">
-                      <%= f.text_area :content, placeholder: "ご自由にご入力ください。", class:"js-summernote-editor w-100" %>
+                    <div class="u-summernote-editor mh-1000px" ><!-- ↓js-summernote-editor -->
+                      <%= f.text_area :content, class:"form-control  mnh-250px mh-1000px",
+                      value: "下記は例です。ご自由にご入力ください。
+
+▼はじめにご挨拶
+
+▼この挙式で伝えたいこと
+
+▼プロジェクトをやろうと思った理由
+
+▼出会いのきっかけ
+
+▼資金の使い道
+
+▼ご祝儀リターンについて
+
+▼最後に" %>
                     </div>
                   </td>
                 </tr>
@@ -101,14 +114,14 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">価格<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_price_1, placeholder: "例) 3,000", class:" u-form__input" %>円
+                    <%= f.text_field :return_price_1, placeholder: "例) 3,000", class:"form-control u-form__input" %>
                   </td>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
-                    <div class="u-summernote-editor mh-250px">
-                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor" %>
+                    <div class="u-summernote-editor mn-1000px">
+                      <%= f.text_area :return_content_1, placeholder: "内容", class:"js-summernote-editor mnh-250px" %>
                     </div>
                   </td>
                 </tr>
@@ -148,14 +161,14 @@
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">価格<span class="bg-danger text-white ml-3 font-size-13 p-1">必須</span></td>
                   <td class="p-3">
-                    <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:" " %>円
+                    <%= f.text_field :return_price_2, placeholder: "例)3,000", data: { autonumeric: true }, class:"form-control" %>
                   </td>
                 </tr>
                 <tr>
                   <td class="u-bg-light-blue-50 text-center p-3">内容<span class="bg-danger text-white ml-3 font-size-13 p-1 ">必須</span></td>
                     <td class="p-3">
-                    <div class="u-summernote-editor mh-250px">
-                      <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor" %>
+                    <div class="u-summernote-editor mn-1000px">
+                      <%= f.text_area :return_content_2, placeholder: "内容", class:"js-summernote-editor mnh-250px" %>
                     </div>
                   </td>
                 </tr>

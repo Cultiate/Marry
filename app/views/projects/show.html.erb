@@ -2,7 +2,7 @@
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
     <!-- Blog Classic Section -->
-    <div class="container u-space-4-top u-space-5-top--md u-space-4-top--lg u-space-3-bottom">
+    <div class="container u-space-1-top u-space-1-top--md u-space-1-top--lg u-space-3-bottom">
       <div class="row mb-9" style="">
         <!-- Title -->
         <h1 class="col-8 text-center font-size-64 mb-9" style="margin:auto;"><%= @project.title %></h1>
@@ -134,6 +134,7 @@
                     </div>
                   </div>
                 </div>
+              </div>
             <% end %>
               <a class="btn btn-lg bg-primary text-white p-2 pl-4 pr-4"><span class="pr-2"><img src="/icon/mail.png" style="width:25px;"></span>メッセージを送る</a>
             </div>
@@ -154,7 +155,8 @@
                   </h4>
                 </div>
                 <div class="col-6">
-                  <%= button_to "このリターンを選択する", project_celebrate_path(@project, return_id: 1), method: "get", data: { disable_with: "選択中" }, class:"btn btn-lg bg-primary text-white p-0 pl-4 pr-4" %>
+                  <%= button_to "選択する", project_celebrate_path(@project, return_id: 1), method: "get", data: { disable_with: "選択中" }, form_class:"h-100",
+                  class:"btn btn-lg bg-primary text-white p-0 h-100 w-100" %>
                 </div>
               </div>
             </div>
