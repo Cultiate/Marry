@@ -76,6 +76,10 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def receive_notification
+    MessageMailer.receive_notification(self).deliver_now
+  end
+
   private
 
   def downcase_email

@@ -91,12 +91,12 @@
           <!-- Sticky Block -->
           <div class="card mb-4">
             <div class="card-body text-center">
-              <% if current_user.user_image.url == "default.jpg" && current_user.provider == nil %>
+              <% if @create_project_user.user_image.url == "default.jpg" && @create_project_user.provider == nil %>
                 <%= image_tag "/default.jpg", class:"rounded-image mb-4" %>
-              <% elsif current_user.provider == "facebook"%>
-                <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class:"rounded-image mb-4" %>
+              <% elsif @create_project_user.provider == "facebook"%>
+                <%= image_tag "http://graph.facebook.com/#{@create_project_user.uid}/picture?type=large", class:"rounded-image mb-4" %>
               <% else %>
-                <%= image_tag current_user.user_image.url, class:"rounded-image mb-4" %>
+                <%= image_tag @create_project_user.user_image.url, class:"rounded-image mb-4" %>
               <% end %>
               <h2 class=""><%= @project.user_name %></h2>
               <div class="row" style="margin:auto;">
@@ -111,17 +111,29 @@
                 <% end %>
               </div>
               <h5 class="p-2 mt-4">プロフィールを見る</h5>
-              <% if @isRoom == true %>
-                <%= link_to "メッセージを送る", room_path(@roomId) %>
-              <% else %>
-                <%= form_for @room do |f| %>
-                  <%= fields_for @entry do |e| %>
-                    <%= e.hidden_field :user_id, value: @project.user_id %>
-                    <%= e.hidden_field :project_id, value: params[:id] %>
-                  <% end %>
-                  <%= f.hidden_field :project_id, value: params[:id] %>
-                  <%= f.submit "メッセージを送る" %>
-                <% end %>
+              <div id="sampleButton">
+                <%= form_for @message do |f| %>
+
+                <div class="modal fade" id="sampleModal" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">プロジェクト名：<%= @project_name %></h4>
+                        <button type="button" class="close　" data-dismiss="modal"><span>×</span></button>
+                      </div>
+                        <%= f.text_field :content, placeholder: "メッセージを入力して下さい" %>
+                        <%= f.hidden_field :user_id, value: current_user.id %>
+                        <%= f.hidden_field :to_user_id, value: @project.user_id %>
+                        <%= f.hidden_field :room_id, value: @room_id %>
+                        <%= f.hidden_field :project_id, value: params[:id] %>
+                        <%= f.submit "投稿する" %>
+                      <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
+                        <button type="button" class="btn btn-primary">送信する</button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
             <% end %>
               <a class="btn btn-lg bg-primary text-white p-2 pl-4 pr-4"><span class="pr-2"><img src="/icon/mail.png" style="width:25px;"></span>メッセージを送る</a>
             </div>
@@ -200,6 +212,19 @@
 
   </main>
   <!-- ========== END MAIN ========== -->
+
+  <script>
+$( function() {
+	$('#sampleButton').click( function () {
+		$('#sampleModal').modal(
+			{
+				keyboard: false,
+				backdrop: "static",
+			}
+		);
+	});
+});
+</script>
 
 </body>
 </html>
