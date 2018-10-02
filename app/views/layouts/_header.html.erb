@@ -30,7 +30,7 @@
             <% end %>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="left">
-                <%= link_to "SHUKUFUKUとは？", about_path, class:"text-def font-weight-bold" %>
+                <%= link_to "Shukufukuとは？", about_path, class:"text-def font-weight-bold" %>
             </li>
 
             <li class="nav-item">
@@ -186,7 +186,6 @@
                         <ul class="list-unstyled u-list">
                           <li><%= link_to "マイページへ", user_path(current_user), class:"nav-link u-list__link py-2 px-0" %></li>
                           <li><%= link_to "プロフィール編集", edit_user_path(current_user), class:"nav-link u-list__link py-2 px-0" %></li>
-                          <li><%= link_to "パスワード設定", "#", class:"nav-link u-list__link py-2 px-0" %></li>
                         </ul>
                         <!-- End Links -->
                       </div>
@@ -194,8 +193,6 @@
                       <div class="col-sm-6">
                         <!-- Links -->
                         <ul class="list-unstyled u-list">
-                          <li><%= link_to "お支払い方法の確認", "#", class:"nav-link u-list__link py-2 px-0" %></li>
-                          <li><%= link_to "銀行口座情報", "#", class:"nav-link u-list__link py-2 px-0" %></li>
                           <li><%= link_to "ログアウト", logout_path, method: "delete", class:"nav-link u-list__link py-2 px-0" %></li>
                         </ul>
                         <!-- End Links -->
@@ -204,18 +201,6 @@
                   </div>
 
                   <!-- Mega Menu Banner -->
-                  <div class="d-none d-md-block u-header__banner-v2 pr-4">
-                    <div class="d-flex align-items-end">
-
-                      <div class="py-4">
-                        <div class="mb-4">
-                          <strong class="d-block u-header__banner-v2-title mb-2">マイプロジェクト</strong>
-                          <span class="d-block u-header__banner-v2-text">支援人数</span>
-                        </div>
-                        <a class="btn btn-sm u-btn-primary--air transition-3d-hover" href="../shop/classic.html">プロジェクトページへ<span class="fa fa-angle-right ml-2"></span></a>
-                      </div>
-                    </div>
-                  </div>
                   <!-- End Mega Menu Banner -->
                 </div>
                 <!-- End Shop - Mega Menu -->
