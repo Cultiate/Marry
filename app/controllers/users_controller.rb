@@ -16,9 +16,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @message = Message.new
     @celebrate_datas = Celebrater.where(user_id: params[:id]).order("created_at desc")
     @create_projects = Project.where(user_id: params[:id]).order("created_at desc")
-    @messages = Message.where(to_user_id: current_user.id).order("created_at desc")
+    @receive_messages = Message.where(to_user_id: current_user.id).order("created_at desc")
     @currentUserEntry= Entry.where(user_id: current_user.id)
     @userEntry= Entry.where(user_id: @user.id)
     @currentUserEntry.each do |cu|

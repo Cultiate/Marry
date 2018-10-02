@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'awesome_print'

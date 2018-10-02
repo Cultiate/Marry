@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
+    @message = Message.new
     @create_project_user = User.find_by(id: @project.user_id)
     remaining_days
     celebraters_info
@@ -19,18 +20,17 @@ class ProjectsController < ApplicationController
     @userEntry= Entry.where(user_id: @project.user_id)
     @currentUserEntry.each do |cu|
       @userEntry.each do |u|
-        if cu.room_id == u.room_id
-          unless Entry.select(user_id: cu.user_id, user_id: u.user_id, project_id: @project.id).distinct
-            @isRoom = true
-            @roomId = cu.room_id
-          end
+        if cu.room_id == u.room_id && Entry.select(user_id: cu.user_id, user_id: u.user_id, project_id: @project.id).distinct
+            @room = Room.create(project_id: params[:id])
+            @room_id = @room.id
+        elsif cu == nil || u == nil
+          @room = Room.create(project_id: params[:id])
+          @room_id = @room.id
+        else
+          @room_entry = Entry.find_by(user_id: @project.user_id, project_id: params[:id])
+          @room_id = @room_entry.room_id
         end
       end
-    end
-    if @isRoom
-    else
-      @room = Room.new
-      @entry = Entry.new
     end
   end
 

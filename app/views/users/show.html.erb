@@ -334,7 +334,7 @@
             </table>
           </div>
 
-          <% @messages.includes(:room).each do |message| %>
+          <% @receive_messages.includes(:room).each do |message| %>
             <% @send_user_name = User.find_by(id: message.user_id).user_name %>
             <% @project_name = Project.find_by(id: message.room.project_id).title %>
             <div class="row">
@@ -347,18 +347,15 @@
                     <td class="p-3" style="min-width:200px;">
                       <%= @send_user_name %>
                     </td>
-                    <td class="" style="min-width:200px;">
+                    <td id="sampleButton" class="" style="min-width:200px;">
                       <%= message.content %>
-                    </td>
-                    <td class="text-center" style="min-width:150px;">
-                      <button type="button" id="sampleButton" class="btn btn-primary">
-                        返信する
-                      </button>
                     </td>
                   </tr>
               </table>
             </div>
               <!-- モーダル・ダイアログ -->
+              <%= form_for @message do |f| %>
+
               <div class="modal fade" id="sampleModal" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -369,18 +366,20 @@
                     <div class="modal-body" style="border-bottom:1px solid #333;">
                       本文：<%= message.content %>
                     </div>
-
-                    <div class="modal-body">
-                      <textarea>返信内容</textarea>
-                    </div>
-                    <div class="modal-footer">
+                      <%= f.text_field :content, placeholder: "メッセージを入力して下さい" %>
+                      <%= f.hidden_field :user_id, value: message.user_id %>
+                      <%= f.hidden_field :to_user_id, value: message.user_id %>
+                      <%= f.hidden_field :room_id, value: message.room_id %>
+                      <%= f.submit "投稿する" %>
+                    <!-- <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
                       <button type="button" class="btn btn-primary">送信する</button>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
               <!-- モーダル・ダイアログ -->
+              <% end %>
             <% end %>
 
         </div>
