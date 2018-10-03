@@ -94,6 +94,7 @@ header {
   background-color: #fff;
   background-clip: border-box;
   border-radius: 0.25rem;
+  border:1px solid #f3f3f3; 
 }
 
 /*------------------------------------
