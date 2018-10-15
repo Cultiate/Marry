@@ -64,8 +64,3 @@ group :development do
   gem 'letter_opener_web'
   gem 'bullet'
 end
-
-group :production do
-  gem 'fog', '1.42'
-  gem 'pg', '1.1.3'
-end
